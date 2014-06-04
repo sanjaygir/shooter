@@ -7,6 +7,8 @@ import com.mygdx.game.Game;
 public class DesktopLauncher {
 	public static void main (String[] arg) {
 		
+		//Main entry point
+		
 		LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
 		
 		config.title = "SHOOTER";
