@@ -1,4 +1,5 @@
-package com.mygdx.game;
+package gamescreens;
+
 
 public class MenuState extends GameState{
 

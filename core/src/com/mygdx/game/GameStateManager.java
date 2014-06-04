@@ -1,5 +1,9 @@
 package com.mygdx.game;
 
+import gamescreens.GameState;
+import gamescreens.MenuState;
+import gamescreens.PlayState;
+
 public class GameStateManager {
 
 	

@@ -1,7 +1,10 @@
-package com.mygdx.game;
+package gamescreens;
 
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
+import com.mygdx.game.Game;
+import com.mygdx.game.GameKeys;
+import com.mygdx.game.Player;
 
 
 public class PlayState extends GameState{

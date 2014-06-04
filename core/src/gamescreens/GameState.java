@@ -1,4 +1,4 @@
-package com.mygdx.game;
+package gamescreens;
 
 public abstract class GameState {
 
