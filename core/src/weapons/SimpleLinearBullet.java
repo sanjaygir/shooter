@@ -1,4 +1,6 @@
-package com.mygdx.game;
+package weapons;
+
+import game.Game;
 
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;

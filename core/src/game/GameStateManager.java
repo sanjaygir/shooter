@@ -1,4 +1,4 @@
-package com.mygdx.game;
+package game;
 
 import gamescreens.GameState;
 import gamescreens.MenuState;

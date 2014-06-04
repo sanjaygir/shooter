@@ -1,4 +1,4 @@
-package com.mygdx.game;
+package weapons;
 
 public class SineBullet extends Bullet{
 	

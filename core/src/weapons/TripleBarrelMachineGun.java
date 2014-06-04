@@ -1,15 +1,15 @@
-package com.mygdx.game;
+package weapons;
 
 import java.util.ArrayList;
 
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 
-public class FiveBarrelMachineGun extends BulletWeaponSystem{
+public class TripleBarrelMachineGun extends BulletWeaponSystem{
 	
 	private float shoot_time;
 	private float shoot_timer;
 	
-	public FiveBarrelMachineGun(){
+	public TripleBarrelMachineGun(){
 	
 		shoot_time = 0.2f;
 		shoot_timer = 0;
@@ -45,14 +45,6 @@ public class FiveBarrelMachineGun extends BulletWeaponSystem{
 				SimpleLinearBullet b3 = new SimpleLinearBullet(x+20, y);
 				b3.setSpeed(800);
 				bullets.add(b3);
-				
-				SimpleLinearBullet b4 = new SimpleLinearBullet(x+40, y);
-				b4.setSpeed(800);
-				bullets.add(b4);
-				
-				SimpleLinearBullet b5 = new SimpleLinearBullet(x-40, y);
-				b5.setSpeed(800);
-				bullets.add(b5);
 				
 				
 				shoot_timer = 0;

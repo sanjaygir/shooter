@@ -1,4 +1,4 @@
-package com.mygdx.game;
+package weapons;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,4 @@
-package com.mygdx.game;
+package game;
 
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 

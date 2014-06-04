@@ -1,5 +1,8 @@
-package com.mygdx.game;
+package game;
 
+
+import weapons.CrossMachineGun;
+import weapons.WeaponSystem;
 
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;

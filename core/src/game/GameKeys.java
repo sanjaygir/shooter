@@ -1,4 +1,4 @@
-package com.mygdx.game;
+package game;
 
 public class GameKeys {
 
