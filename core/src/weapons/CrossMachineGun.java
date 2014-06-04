@@ -2,6 +2,8 @@ package weapons;
 
 import java.util.ArrayList;
 
+import bullets.SimpleLinearBullet;
+
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 
 public class CrossMachineGun extends BulletWeaponSystem{

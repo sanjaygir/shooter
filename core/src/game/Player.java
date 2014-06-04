@@ -1,7 +1,7 @@
 package game;
 
 
-import weapons.CrossMachineGun;
+import weapons.SineMachineGun;
 import weapons.WeaponSystem;
 
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
@@ -35,7 +35,7 @@ public class Player {
 		
 		speed = 300;
 		
-		weapon = new CrossMachineGun();
+		weapon = new SineMachineGun();
 		weapon.setX(x);
 		weapon.setY(y);
 		

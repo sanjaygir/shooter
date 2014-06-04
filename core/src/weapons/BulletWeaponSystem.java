@@ -2,6 +2,8 @@ package weapons;
 
 import java.util.ArrayList;
 
+import bullets.Bullet;
+
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 
 public abstract class BulletWeaponSystem extends WeaponSystem{

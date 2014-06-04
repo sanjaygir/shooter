@@ -1,4 +1,4 @@
-package weapons;
+package bullets;
 
 import game.Entity;
 
