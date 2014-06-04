@@ -1,4 +1,4 @@
-package com.mygdx.game.desktop;
+package desktop;
 
 import game.Game;
 
