@@ -1,9 +1,10 @@
 package bullets;
 
+import game.Entity;
 import game.Game;
 
-import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
-import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
+import java.util.ArrayList;
+
 import com.badlogic.gdx.math.MathUtils;
 
 public class SimpleLinearBullet extends Bullet{
@@ -43,10 +44,21 @@ public class SimpleLinearBullet extends Bullet{
 		
 		
 		if(!dead){
+						
+			for(int i=0;i<targets.size();i++){
 				
+				//if(this.intersects(targets.get(i))){
+				//	targets.get(i).getHit();
+				//}
+				
+			}
+			
+			
 			y += speed * MathUtils.sin(angle * MathUtils.PI/180f) * dt;
 			x += speed * MathUtils.cos(angle * MathUtils.PI/180f) * dt;
-									
+		
+			
+			
 		}
 		
 		

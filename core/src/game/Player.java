@@ -1,8 +1,8 @@
 package game;
 
 
-import weapons.SineMachineGun;
-import weapons.WeaponSystem;
+import player.weapons.SineMachineGun;
+import player.weapons.WeaponSystem;
 
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;

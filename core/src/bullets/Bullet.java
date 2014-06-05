@@ -1,22 +1,35 @@
 package bullets;
 
 import game.Entity;
+import game.Hittable;
+
+import java.util.ArrayList;
 
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
-import com.badlogic.gdx.math.MathUtils;
 
 public abstract class Bullet extends Entity{
 	
 	protected float speed;
-			
 	protected boolean dead;
-		
+	protected float damage;
+	
+	protected ArrayList<Hittable> targets;
+	
 	
 	public Bullet(){
+				
+	}
 		
+	
+	public void setTargets(ArrayList<Hittable> e){
+	
+		this.targets = e;
+				
 	}
 	
+	
+		
 	
 	public void setSpeed(float s){
 		
