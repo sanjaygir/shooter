@@ -1,7 +1,7 @@
-package bullets;
+package player.weapons.bullets;
 
+import enemies.Enemy;
 import game.Entity;
-import game.Hittable;
 
 import java.util.ArrayList;
 
@@ -11,10 +11,9 @@ import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
 public abstract class Bullet extends Entity{
 	
 	protected float speed;
-	protected boolean dead;
 	protected float damage;
 	
-	protected ArrayList<Hittable> targets;
+	protected ArrayList<Enemy> targets;
 	
 	
 	public Bullet(){
@@ -22,7 +21,7 @@ public abstract class Bullet extends Entity{
 	}
 		
 	
-	public void setTargets(ArrayList<Hittable> e){
+	public void setTargets(ArrayList<Enemy> e){
 	
 		this.targets = e;
 				
@@ -37,13 +36,6 @@ public abstract class Bullet extends Entity{
 		
 	}
 	
-	public boolean getDead(){
-		return dead;
-	}
-	
-	public void setDead(boolean b){
-		dead = b;
-	}
 	
 	public void update(float dt){
 	

@@ -4,6 +4,7 @@ import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
 
 import game.Entity;
+import game.Jukebox;
 
 public class SimpleLinearEnemyUnit extends Enemy{
 
@@ -11,9 +12,10 @@ public class SimpleLinearEnemyUnit extends Enemy{
 	private float speed;
 	private float hp;
 	
-	
-	
+		
 	public SimpleLinearEnemyUnit(){
+		
+		remove = false;
 		
 		this.x = 400;
 		this.y = 800;		
@@ -21,6 +23,7 @@ public class SimpleLinearEnemyUnit extends Enemy{
 		this.width = 20;
 		this.height = 20;
 		
+		this.hp = 200;
 		
 		speed = 200f;
 				
@@ -51,6 +54,20 @@ public class SimpleLinearEnemyUnit extends Enemy{
 		
 		sr.end();
 
+		
+	}
+
+	@Override
+	public void getHit(float d) {
+		// TODO Auto-generated method stub
+		if(remove) return;
+		
+		this.hp -= d;		
+		
+		if(this.hp < 0){
+			this.remove = true;
+			
+		}
 		
 	}
 	

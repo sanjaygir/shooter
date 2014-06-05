@@ -9,6 +9,9 @@ public abstract class Entity {
 	protected float width;
 	protected float height;
 	
+	public boolean remove;
+	
+	
 	public abstract void update(float dt);
 	public abstract void draw(ShapeRenderer sr);
 	

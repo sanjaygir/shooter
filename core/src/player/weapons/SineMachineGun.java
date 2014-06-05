@@ -2,7 +2,7 @@ package player.weapons;
 
 import java.util.ArrayList;
 
-import bullets.SineBullet;
+import player.weapons.bullets.SineBullet;
 
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 

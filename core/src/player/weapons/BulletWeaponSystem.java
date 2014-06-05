@@ -2,7 +2,7 @@ package player.weapons;
 
 import java.util.ArrayList;
 
-import bullets.Bullet;
+import player.weapons.bullets.Bullet;
 
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 
@@ -25,7 +25,7 @@ public abstract class BulletWeaponSystem extends WeaponSystem{
 
 		for(int i=0;i<bullets.size();i++){
 			
-			if(!bullets.get(i).getDead()){
+			if(!bullets.get(i).remove){
 				
 				bullets.get(i).update(dt);
 				

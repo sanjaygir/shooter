@@ -1,10 +1,7 @@
 package player.weapons;
 
-import java.util.ArrayList;
-
-import bullets.SimpleLinearBullet;
-
-import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
+import gamescreens.PlayState;
+import player.weapons.bullets.SimpleLinearBullet;
 
 public class SingleBarrelMachineGun extends BulletWeaponSystem{
 	
@@ -13,7 +10,7 @@ public class SingleBarrelMachineGun extends BulletWeaponSystem{
 	
 	public SingleBarrelMachineGun(){
 	
-		shoot_time = 0.2f;
+		shoot_time = 0.05f;
 		shoot_timer = 0;
 		
 		
@@ -38,7 +35,8 @@ public class SingleBarrelMachineGun extends BulletWeaponSystem{
 			if(shoot_timer >= shoot_time){
 				
 				SimpleLinearBullet b = new SimpleLinearBullet(x, y);
-				b.setSpeed(800);
+				b.setTargets(PlayState.enemies);
+				b.setSpeed(1000);
 				bullets.add(b);
 				
 				
@@ -50,7 +48,7 @@ public class SingleBarrelMachineGun extends BulletWeaponSystem{
 		}
 		else{
 			
-			shoot_timer = 0.2f;
+			shoot_timer = 0.05f;
 			
 		}
 		

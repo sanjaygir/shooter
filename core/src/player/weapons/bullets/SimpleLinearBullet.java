@@ -1,4 +1,4 @@
-package bullets;
+package player.weapons.bullets;
 
 import game.Entity;
 import game.Game;
@@ -17,12 +17,15 @@ public class SimpleLinearBullet extends Bullet{
 		this.x = x;
 		this.y = y;
 		
-		speed = 300;
+		speed = 500;
 		
 		width = 5;
-		height = 5;
+		height = 10;
 					
 		angle = 90;
+		
+		this.damage = 30;
+		
 		
 	}
 	
@@ -38,18 +41,19 @@ public class SimpleLinearBullet extends Bullet{
 	public void update(float dt){
 	
 		if(this.y >= Game.GAME_HEIGHT){
-			this.dead = true;
+			this.remove = true;
 			return;
 		}
 		
 		
-		if(!dead){
+		if(!remove){
 						
 			for(int i=0;i<targets.size();i++){
 				
-				//if(this.intersects(targets.get(i))){
-				//	targets.get(i).getHit();
-				//}
+				if(this.intersects(targets.get(i))){
+					this.remove = true;
+					targets.get(i).getHit(this.damage);
+				}
 				
 			}
 			

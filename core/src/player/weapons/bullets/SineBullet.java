@@ -1,4 +1,4 @@
-package bullets;
+package player.weapons.bullets;
 
 import game.Game;
 
@@ -59,12 +59,12 @@ public class SineBullet extends Bullet{
 		time_accum += dt;
 				
 		if(this.y >= Game.GAME_HEIGHT){
-			this.dead = true;
+			this.remove = true;
 			return;
 		}
 		
 		
-		if(!dead){
+		if(!remove){
 			
 			y += speed * dt;
 			x = initial_x + amplitude * MathUtils.sin((2 * MathUtils.PI*frequency*time_accum + phase) * MathUtils.PI/180f);

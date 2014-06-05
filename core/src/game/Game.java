@@ -31,7 +31,9 @@ public class Game extends ApplicationAdapter {
 		
 		Gdx.input.setInputProcessor(new GameInputProcessor());
 		
-		
+		Jukebox.load("laser2.wav", "shoot");
+		Jukebox.load("explode2.wav", "explode");
+			
 	}
 
 	@Override

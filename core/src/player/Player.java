@@ -1,13 +1,14 @@
-package game;
+package player;
 
 
-import player.weapons.SineMachineGun;
+import game.HittableEntity;
+import player.weapons.LaserGun;
 import player.weapons.WeaponSystem;
 
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
 
-public class Player {
+public class Player extends HittableEntity{
 
 	private boolean up;
 	private boolean down;
@@ -35,15 +36,23 @@ public class Player {
 		
 		speed = 300;
 		
-		weapon = new SineMachineGun();
+		weapon = new LaserGun();
 		weapon.setX(x);
 		weapon.setY(y);
 		
+		remove = false;
+		
+	}
+		
+
+	@Override
+	public void getHit(float h) {
+		// TODO Auto-generated method stub
 		
 	}
 	
 	
-	
+
 	public void update(float dt){
 		
 		
