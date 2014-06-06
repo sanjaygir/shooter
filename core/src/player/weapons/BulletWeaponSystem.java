@@ -10,14 +10,20 @@ public abstract class BulletWeaponSystem extends WeaponSystem{
 
 	protected ArrayList<Bullet> bullets;
 	
+	protected float shoot_time;
+	protected float shoot_timer;
 	
-	public BulletWeaponSystem(){
+	
+	public BulletWeaponSystem(float x, float y){
+		super(x, y);
 		
 		bullets = new ArrayList<Bullet>();		
 		
 	}
 
-	
+	public void setShootInterval(float s){
+		this.shoot_time = s;
+	}
 	
 	public void update(float dt){
 		

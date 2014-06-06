@@ -10,9 +10,7 @@ public class SimpleLinearBullet extends Bullet{
 	
 		
 	public SimpleLinearBullet(float x, float y){
-		
-		this.x = x;
-		this.y = y;
+		super(x, y);
 		
 		speed = 500;
 		

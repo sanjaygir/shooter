@@ -5,22 +5,18 @@ import player.weapons.bullets.SimpleLinearBullet;
 
 public class SingleBarrelMachineGun extends BulletWeaponSystem{
 	
-	private float shoot_time;
-	private float shoot_timer;
 	
-	public SingleBarrelMachineGun(){
+	public SingleBarrelMachineGun(float x, float y){
 	
+		
+		super(x, y);
+		
 		shoot_time = 0.05f;
 		shoot_timer = 0;
 		
 		
 	}
 	
-	@Override
-	public void setShoot(boolean b) {
-		// TODO Auto-generated method stub
-		shoot = b;		
-	}
 
 	@Override
 	public void update(float dt) {

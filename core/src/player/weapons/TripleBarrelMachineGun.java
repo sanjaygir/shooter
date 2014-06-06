@@ -6,21 +6,12 @@ import player.weapons.bullets.SimpleLinearBullet;
 
 public class TripleBarrelMachineGun extends BulletWeaponSystem{
 	
-	private float shoot_time;
-	private float shoot_timer;
-	
-	public TripleBarrelMachineGun(){
-	
+	public TripleBarrelMachineGun(float x, float y){
+		super(x, y);
 		shoot_time = 0.2f;
 		shoot_timer = 0;
 		
 		
-	}
-	
-	@Override
-	public void setShoot(boolean b) {
-		// TODO Auto-generated method stub
-		shoot = b;		
 	}
 
 	@Override

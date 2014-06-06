@@ -6,11 +6,11 @@ import player.weapons.bullets.SimpleLinearBullet;
 public class DoubleLinearMissileGun extends BulletWeaponSystem{
 
 	
-	private float shoot_time;
-	private float shoot_timer;
 	
-	public DoubleLinearMissileGun(){
+	public DoubleLinearMissileGun(float x, float y){
 	
+		
+		super(x, y);
 		
 		shoot_time = 1f;
 		shoot_timer = 0;
@@ -18,11 +18,7 @@ public class DoubleLinearMissileGun extends BulletWeaponSystem{
 		
 	}
 	
-	@Override
-	public void setShoot(boolean b) {
-		// TODO Auto-generated method stub
-		shoot = b;		
-	}
+	
 
 	@Override
 	public void update(float dt) {

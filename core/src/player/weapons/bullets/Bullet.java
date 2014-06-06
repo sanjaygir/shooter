@@ -15,10 +15,9 @@ public abstract class Bullet extends Entity{
 	
 	protected ArrayList<Enemy> targets;
 		
-	public Bullet(){
-				
-	}
-		
+	public Bullet(float x, float y){
+		super(x, y);
+	}		
 	
 	public void setTargets(ArrayList<Enemy> e){
 	
@@ -27,27 +26,32 @@ public abstract class Bullet extends Entity{
 	}
 	
 	
-		
-	
 	public void setSpeed(float s){
-		
 		this.speed = s;
-		
+	}
+	
+	public float getSpeed(){
+		return this.speed;		
 	}
 	
 	
-	public void update(float dt){
+	public void setDamage(float d){
+		this.damage = d;
+	}
 	
-		
+	public float getDamage(){
+		return this.damage;
+	}
+	
+	public void update(float dt){
+			
 	}
 
 	
 	public void draw(ShapeRenderer sr){
 		
-		sr.begin(ShapeType.Filled);
-		
-		sr.rect(x - width/2, y - height/2, width, height);
-		
+		sr.begin(ShapeType.Filled);		
+			sr.rect(x - width/2, y - height/2, width, height);
 		sr.end();
 		
 	}

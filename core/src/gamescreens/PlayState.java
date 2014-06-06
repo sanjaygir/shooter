@@ -37,7 +37,7 @@ public class PlayState extends GameState{
 		enemies = new ArrayList<Enemy>();
 				
 		sr = new ShapeRenderer();
-		player = new Player(this);
+		player = new Player(300, 10, this);
 		
 		spawn_time = 2;
 		spawn_timer = 0;
@@ -64,11 +64,9 @@ public class PlayState extends GameState{
 		
 		if(spawn_timer >= spawn_time){
 			
-			enemy = new SimpleLinearEnemyUnit();
+			enemy = new SimpleLinearEnemyUnit(1 + MathUtils.random(Game.GAME_WIDTH), Game.GAME_HEIGHT + 10);
 			enemy.setSpeed(200);
 			
-			enemy.setX(1 + MathUtils.random(Game.GAME_WIDTH));
-			enemy.setY(Game.GAME_HEIGHT + 10);
 			
 			enemies.add(enemy);
 			

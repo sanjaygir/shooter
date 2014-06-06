@@ -5,22 +5,19 @@ import enemies.Enemy;
 
 public class EnemyChaserGun extends BulletWeaponSystem{
 
-	private float shoot_time;
-	private float shoot_timer;
 	
-	public EnemyChaserGun(){
+	public EnemyChaserGun(float x, float y){
 	
+		
+		super(x, y);
+		
 		shoot_time = 2f;
 		shoot_timer = 0;
 		
 		
 	}
 	
-	@Override
-	public void setShoot(boolean b) {
-		// TODO Auto-generated method stub
-		shoot = b;		
-	}
+	
 
 	@Override
 	public void update(float dt) {

@@ -4,15 +4,14 @@ import player.weapons.bullets.TimeBombBullet;
 
 public class TimeBombGun extends BulletWeaponSystem{
 
-		
-	private float shoot_time;
-	private float shoot_timer;
 	
 	
 	private TimeBombBullet bullet;
 	
 	
-	public TimeBombGun(){
+	public TimeBombGun(float x, float y){
+		
+		super(x, y);
 	
 		shoot_time = 3f;
 		shoot_timer = 0;
@@ -20,11 +19,6 @@ public class TimeBombGun extends BulletWeaponSystem{
 		
 	}
 	
-	@Override
-	public void setShoot(boolean b) {
-		// TODO Auto-generated method stub
-		shoot = b;		
-	}
 
 	@Override
 	public void update(float dt) {

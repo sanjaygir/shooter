@@ -5,23 +5,16 @@ import player.weapons.bullets.SineBullet;
 
 public class SineMachineGun extends BulletWeaponSystem{
 	
+	public SineMachineGun(float x, float y){
 	
-	private float shoot_time;
-	private float shoot_timer;
-	
-	public SineMachineGun(){
-	
+		super(x, y);
+		
 		shoot_time = 0.05f;
 		shoot_timer = 0;
 		
 		
 	}
 	
-	@Override
-	public void setShoot(boolean b) {
-		// TODO Auto-generated method stub
-		shoot = b;		
-	}
 
 	@Override
 	public void update(float dt) {

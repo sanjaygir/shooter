@@ -21,7 +21,9 @@ public class LaserGun extends WeaponSystem{
 	private boolean hitting_target;
 	
 	
-	public LaserGun(){
+	public LaserGun(float x, float y){
+				
+		super(x, y);
 		
 	
 		target_y = this.y;
@@ -33,12 +35,6 @@ public class LaserGun extends WeaponSystem{
 		hitting_target = false;
 	}
 	
-	@Override
-	public void setShoot(boolean b) {
-		// TODO Auto-generated method stub
-		shoot = b;
-		
-	}
 
 	@Override
 	public void update(float dt) {

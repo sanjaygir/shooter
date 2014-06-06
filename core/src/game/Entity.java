@@ -15,6 +15,10 @@ public abstract class Entity {
 	public abstract void update(float dt);
 	public abstract void draw(ShapeRenderer sr);
 	
+	public Entity(float x, float y){
+		this.x = x;
+		this.y = y;
+	}
 	
 
 	public void setX(float x){

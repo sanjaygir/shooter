@@ -31,31 +31,24 @@ public class Player extends HittableEntity{
 	private PlayState play_state;
 	
 		
-	public Player(PlayState ps){
+	public Player(float x, float y, PlayState p){
 		
-		x = 300;
-		y = 10;
+		
+		super(x, y);		
+		
+		this.play_state = p;
 		
 		width = 100;
 		height = 10;
 		
 		speed = 300;
 		
-		this.play_state = ps;
 		
-		weapon1 = new SineMachineGun();
-		weapon1.setX(x);
-		weapon1.setY(y);
-		
+		weapon1 = new SineMachineGun(x, y);	
+		weapon2 = new EnemyChaserGun(x, y);
+				
 		weapon1.setPlayState(play_state);
-		
-		
-		weapon2 = new EnemyChaserGun();
-		weapon2.setX(x);
-		weapon2.setY(y);
-		
 		weapon2.setPlayState(play_state);
-		
 		
 		
 		remove = false;

@@ -6,12 +6,11 @@ public class TimeBombBullet extends Bullet{
 	private float explode_timer;
 	private float explode_time;
 	
-	private float radius;
+	private float blast_radius;
 	
 	public TimeBombBullet(float x, float y){
 		
-		this.x = x;
-		this.y = y;
+		super(x, y);
 		
 		speed = 500;
 		
@@ -20,16 +19,21 @@ public class TimeBombBullet extends Bullet{
 					
 		this.damage = 1000;
 				
-		radius = 500;
+		blast_radius = 500;
 				
 		this.explode_time = 3;
 				
 	}
 	
+	
+	
 	public void setExplodeTime(float s){
 		this.explode_time = s;		
 	}
-			
+		
+	public float getExplodeTime(){
+		return this.explode_time;
+	}
 	
 	public void update(float dt){
 	
@@ -42,7 +46,7 @@ public class TimeBombBullet extends Bullet{
 				
 				float dist = (float)Math.sqrt((targets.get(i).getX() - this.x)*(targets.get(i).getX() - this.x) + (targets.get(i).getY() - this.y)*(targets.get(i).getY() - this.y));
 				
-				if(dist <= radius){
+				if(dist <= blast_radius){
 					
 					targets.get(i).getHit(1000);
 										

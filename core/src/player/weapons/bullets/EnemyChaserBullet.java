@@ -7,25 +7,20 @@ import com.badlogic.gdx.math.MathUtils;
 
 public class EnemyChaserBullet extends Bullet{
 
-	private float angle;
-		
+	private float angle;		
 	private Enemy target;
-	
-	
+		
 	public EnemyChaserBullet(float x, float y){
 		
-		this.x = x;
-		this.y = y;
+		super(x, y);		
 		
 		speed = 500;
 		
 		width = 5;
 		height = 10;
-			
 		
 		this.damage = 1000;
-		
-		
+	
 	}
 	
 	
@@ -33,16 +28,10 @@ public class EnemyChaserBullet extends Bullet{
 		this.target = e;		
 	}
 
-	public void setAngle(float degrees){
-		
-		angle = degrees;
-				
-	}
 	
 	
 	public void update(float dt){
-	
-		
+			
 		if(this.y >= Game.GAME_HEIGHT || this.target.remove){
 			this.remove = true;
 			return;

@@ -11,7 +11,9 @@ public class SimpleLinearEnemyUnit extends Enemy{
 	private float hp;
 	
 		
-	public SimpleLinearEnemyUnit(){
+	public SimpleLinearEnemyUnit(float x, float y){
+		
+		super(x, y);
 		
 		remove = false;
 		

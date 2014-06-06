@@ -10,22 +10,15 @@ public class SineBullet extends Bullet{
 	
 	private float frequency;
 	private float amplitude;
-	private float initial_x;
-	
-
-	private float time_accum;
-	
-		
+	private float initial_x;	
+	private float time_accum;			
 	private float phase;
-	
-	
+		
 	public SineBullet(float x, float y){
 		
-		this.x = x;
-		this.y = y;
+		super(x, y);
 		
-		initial_x = x;
-		
+		initial_x = x;		
 		
 		speed = 300;
 		
@@ -47,11 +40,39 @@ public class SineBullet extends Bullet{
 	}
 	
 	
+	public void setInitialX(float x){
+		initial_x = x;
+	}
+	
+	public float getInitialX(){
+		return initial_x;
+	}
+	
+	public void setAmplitude(float a){
+		amplitude = a;
+	}
+	
+	public float getAmplitude(){
+		return amplitude;		
+	}
+	
+	public void setFrequency(float f){
+		frequency = f;
+	}
+	
+	public float getFrequency(){
+		return frequency;		
+	}
 	
 	public void setPhase(float p){
-		this.phase = p;
-		
+		phase = p;		
 	}
+	
+	public float getPhase(){
+		return phase;
+	}
+	
+	
 	
 	// y(t) = A sin(2 pi f t)
 	
