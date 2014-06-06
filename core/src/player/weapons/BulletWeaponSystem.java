@@ -12,13 +12,14 @@ public abstract class BulletWeaponSystem extends WeaponSystem{
 	
 	protected float shoot_time;
 	protected float shoot_timer;
-	
+		
+	protected boolean cooling_down;
 	
 	public BulletWeaponSystem(float x, float y){
 		super(x, y);
 		
 		bullets = new ArrayList<Bullet>();		
-		
+		cooling_down = false;
 	}
 
 	public void setShootInterval(float s){
@@ -43,6 +44,16 @@ public abstract class BulletWeaponSystem extends WeaponSystem{
 				
 			}
 			
+		}
+		
+
+		if(cooling_down){
+			shoot_timer += dt;
+		}
+		
+		if(shoot_timer >= shoot_time){
+			shoot_timer = 0;
+			cooling_down = false;
 		}
 			
 	}

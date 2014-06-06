@@ -5,12 +5,7 @@ import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
 
 
 public class SimpleLinearEnemyUnit extends Enemy{
-
 	
-	private float speed;
-	private float hp;
-	
-		
 	public SimpleLinearEnemyUnit(float x, float y){
 		
 		super(x, y);
@@ -29,16 +24,12 @@ public class SimpleLinearEnemyUnit extends Enemy{
 				
 	}
 	
-	public void setSpeed(float s){
-		this.speed = s;
-		
-	}
+
 	
 	@Override
 	public void update(float dt) {
 		// TODO Auto-generated method stub
-		
-		
+				
 
 		if(this.y < 0){
 			this.remove = true;
@@ -46,10 +37,10 @@ public class SimpleLinearEnemyUnit extends Enemy{
 		}
 			
 		this.y -= speed * dt;
-		
-		
+				
 		
 	}
+	
 
 	@Override
 	public void draw(ShapeRenderer sr) {
@@ -64,20 +55,6 @@ public class SimpleLinearEnemyUnit extends Enemy{
 		
 	}
 
-	@Override
-	public void getHit(float d) {
-		// TODO Auto-generated method stub
-		if(remove) return;
-		
-		this.hp -= d;		
-		
-		if(this.hp < 0){
-			this.remove = true;
-			
-		}
-		
-	}
-	
 	
 
 	

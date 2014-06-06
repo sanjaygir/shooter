@@ -3,8 +3,8 @@ package player;
 
 import game.HittableEntity;
 import gamescreens.PlayState;
+import player.weapons.CrossMachineGun;
 import player.weapons.EnemyChaserGun;
-import player.weapons.SineMachineGun;
 import player.weapons.WeaponSystem;
 
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
@@ -16,15 +16,7 @@ public class Player extends HittableEntity{
 	private boolean down;
 	private boolean left;
 	private boolean right;
-		
-	private float x;
-	private float y;
-	
-	private float width;
-	private float height;
-	
-	private float speed;
-	
+			
 	private WeaponSystem weapon1;
 	private WeaponSystem weapon2;
 
@@ -41,10 +33,9 @@ public class Player extends HittableEntity{
 		width = 100;
 		height = 10;
 		
-		speed = 300;
+		speed = 300;		
 		
-		
-		weapon1 = new SineMachineGun(x, y);	
+		weapon1 = new CrossMachineGun(x, y);	
 		weapon2 = new EnemyChaserGun(x, y);
 				
 		weapon1.setPlayState(play_state);
@@ -56,12 +47,6 @@ public class Player extends HittableEntity{
 	}
 		
 
-	@Override
-	public void getHit(float h) {
-		// TODO Auto-generated method stub
-		
-	}
-	
 	
 
 	public void update(float dt){
@@ -72,9 +57,7 @@ public class Player extends HittableEntity{
 		
 		weapon2.setX(x);
 		weapon2.setY(y);
-		
-		
-		
+			
 		if(left){
 			x -= speed*dt;
 		}
@@ -121,12 +104,6 @@ public class Player extends HittableEntity{
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
 	
-
-	public void setSpeed(float s){
-		
-		this.speed = s;
-		
-	}
 	
 	public void setUp(boolean b){
 		up = b;

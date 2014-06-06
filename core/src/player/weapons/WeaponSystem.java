@@ -3,10 +3,11 @@ package player.weapons;
 import game.Entity;
 import gamescreens.PlayState;
 
+
+
 public abstract class WeaponSystem extends Entity {
 
 	protected boolean shoot;
-			
 	protected PlayState play_state;
 	
 			

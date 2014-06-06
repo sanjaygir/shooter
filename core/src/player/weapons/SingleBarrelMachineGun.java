@@ -21,35 +21,20 @@ public class SingleBarrelMachineGun extends BulletWeaponSystem{
 	@Override
 	public void update(float dt) {
 		// TODO Auto-generated method stub
-	
-		if(shoot){
-			
-			
-			shoot_timer += dt;
-			
-			
-			if(shoot_timer >= shoot_time){
-				
-				SimpleLinearBullet b = new SimpleLinearBullet(x, y);
-				b.setTargets(this.play_state.getEnemies());
-				b.setSpeed(1000);
-				bullets.add(b);
-				
-				
-				shoot_timer = 0;
-				
-				
-			}
-			
-		}
-		else{
-			
-			shoot_timer = 0.05f;
-			
-		}
-		
-		
 		super.update(dt);
+		
+		
+		if(!cooling_down && shoot){
+
+			SimpleLinearBullet b = new SimpleLinearBullet(x, y);
+			b.setTargets(this.play_state.getEnemies());
+			b.setSpeed(1000);
+			bullets.add(b);
+			
+			cooling_down = true;
+			
+			
+		}
 		
 		
 	
