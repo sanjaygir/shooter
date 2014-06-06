@@ -1,9 +1,6 @@
 package player.weapons.bullets;
 
-import game.Entity;
 import game.Game;
-
-import java.util.ArrayList;
 
 import com.badlogic.gdx.math.MathUtils;
 

@@ -1,17 +1,18 @@
 package player.weapons;
 
 
-import player.weapons.bullets.SineBullet;
+import player.weapons.bullets.SimpleLinearBullet;
 
-public class SineMachineGun extends BulletWeaponSystem{
-	
+public class DoubleLinearMissileGun extends BulletWeaponSystem{
+
 	
 	private float shoot_time;
 	private float shoot_timer;
 	
-	public SineMachineGun(){
+	public DoubleLinearMissileGun(){
 	
-		shoot_time = 0.05f;
+		
+		shoot_time = 1f;
 		shoot_timer = 0;
 		
 		
@@ -35,19 +36,15 @@ public class SineMachineGun extends BulletWeaponSystem{
 			
 			if(shoot_timer >= shoot_time){
 				
-				SineBullet b1 = new SineBullet(x, y);
-				b1.setSpeed(800);
+				SimpleLinearBullet b1 = new SimpleLinearBullet(x-30, y);
 				b1.setTargets(this.play_state.getEnemies());
-				
-				
-				SineBullet b2 = new SineBullet(x, y);
-				b2.setSpeed(800);
-				b2.setPhase(180);
-				
-				b2.setTargets(this.play_state.getEnemies());
-				
-				
+				b1.setSpeed(500);
 				bullets.add(b1);
+				
+				
+				SimpleLinearBullet b2 = new SimpleLinearBullet(x+30, y);
+				b2.setTargets(this.play_state.getEnemies());
+				b2.setSpeed(500);
 				bullets.add(b2);
 				
 				
@@ -59,7 +56,7 @@ public class SineMachineGun extends BulletWeaponSystem{
 		}
 		else{
 			
-			shoot_timer = 0.05f;
+			shoot_timer = 1;
 			
 		}
 		
@@ -72,6 +69,7 @@ public class SineMachineGun extends BulletWeaponSystem{
 	}
 
 	
-
 	
+	
+
 }

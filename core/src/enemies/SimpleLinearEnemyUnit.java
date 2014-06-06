@@ -3,8 +3,6 @@ package enemies;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
 
-import game.Entity;
-import game.Jukebox;
 
 public class SimpleLinearEnemyUnit extends Enemy{
 
@@ -38,6 +36,13 @@ public class SimpleLinearEnemyUnit extends Enemy{
 	public void update(float dt) {
 		// TODO Auto-generated method stub
 		
+		
+
+		if(this.y < 0){
+			this.remove = true;
+			return;
+		}
+			
 		this.y -= speed * dt;
 		
 		

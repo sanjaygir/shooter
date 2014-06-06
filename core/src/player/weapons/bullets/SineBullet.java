@@ -11,7 +11,7 @@ public class SineBullet extends Bullet{
 	private float frequency;
 	private float amplitude;
 	private float initial_x;
-	private float initial_y;
+	
 
 	private float time_accum;
 	
@@ -25,10 +25,12 @@ public class SineBullet extends Bullet{
 		this.y = y;
 		
 		initial_x = x;
-		initial_y = y;
 		
 		
 		speed = 300;
+		
+		this.damage = 1000;
+		
 		
 		width = 5;
 		height = 5;
@@ -66,13 +68,18 @@ public class SineBullet extends Bullet{
 		
 		if(!remove){
 			
+			for(int i=0;i<targets.size();i++){
+				
+				if(this.intersects(targets.get(i))){
+					this.remove = true;
+					targets.get(i).getHit(this.damage);
+				}
+				
+			}
+			
+	
 			y += speed * dt;
 			x = initial_x + amplitude * MathUtils.sin((2 * MathUtils.PI*frequency*time_accum + phase) * MathUtils.PI/180f);
-				
-			
-			//x = initial_x + amplitude * MathUtils.cos(time_accum*200 * MathUtils.PI/180f)* MathUtils.cos(time_accum*200 * MathUtils.PI/180f)* MathUtils.cos(time_accum*200 * MathUtils.PI/180f);
-			//y = initial_y + amplitude * MathUtils.sin(time_accum *200* MathUtils.PI/180f)* MathUtils.sin(time_accum *200* MathUtils.PI/180f)* MathUtils.sin(time_accum *200* MathUtils.PI/180f);
-			
 			
 			
 			

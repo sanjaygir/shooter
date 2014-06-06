@@ -4,8 +4,6 @@ import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 public class Game extends ApplicationAdapter {
 	
@@ -31,8 +29,7 @@ public class Game extends ApplicationAdapter {
 		
 		Gdx.input.setInputProcessor(new GameInputProcessor());
 		
-		Jukebox.load("laser2.wav", "shoot");
-		Jukebox.load("explode2.wav", "explode");
+		
 			
 	}
 

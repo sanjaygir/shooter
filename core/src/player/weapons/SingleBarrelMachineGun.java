@@ -1,6 +1,6 @@
 package player.weapons;
 
-import gamescreens.PlayState;
+
 import player.weapons.bullets.SimpleLinearBullet;
 
 public class SingleBarrelMachineGun extends BulletWeaponSystem{
@@ -35,7 +35,7 @@ public class SingleBarrelMachineGun extends BulletWeaponSystem{
 			if(shoot_timer >= shoot_time){
 				
 				SimpleLinearBullet b = new SimpleLinearBullet(x, y);
-				b.setTargets(PlayState.enemies);
+				b.setTargets(this.play_state.getEnemies());
 				b.setSpeed(1000);
 				bullets.add(b);
 				

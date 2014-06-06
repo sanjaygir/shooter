@@ -1,10 +1,8 @@
 package player.weapons;
 
-import java.util.ArrayList;
 
 import player.weapons.bullets.SimpleLinearBullet;
 
-import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 
 public class TripleBarrelMachineGun extends BulletWeaponSystem{
 	

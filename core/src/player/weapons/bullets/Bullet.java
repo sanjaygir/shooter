@@ -14,8 +14,7 @@ public abstract class Bullet extends Entity{
 	protected float damage;
 	
 	protected ArrayList<Enemy> targets;
-	
-	
+		
 	public Bullet(){
 				
 	}

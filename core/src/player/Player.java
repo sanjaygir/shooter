@@ -2,7 +2,9 @@ package player;
 
 
 import game.HittableEntity;
-import player.weapons.LaserGun;
+import gamescreens.PlayState;
+import player.weapons.EnemyChaserGun;
+import player.weapons.SineMachineGun;
 import player.weapons.WeaponSystem;
 
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
@@ -23,10 +25,13 @@ public class Player extends HittableEntity{
 	
 	private float speed;
 	
-	private WeaponSystem weapon;
+	private WeaponSystem weapon1;
+	private WeaponSystem weapon2;
 
+	private PlayState play_state;
+	
 		
-	public Player(){
+	public Player(PlayState ps){
 		
 		x = 300;
 		y = 10;
@@ -36,9 +41,22 @@ public class Player extends HittableEntity{
 		
 		speed = 300;
 		
-		weapon = new LaserGun();
-		weapon.setX(x);
-		weapon.setY(y);
+		this.play_state = ps;
+		
+		weapon1 = new SineMachineGun();
+		weapon1.setX(x);
+		weapon1.setY(y);
+		
+		weapon1.setPlayState(play_state);
+		
+		
+		weapon2 = new EnemyChaserGun();
+		weapon2.setX(x);
+		weapon2.setY(y);
+		
+		weapon2.setPlayState(play_state);
+		
+		
 		
 		remove = false;
 		
@@ -56,8 +74,11 @@ public class Player extends HittableEntity{
 	public void update(float dt){
 		
 		
-		weapon.setX(x);
-		weapon.setY(y);
+		weapon1.setX(x);
+		weapon1.setY(y);
+		
+		weapon2.setX(x);
+		weapon2.setY(y);
 		
 		
 		
@@ -79,7 +100,8 @@ public class Player extends HittableEntity{
 		}
 			
 		
-		weapon.update(dt);
+		weapon1.update(dt);
+		weapon2.update(dt);
 		
 	}
 	
@@ -92,7 +114,9 @@ public class Player extends HittableEntity{
 		
 		sr.end();
 		
-		weapon.draw(sr);
+		weapon1.draw(sr);
+		weapon2.draw(sr);
+		
 	}
 	
 
@@ -136,11 +160,13 @@ public class Player extends HittableEntity{
 	
 	public void setShootA(boolean b){
 				
-		weapon.setShoot(b);
+		weapon1.setShoot(b);
 		
 	}
 	
 	public void setShootB(boolean b){
+		
+		weapon2.setShoot(b);
 		
 	}
 	

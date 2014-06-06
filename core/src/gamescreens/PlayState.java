@@ -9,7 +9,7 @@ import com.badlogic.gdx.math.MathUtils;
 
 import enemies.Enemy;
 import enemies.SimpleLinearEnemyUnit;
-import game.Entity;
+
 import game.Game;
 import game.GameKeys;
 
@@ -20,7 +20,7 @@ public class PlayState extends GameState{
 	private Player player;
 	private SimpleLinearEnemyUnit enemy;
 	
-	public static ArrayList<Enemy> enemies;
+	private  ArrayList<Enemy> enemies;
 	
 	private float spawn_time;
 	private float spawn_timer;
@@ -37,7 +37,7 @@ public class PlayState extends GameState{
 		enemies = new ArrayList<Enemy>();
 				
 		sr = new ShapeRenderer();
-		player = new Player();
+		player = new Player(this);
 		
 		spawn_time = 2;
 		spawn_timer = 0;
@@ -47,6 +47,14 @@ public class PlayState extends GameState{
 		
 		
 	}
+	
+	
+	public ArrayList<Enemy> getEnemies(){
+		
+		return this.enemies;
+		
+	}
+	
 
 	@Override
 	public void update(float dt) {

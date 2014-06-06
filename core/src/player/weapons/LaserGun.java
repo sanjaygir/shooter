@@ -6,15 +6,12 @@ import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
 
 import enemies.Enemy;
+
 import game.Game;
-import gamescreens.PlayState;
 
 public class LaserGun extends WeaponSystem{
 
 
-	private float shoot_time;
-	private float shoot_timer;
-	
 	private float target_y;
 	
 	private float speed;
@@ -26,14 +23,12 @@ public class LaserGun extends WeaponSystem{
 	
 	public LaserGun(){
 		
-		shoot_time = 0.05f;
-		shoot_timer = 0;
 	
 		target_y = this.y;
 		
 		speed = 3000;
 		
-		targets = PlayState.enemies;
+		targets = this.play_state.getEnemies();
 	
 		hitting_target = false;
 	}
