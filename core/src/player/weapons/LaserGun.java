@@ -16,7 +16,6 @@ public class LaserGun extends WeaponSystem{
 	
 	private float speed;
 	
-	private ArrayList<Enemy> targets;
 	
 	private boolean hitting_target;
 	
@@ -30,12 +29,13 @@ public class LaserGun extends WeaponSystem{
 		
 		speed = 3000;
 		
-		targets = this.play_state.getEnemies();
 	
 		hitting_target = false;
 	}
 	
 
+	
+	
 	@Override
 	public void update(float dt) {
 		// TODO Auto-generated method stub

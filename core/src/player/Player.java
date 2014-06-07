@@ -3,13 +3,12 @@ package player;
 
 import game.HittableEntity;
 import gamescreens.PlayState;
-import player.weapons.EnemyChaserGun;
-import player.weapons.SingleBarrelMachineGun;
+import player.weapons.DoubleLinearMissileGun;
+import player.weapons.LaserGun;
 import player.weapons.WeaponSystem;
 
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
-import com.badlogic.gdx.math.MathUtils;
 
 public class Player extends HittableEntity{
 
@@ -36,13 +35,13 @@ public class Player extends HittableEntity{
 		
 		speed = 300;		
 		
-		weapon1 = new SingleBarrelMachineGun(x, y);	
-		weapon2 = new EnemyChaserGun(x, y);
+		weapon1 = new LaserGun(x, y);	
+		weapon2 = new DoubleLinearMissileGun(x, y);
+						
+		weapon1.setTargets(play_state.getEnemies());
+		weapon2.setTargets(play_state.getEnemies());
+		
 				
-		weapon1.setPlayState(play_state);
-		weapon2.setPlayState(play_state);
-		
-		
 		remove = false;
 		
 	}

@@ -29,7 +29,7 @@ public class TimeBombGun extends BulletWeaponSystem{
 		if(!cooling_down && shoot){
 			
 			bullet = new TimeBombBullet(x, y);
-			bullet.setTargets(this.play_state.getEnemies());
+			bullet.setTargets(targets);
 			bullet.setSpeed(1000);
 			bullets.add(bullet);
 			

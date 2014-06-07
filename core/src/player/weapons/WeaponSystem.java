@@ -1,14 +1,17 @@
 package player.weapons;
 
+import enemies.Enemy;
 import game.Entity;
 import gamescreens.PlayState;
+
+import java.util.ArrayList;
 
 
 
 public abstract class WeaponSystem extends Entity {
 
 	protected boolean shoot;
-	protected PlayState play_state;
+	protected ArrayList<Enemy> targets;
 	
 			
 	public void setShoot(boolean b) {
@@ -21,8 +24,9 @@ public abstract class WeaponSystem extends Entity {
 		super(x, y);
 	}
 	
-	public void setPlayState(PlayState ps){
-		this.play_state = ps;
+	
+	public void setTargets(ArrayList<Enemy> t){
+		this.targets = t;
 	}
 	
 }

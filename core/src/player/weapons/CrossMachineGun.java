@@ -25,14 +25,14 @@ public class CrossMachineGun extends BulletWeaponSystem{
 		if(!cooling_down && shoot){
 						
 			SimpleLinearBullet b1 = new SimpleLinearBullet(x, y);
-			b1.setTargets(this.play_state.getEnemies());
+			b1.setTargets(targets);
 			
 			b1.setSpeed(800);
 			b1.setAngle(45);
 			bullets.add(b1);
 	
 			SimpleLinearBullet b2 = new SimpleLinearBullet(x, y);
-			b2.setTargets(this.play_state.getEnemies());
+			b2.setTargets(targets);
 			
 			b2.setSpeed(800);
 			b2.setAngle(45 + 90);
@@ -41,14 +41,14 @@ public class CrossMachineGun extends BulletWeaponSystem{
 			
 			SimpleLinearBullet b3 = new SimpleLinearBullet(x, y);
 			
-			b3.setTargets(this.play_state.getEnemies());
+			b3.setTargets(targets);
 			b3.setSpeed(800);
 			b3.setAngle(45 + 180);
 			bullets.add(b3);
 	
 			
 			SimpleLinearBullet b4 = new SimpleLinearBullet(x, y);
-			b4.setTargets(this.play_state.getEnemies());
+			b4.setTargets(targets);
 			
 			b4.setSpeed(800);
 			b4.setAngle(45 + 270);

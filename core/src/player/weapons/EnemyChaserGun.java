@@ -28,10 +28,10 @@ public class EnemyChaserGun extends BulletWeaponSystem{
 			Enemy target = null;
 			
 			
-			for(int i=0;i<this.play_state.getEnemies().size();i++){
+			for(int i=0;i<targets.size();i++){
 				
 				
-				Enemy temp = this.play_state.getEnemies().get(i);
+				Enemy temp = targets.get(i);
 				
 				
 				
@@ -50,7 +50,7 @@ public class EnemyChaserGun extends BulletWeaponSystem{
 				
 				EnemyChaserBullet b = new EnemyChaserBullet(x, y);
 				b.setTarget(target);
-				b.setTargets(this.play_state.getEnemies());
+				b.setTargets(targets);
 				b.setSpeed(400);
 				
 				

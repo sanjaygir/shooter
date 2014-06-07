@@ -8,6 +8,9 @@ public class SimpleLinearBullet extends Bullet{
 	
 	private float angle;
 	
+	private float drift_left_speed;
+	private float drift_right_speed;
+	
 		
 	public SimpleLinearBullet(float x, float y){
 		super(x, y);
@@ -21,8 +24,21 @@ public class SimpleLinearBullet extends Bullet{
 		
 		this.damage = 30;
 		
+		drift_left_speed = 0;
+		drift_right_speed = 0;
+		
 		
 	}
+	
+	
+	public void setDriftLeft(float s){
+		drift_left_speed = s;
+	}
+	
+	public void setDriftRight(float s){
+		drift_right_speed = s;
+	}
+	
 	
 	
 
@@ -54,7 +70,7 @@ public class SimpleLinearBullet extends Bullet{
 			
 			
 			y += speed * MathUtils.sin(angle * MathUtils.PI/180f) * dt;
-			x += speed * MathUtils.cos(angle * MathUtils.PI/180f) * dt;
+			x += speed * MathUtils.cos(angle * MathUtils.PI/180f) * dt - drift_left_speed*dt + drift_right_speed*dt;
 		
 			
 			
