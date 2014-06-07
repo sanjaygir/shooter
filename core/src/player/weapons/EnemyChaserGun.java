@@ -10,7 +10,7 @@ public class EnemyChaserGun extends BulletWeaponSystem{
 			
 		super(x, y);
 		
-		shoot_time = 2f;
+		shoot_time = 0.2f;
 		shoot_timer = 0;
 		
 	}
@@ -51,7 +51,7 @@ public class EnemyChaserGun extends BulletWeaponSystem{
 				EnemyChaserBullet b = new EnemyChaserBullet(x, y);
 				b.setTarget(target);
 				b.setTargets(this.play_state.getEnemies());
-				b.setSpeed(300);
+				b.setSpeed(400);
 				
 				
 				bullets.add(b);

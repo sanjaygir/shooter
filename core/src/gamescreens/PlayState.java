@@ -7,12 +7,11 @@ import player.Player;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.MathUtils;
 
+import enemies.CircleEnemyUnit;
 import enemies.Enemy;
 import enemies.SimpleLinearEnemyUnit;
-
 import game.Game;
 import game.GameKeys;
-
 
 public class PlayState extends GameState{
 
@@ -44,6 +43,17 @@ public class PlayState extends GameState{
 		
 		
 		player.setSpeed(300);
+		
+		
+		
+		
+		
+		for(int i=0;i<100;i++){
+			CircleEnemyUnit en = new CircleEnemyUnit(100, Game.GAME_HEIGHT + 400 + i*40);
+			enemies.add(en);
+		}
+		
+		
 		
 		
 	}

@@ -3,12 +3,13 @@ package player;
 
 import game.HittableEntity;
 import gamescreens.PlayState;
-import player.weapons.CrossMachineGun;
 import player.weapons.EnemyChaserGun;
+import player.weapons.SingleBarrelMachineGun;
 import player.weapons.WeaponSystem;
 
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
+import com.badlogic.gdx.math.MathUtils;
 
 public class Player extends HittableEntity{
 
@@ -25,9 +26,9 @@ public class Player extends HittableEntity{
 		
 	public Player(float x, float y, PlayState p){
 		
-		
+				
 		super(x, y);		
-		
+						
 		this.play_state = p;
 		
 		width = 100;
@@ -35,7 +36,7 @@ public class Player extends HittableEntity{
 		
 		speed = 300;		
 		
-		weapon1 = new CrossMachineGun(x, y);	
+		weapon1 = new SingleBarrelMachineGun(x, y);	
 		weapon2 = new EnemyChaserGun(x, y);
 				
 		weapon1.setPlayState(play_state);

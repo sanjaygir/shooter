@@ -9,6 +9,9 @@ public class EnemyChaserBullet extends Bullet{
 
 	private float angle;		
 	private Enemy target;
+	
+	private float target_angle;
+	
 		
 	public EnemyChaserBullet(float x, float y){
 		
@@ -19,7 +22,12 @@ public class EnemyChaserBullet extends Bullet{
 		width = 5;
 		height = 10;
 		
-		this.damage = 1000;
+		this.damage = 100;
+		
+		target_angle = 0f;
+		angle = 0f;
+		
+		
 	
 	}
 	
@@ -32,7 +40,7 @@ public class EnemyChaserBullet extends Bullet{
 	
 	public void update(float dt){
 			
-		if(this.y >= Game.GAME_HEIGHT || this.target.remove){
+		if(this.y >= Game.GAME_HEIGHT || this.y <= 0  ||  this.x <= 0 || this.x >= Game.GAME_WIDTH){
 			this.remove = true;
 			return;
 		}
@@ -50,9 +58,34 @@ public class EnemyChaserBullet extends Bullet{
 			}
 					
 			
-			angle = MathUtils.atan2(target.getY()-this.y, target.getX()-this.x)*180f/MathUtils.PI;
 			
-					
+
+			float x_comp = target.getX() - this.x;
+			float y_comp = target.getY() - this.y;
+			
+			
+			if((x_comp < 0 && y_comp < 0) || (x_comp >= 0 && y_comp < 0)){
+				
+				target_angle = MathUtils.atan2(y_comp, x_comp)*180f/MathUtils.PI;
+				target_angle = 180 + (180 + target_angle);
+				
+				
+			}
+			else{
+			
+				target_angle = MathUtils.atan2(y_comp, x_comp)*180f/MathUtils.PI;
+			}
+			
+			
+			
+			if(angle > target_angle){
+				angle -= 5;
+			}
+			else if(angle < target_angle){
+				angle += 5;
+			}
+			
+			
 			y += speed * MathUtils.sin(angle * MathUtils.PI/180f) * dt;
 			x += speed * MathUtils.cos(angle * MathUtils.PI/180f) * dt;
 		
