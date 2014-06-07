@@ -1,8 +1,6 @@
-package player.weapons;
+package game;
 
 import java.util.ArrayList;
-
-import player.weapons.bullets.Bullet;
 
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 

@@ -1,5 +1,7 @@
 package player.weapons.bullets;
 
+import game.Bullet;
+
 
 public class TimeBombBullet extends Bullet{
 

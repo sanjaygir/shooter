@@ -1,14 +1,14 @@
 package player.weapons;
 
 
+import game.BulletWeaponSystem;
 import player.weapons.bullets.SimpleLinearBullet;
 
 public class SingleBarrelMachineGun extends BulletWeaponSystem{
 	
 	
 	public SingleBarrelMachineGun(float x, float y){
-	
-		
+			
 		super(x, y);
 		
 		shoot_time = 0.05f;

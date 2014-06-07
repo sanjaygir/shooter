@@ -1,5 +1,6 @@
 package player.weapons;
 
+import game.BulletWeaponSystem;
 import player.weapons.bullets.SimpleLinearBullet;
 
 public class CrossMachineGun extends BulletWeaponSystem{

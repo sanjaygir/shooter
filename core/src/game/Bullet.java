@@ -1,7 +1,6 @@
-package player.weapons.bullets;
+package game;
 
 import enemies.Enemy;
-import game.Entity;
 
 import java.util.ArrayList;
 
@@ -13,13 +12,13 @@ public abstract class Bullet extends Entity{
 	protected float speed;
 	protected float damage;
 	
-	protected ArrayList<Enemy> targets;
+	protected ArrayList<HittableEntity> targets;
 		
 	public Bullet(float x, float y){
 		super(x, y);
 	}		
 	
-	public void setTargets(ArrayList<Enemy> e){
+	public void setTargets(ArrayList<HittableEntity> e){
 	
 		this.targets = e;
 				

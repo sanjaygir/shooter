@@ -1,19 +1,15 @@
 package player.weapons;
 
-import java.util.ArrayList;
+import game.Game;
+import game.HittableEntity;
+import game.WeaponSystem;
 
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
 
-import enemies.Enemy;
-
-import game.Game;
-
 public class LaserGun extends WeaponSystem{
 
-
 	private float target_y;
-	
 	private float speed;
 	
 	
@@ -40,11 +36,11 @@ public class LaserGun extends WeaponSystem{
 	public void update(float dt) {
 		// TODO Auto-generated method stub
 		
-		Enemy min = null;
+		HittableEntity min = null;
 		float min_dis = 1000;
 		
 		for(int i=0;i<targets.size();i++){
-			Enemy temp = targets.get(i);
+			HittableEntity temp = targets.get(i);
 			
 			if(this.x >= (temp.getX() - temp.getWidth()/2) && this.x <= (temp.getX() + temp.getWidth()/2)){
 				
@@ -110,10 +106,10 @@ public class LaserGun extends WeaponSystem{
 	public void draw(ShapeRenderer sr) {
 		// TODO Auto-generated method stub
 		
-		sr.begin(ShapeType.Line);
+		sr.begin(ShapeType.Filled);
 		
-		sr.line(this.x, this.y, 0, this.x, target_y, 0);
-		
+			sr.rectLine(this.x, this.y, this.x, target_y, 5);
+				
 		sr.end();
 		
 		

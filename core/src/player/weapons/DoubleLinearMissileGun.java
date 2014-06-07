@@ -1,6 +1,7 @@
 package player.weapons;
 
 
+import game.BulletWeaponSystem;
 import player.weapons.bullets.SimpleLinearBullet;
 
 public class DoubleLinearMissileGun extends BulletWeaponSystem{
@@ -31,6 +32,8 @@ public class DoubleLinearMissileGun extends BulletWeaponSystem{
 			b1.setTargets(targets);
 			b1.setSpeed(500);
 			b1.setDriftLeft(50);
+			b1.setHeight(50);
+			
 			
 			bullets.add(b1);
 			
@@ -39,6 +42,8 @@ public class DoubleLinearMissileGun extends BulletWeaponSystem{
 			b2.setTargets(targets);
 			b2.setSpeed(500);
 			b2.setDriftRight(50);
+			
+			b2.setHeight(50);
 			
 			bullets.add(b2);
 			

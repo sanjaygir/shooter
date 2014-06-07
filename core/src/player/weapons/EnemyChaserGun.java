@@ -2,6 +2,8 @@ package player.weapons;
 
 import player.weapons.bullets.EnemyChaserBullet;
 import enemies.Enemy;
+import game.BulletWeaponSystem;
+import game.HittableEntity;
 
 public class EnemyChaserGun extends BulletWeaponSystem{
 	
@@ -25,13 +27,13 @@ public class EnemyChaserGun extends BulletWeaponSystem{
 		if(cooling_down == false && shoot){
 			
 			float min_dist = 10000;
-			Enemy target = null;
+			HittableEntity target = null;
 			
 			
 			for(int i=0;i<targets.size();i++){
 				
 				
-				Enemy temp = targets.get(i);
+				HittableEntity temp = targets.get(i);
 				
 				
 				

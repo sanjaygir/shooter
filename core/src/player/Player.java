@@ -2,10 +2,10 @@ package player;
 
 
 import game.HittableEntity;
+import game.WeaponSystem;
 import gamescreens.PlayState;
+import player.weapons.CrossMachineGun;
 import player.weapons.DoubleLinearMissileGun;
-import player.weapons.LaserGun;
-import player.weapons.WeaponSystem;
 
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
@@ -24,8 +24,7 @@ public class Player extends HittableEntity{
 	
 		
 	public Player(float x, float y, PlayState p){
-		
-				
+						
 		super(x, y);		
 						
 		this.play_state = p;
@@ -35,7 +34,7 @@ public class Player extends HittableEntity{
 		
 		speed = 300;		
 		
-		weapon1 = new LaserGun(x, y);	
+		weapon1 = new CrossMachineGun(x, y);	
 		weapon2 = new DoubleLinearMissileGun(x, y);
 						
 		weapon1.setTargets(play_state.getEnemies());

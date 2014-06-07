@@ -1,5 +1,6 @@
 package player.weapons.bullets;
 
+import game.Bullet;
 import game.Game;
 
 import com.badlogic.gdx.math.MathUtils;

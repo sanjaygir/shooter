@@ -12,6 +12,7 @@ import enemies.Enemy;
 import enemies.SimpleLinearEnemyUnit;
 import game.Game;
 import game.GameKeys;
+import game.HittableEntity;
 
 public class PlayState extends GameState{
 
@@ -19,7 +20,7 @@ public class PlayState extends GameState{
 	private Player player;
 	private SimpleLinearEnemyUnit enemy;
 	
-	private  ArrayList<Enemy> enemies;
+	private  ArrayList<HittableEntity> enemies;
 	
 	private float spawn_time;
 	private float spawn_timer;
@@ -33,7 +34,7 @@ public class PlayState extends GameState{
 	public void init() {
 		// TODO Auto-generated method stub
 				
-		enemies = new ArrayList<Enemy>();
+		enemies = new ArrayList<HittableEntity>();
 				
 		sr = new ShapeRenderer();
 		player = new Player(300, 10, this);
@@ -59,7 +60,7 @@ public class PlayState extends GameState{
 	}
 	
 	
-	public ArrayList<Enemy> getEnemies(){
+	public ArrayList<HittableEntity> getEnemies(){
 		
 		return this.enemies;
 		

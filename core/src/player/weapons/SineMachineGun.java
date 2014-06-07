@@ -1,6 +1,7 @@
 package player.weapons;
 
 
+import game.BulletWeaponSystem;
 import player.weapons.bullets.SineBullet;
 
 public class SineMachineGun extends BulletWeaponSystem{
