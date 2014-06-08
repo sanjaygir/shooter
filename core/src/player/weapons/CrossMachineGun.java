@@ -1,9 +1,17 @@
 package player.weapons;
 
 import game.BulletWeaponSystem;
+import game.HittableEntity;
+import gamescreens.PlayState;
+
+import java.util.ArrayList;
+
 import player.weapons.bullets.SimpleLinearBullet;
 
 public class CrossMachineGun extends BulletWeaponSystem{
+	
+	
+	private ArrayList<HittableEntity> targets;
 	
 	
 	public CrossMachineGun(float x, float y){
@@ -11,6 +19,9 @@ public class CrossMachineGun extends BulletWeaponSystem{
 		super(x, y);
 		shoot_time = 0.1f;
 		shoot_timer = 0;
+		
+		targets = PlayState.enemies;
+		
 				
 	}
 	

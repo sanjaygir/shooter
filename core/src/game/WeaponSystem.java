@@ -19,11 +19,8 @@ public abstract class WeaponSystem extends Entity {
 	
 	public WeaponSystem(float x, float y){
 		super(x, y);
+		
 	}
 
 
-	public void setTargets(ArrayList<HittableEntity> t){
-		this.targets = t;
-	}
-	
 }

@@ -4,8 +4,8 @@ package player;
 import game.HittableEntity;
 import game.WeaponSystem;
 import gamescreens.PlayState;
-import player.weapons.CrossMachineGun;
-import player.weapons.DoubleLinearMissileGun;
+import player.weapons.EnemyChaserGun;
+import player.weapons.FiveBarrelMachineGun;
 
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
@@ -34,11 +34,11 @@ public class Player extends HittableEntity{
 		
 		speed = 300;		
 		
-		weapon1 = new CrossMachineGun(x, y);	
-		weapon2 = new DoubleLinearMissileGun(x, y);
+		weapon1 = new FiveBarrelMachineGun(x, y);	
+		weapon2 = new EnemyChaserGun(x, y);
 						
-		weapon1.setTargets(play_state.getEnemies());
-		weapon2.setTargets(play_state.getEnemies());
+	//	weapon1.setTargets(play_state.getEnemies());
+	//	weapon2.setTargets(play_state.getEnemies());
 		
 				
 		remove = false;

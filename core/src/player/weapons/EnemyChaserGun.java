@@ -4,6 +4,7 @@ import player.weapons.bullets.EnemyChaserBullet;
 import enemies.Enemy;
 import game.BulletWeaponSystem;
 import game.HittableEntity;
+import gamescreens.PlayState;
 
 public class EnemyChaserGun extends BulletWeaponSystem{
 	
@@ -14,6 +15,7 @@ public class EnemyChaserGun extends BulletWeaponSystem{
 		
 		shoot_time = 0.2f;
 		shoot_timer = 0;
+		targets = PlayState.enemies;
 		
 	}
 		

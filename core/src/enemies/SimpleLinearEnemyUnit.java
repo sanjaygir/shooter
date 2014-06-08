@@ -1,5 +1,7 @@
 package enemies;
 
+import gamescreens.PlayState;
+
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
 
@@ -12,8 +14,8 @@ public class SimpleLinearEnemyUnit extends Enemy{
 		
 		remove = false;
 		
-		this.x = x;
-		this.y = y;		
+		this.x = 400;
+		this.y = 800;		
 		
 		this.width = 20;
 		this.height = 20;

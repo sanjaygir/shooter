@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
 
-public abstract class Bullet extends Entity{
+public abstract class Bullet extends HittableEntity{
 	
 	protected float speed;
 	protected float damage;

@@ -2,6 +2,7 @@ package player.weapons;
 
 
 import game.BulletWeaponSystem;
+import gamescreens.PlayState;
 import player.weapons.bullets.SimpleLinearBullet;
 
 public class DoubleLinearMissileGun extends BulletWeaponSystem{
@@ -14,6 +15,7 @@ public class DoubleLinearMissileGun extends BulletWeaponSystem{
 		shoot_time = 0.4f;
 		shoot_timer = 0;
 		
+		targets = PlayState.enemies;
 		
 	}
 	

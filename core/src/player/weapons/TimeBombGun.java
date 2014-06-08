@@ -1,6 +1,7 @@
 package player.weapons;
 
 import game.BulletWeaponSystem;
+import gamescreens.PlayState;
 import player.weapons.bullets.TimeBombBullet;
 
 public class TimeBombGun extends BulletWeaponSystem{
@@ -17,6 +18,7 @@ public class TimeBombGun extends BulletWeaponSystem{
 		shoot_time = 3f;
 		shoot_timer = 0;
 		
+		targets = PlayState.enemies;
 		
 	}
 	

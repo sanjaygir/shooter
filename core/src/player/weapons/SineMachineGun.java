@@ -2,6 +2,7 @@ package player.weapons;
 
 
 import game.BulletWeaponSystem;
+import gamescreens.PlayState;
 import player.weapons.bullets.SineBullet;
 
 public class SineMachineGun extends BulletWeaponSystem{
@@ -12,6 +13,7 @@ public class SineMachineGun extends BulletWeaponSystem{
 		
 		shoot_time = 0.05f;
 		shoot_timer = 0;
+		targets = PlayState.enemies;
 		
 		
 	}

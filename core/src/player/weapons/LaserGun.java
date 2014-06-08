@@ -3,6 +3,7 @@ package player.weapons;
 import game.Game;
 import game.HittableEntity;
 import game.WeaponSystem;
+import gamescreens.PlayState;
 
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
@@ -27,6 +28,8 @@ public class LaserGun extends WeaponSystem{
 		
 	
 		hitting_target = false;
+		targets = PlayState.enemies;
+		
 	}
 	
 

@@ -1,5 +1,7 @@
 package enemies;
 
+import gamescreens.PlayState;
+
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
 import com.badlogic.gdx.math.MathUtils;
@@ -10,6 +12,9 @@ public class CircleEnemyUnit extends Enemy{
 	private float angle;
 	private float angle_amount;
 	
+	private float timer;
+	
+	private int left = 1;
 	
 	public CircleEnemyUnit(float x, float y){
 		
@@ -32,6 +37,8 @@ public class CircleEnemyUnit extends Enemy{
 		angle_amount = 1f;
 			
 		angle = 270;
+		timer = 0;
+		
 		
 		
 	}
@@ -43,15 +50,12 @@ public class CircleEnemyUnit extends Enemy{
 		// TODO Auto-generated method stub
 		
 		if(this.y < 400){
-			
 			angle += angle_amount;
-			
-			this.x += speed * dt * MathUtils.cos(angle * MathUtils.PI/180f);
-			this.y += speed * dt * MathUtils.sin(angle * MathUtils.PI/180f);
-			
 		}
 		
-		
+		this.x += speed * dt * MathUtils.cos(angle * MathUtils.PI/180f);
+		this.y += speed * dt * MathUtils.sin(angle * MathUtils.PI/180f);
+	
 	}
 	
 

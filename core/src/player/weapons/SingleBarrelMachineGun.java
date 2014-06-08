@@ -2,6 +2,7 @@ package player.weapons;
 
 
 import game.BulletWeaponSystem;
+import gamescreens.PlayState;
 import player.weapons.bullets.SimpleLinearBullet;
 
 public class SingleBarrelMachineGun extends BulletWeaponSystem{
@@ -13,6 +14,7 @@ public class SingleBarrelMachineGun extends BulletWeaponSystem{
 		
 		shoot_time = 0.05f;
 		shoot_timer = 0;
+		targets = PlayState.enemies;
 		
 		
 	}
