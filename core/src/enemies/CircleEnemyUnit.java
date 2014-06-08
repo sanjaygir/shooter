@@ -1,6 +1,5 @@
 package enemies;
 
-import gamescreens.PlayState;
 
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
@@ -12,9 +11,7 @@ public class CircleEnemyUnit extends Enemy{
 	private float angle;
 	private float angle_amount;
 	
-	private float timer;
 	
-	private int left = 1;
 	
 	public CircleEnemyUnit(float x, float y){
 		
@@ -37,8 +34,6 @@ public class CircleEnemyUnit extends Enemy{
 		angle_amount = 1f;
 			
 		angle = 270;
-		timer = 0;
-		
 		
 		
 	}

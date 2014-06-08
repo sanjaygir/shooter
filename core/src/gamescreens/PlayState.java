@@ -20,7 +20,7 @@ public class PlayState extends GameState{
 	public static  ArrayList<HittableEntity> players;
 	private EnemyUnitGenerator generator;
 	
-	private Player player;
+	public static Player player;
 	
 	
 	public PlayState(){

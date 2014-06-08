@@ -1,6 +1,7 @@
 package player;
 
 
+import game.Game;
 import game.HittableEntity;
 import game.WeaponSystem;
 import gamescreens.PlayState;
@@ -20,14 +21,10 @@ public class Player extends HittableEntity{
 	private WeaponSystem weapon1;
 	private WeaponSystem weapon2;
 
-	private PlayState play_state;
 	
-		
 	public Player(float x, float y, PlayState p){
 						
 		super(x, y);		
-						
-		this.play_state = p;
 		
 		width = 100;
 		height = 10;
@@ -37,10 +34,6 @@ public class Player extends HittableEntity{
 		weapon1 = new FiveBarrelMachineGun(x, y);	
 		weapon2 = new EnemyChaserGun(x, y);
 						
-	//	weapon1.setTargets(play_state.getEnemies());
-	//	weapon2.setTargets(play_state.getEnemies());
-		
-				
 		remove = false;
 		
 	}
@@ -57,24 +50,23 @@ public class Player extends HittableEntity{
 		weapon2.setX(x);
 		weapon2.setY(y);
 			
-		if(left){
+		if(left && ((x - speed*dt - this.width/2) > 0)){
 			x -= speed*dt;
 		}
 		
-		if(right){
+		if(right && ((x + speed*dt + this.width/2) < Game.GAME_WIDTH)){
 			x += speed*dt;
 		}
 		
-		if(up){
+		if(up && ((y + speed*dt + this.height/2) < Game.GAME_HEIGHT)){
 			y += speed*dt;
 		}
 		
-		if(down){
+		if(down && ((y - speed*dt - this.height/2) > 0)){
 			y-=speed*dt;
 			
 		}
-			
-		
+					
 		weapon1.update(dt);
 		weapon2.update(dt);
 		

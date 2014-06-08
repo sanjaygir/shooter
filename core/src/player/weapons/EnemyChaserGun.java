@@ -1,7 +1,6 @@
 package player.weapons;
 
 import player.weapons.bullets.EnemyChaserBullet;
-import enemies.Enemy;
 import game.BulletWeaponSystem;
 import game.HittableEntity;
 import gamescreens.PlayState;

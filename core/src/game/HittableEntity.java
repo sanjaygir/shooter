@@ -7,6 +7,10 @@ public abstract class HittableEntity extends Entity {
 	
 	public HittableEntity(float x, float y){
 		super(x, y);
+		
+		speed = 200;
+		hp = 500;
+		
 	}
 	
 	public void setHP(float h){

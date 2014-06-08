@@ -1,7 +1,5 @@
 package enemies;
 
-import gamescreens.PlayState;
-
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
 

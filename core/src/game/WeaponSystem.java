@@ -1,8 +1,6 @@
 package game;
 
-import enemies.Enemy;
 import game.Entity;
-import gamescreens.PlayState;
 
 import java.util.ArrayList;
 

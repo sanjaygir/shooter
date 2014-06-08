@@ -7,6 +7,7 @@ import com.badlogic.gdx.math.MathUtils;
 import enemies.CircleEnemyUnit;
 import enemies.Enemy;
 import enemies.SimpleLinearEnemyUnit;
+import enemies.TriangularPathEnemyUnit;
 import enemies.WallCrawler;
 import gamescreens.PlayState;
 
@@ -19,6 +20,9 @@ public class EnemyUnitGenerator {
 	
 	private ArrayList<Float> generate_times;
 	private ArrayList<Enemy> to_generate;
+	
+	
+	private Enemy enemy;
 	
 	
 	
@@ -39,36 +43,46 @@ public class EnemyUnitGenerator {
 	
 	private void createUnits(){
 		
-		Enemy e1 = new WallCrawler(10, 400);
-		generateAt(e1, 2f);
+		
+		enemy = new WallCrawler(10, 400);
+		generateAt(enemy, 2f);
 		
 				
-		Enemy e2 = new WallCrawler(10, 700);
-		generateAt(e2, 4f);
+		enemy = new WallCrawler(10, 700);
+		generateAt(enemy, 4f);
 					
-		Enemy e3 = new WallCrawler(10, -100);
-		generateAt(e3, 6f);
+		enemy = new WallCrawler(10, -100);
+		generateAt(enemy, 6f);
 		
 		
-		Enemy e4 = new WallCrawler(790, 400);
-		e4.setSpeed(100);
-		generateAt(e4, 8f);
-				
+		enemy = new WallCrawler(790, 400);
+		enemy.setSpeed(100);
+		generateAt(enemy, 8f);
+			
 
 
 		for(int i=0;i<100;i++){
-			CircleEnemyUnit en = new CircleEnemyUnit(100, Game.GAME_HEIGHT  + i*40);
-			
-			generateAt(en, i*0.1f);
+			enemy = new CircleEnemyUnit(100, Game.GAME_HEIGHT  + i*40);
+			generateAt(enemy, i*0.1f);
 			
 		}
 		
 		for(int i=0; i< 100; i++){
 			
-			SimpleLinearEnemyUnit enemy = new SimpleLinearEnemyUnit(1 + MathUtils.random(Game.GAME_WIDTH), Game.GAME_HEIGHT + 10);
+			enemy = new SimpleLinearEnemyUnit(1 + MathUtils.random(Game.GAME_WIDTH), Game.GAME_HEIGHT + 10);
 			enemy.setSpeed(200);
 			
 			generateAt(enemy, i*2f);
+			
+		}
+		
+		
+		for(int i=0; i<10; i++){
+			
+			enemy = new TriangularPathEnemyUnit(400, Game.GAME_HEIGHT + 10);
+			enemy.setSpeed(300);
+			generateAt(enemy, 10 + i*0.2f);
+			
 			
 		}
 		

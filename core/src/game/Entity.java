@@ -18,6 +18,12 @@ public abstract class Entity {
 	public Entity(float x, float y){
 		this.x = x;
 		this.y = y;
+		
+		this.width = 50;
+		this.height = 50;
+		
+		remove = false;
+		
 	}
 	
 
