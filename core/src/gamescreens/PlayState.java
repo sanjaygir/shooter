@@ -1,9 +1,9 @@
 package gamescreens;
 
 import game.EnemyUnitGenerator;
+import game.Entity;
 import game.Game;
 import game.GameKeys;
-import game.HittableEntity;
 
 import java.util.ArrayList;
 
@@ -16,8 +16,8 @@ public class PlayState extends GameState{
 
 	private ShapeRenderer sr;
 		
-	public static  ArrayList<HittableEntity> enemies;
-	public static  ArrayList<HittableEntity> players;
+	public static  ArrayList<Entity> enemies;
+	public static  ArrayList<Entity> players;
 	private EnemyUnitGenerator generator;
 	
 	public static Player player;
@@ -31,8 +31,8 @@ public class PlayState extends GameState{
 	public void init() {
 		// TODO Auto-generated method stub
 				
-		enemies = new ArrayList<HittableEntity>();
-		players = new ArrayList<HittableEntity>();
+		enemies = new ArrayList<Entity>();
+		players = new ArrayList<Entity>();
 		
 		generator = new EnemyUnitGenerator();
 		
@@ -40,7 +40,7 @@ public class PlayState extends GameState{
 		sr = new ShapeRenderer();
 			
 		player = new Player(300, 10, this);
-		player.setHP(500);
+		player.setHP(1);
 		player.setSpeed(300);
 		players.add(player);		
 				

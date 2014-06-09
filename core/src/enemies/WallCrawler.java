@@ -36,6 +36,10 @@ public class WallCrawler extends Enemy{
 	public void update(float dt) {
 		// TODO Auto-generated method stub
 		
+		
+		super.update(dt);
+		
+		
 		weapon.setX(this.x);
 		weapon.setY(this.y);
 	

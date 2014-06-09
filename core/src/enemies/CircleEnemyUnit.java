@@ -44,6 +44,9 @@ public class CircleEnemyUnit extends Enemy{
 	public void update(float dt) {
 		// TODO Auto-generated method stub
 		
+		super.update(dt);
+		
+		
 		if(this.y < 400){
 			angle += angle_amount;
 		}

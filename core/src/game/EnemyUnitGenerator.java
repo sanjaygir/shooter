@@ -15,7 +15,7 @@ public class EnemyUnitGenerator {
 
 	private float spawn_timer;	
 	
-	private ArrayList<HittableEntity> enemies;
+	private ArrayList<Entity> enemies;
 		
 	
 	private ArrayList<Float> generate_times;

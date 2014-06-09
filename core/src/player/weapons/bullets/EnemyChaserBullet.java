@@ -1,15 +1,15 @@
 package player.weapons.bullets;
 
 import game.Bullet;
+import game.Entity;
 import game.Game;
-import game.HittableEntity;
 
 import com.badlogic.gdx.math.MathUtils;
 
 public class EnemyChaserBullet extends Bullet{
 
 	private float angle;		
-	private HittableEntity target;
+	private Entity target;
 	
 	private float target_angle;
 	
@@ -33,7 +33,7 @@ public class EnemyChaserBullet extends Bullet{
 	}
 	
 	
-	public void setTarget(HittableEntity e){
+	public void setTarget(Entity e){
 		this.target = e;		
 	}
 
@@ -51,7 +51,7 @@ public class EnemyChaserBullet extends Bullet{
 						
 			for(int i=0;i<targets.size();i++){
 				
-				if(this.intersects(targets.get(i))){
+				if(targets.get(i).isHittable() && this.intersects(targets.get(i))){
 					this.remove = true;
 					targets.get(i).getHit(this.damage);
 				}

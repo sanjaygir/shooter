@@ -1,7 +1,7 @@
 package player.weapons;
 
+import game.Entity;
 import game.Game;
-import game.HittableEntity;
 import game.WeaponSystem;
 import gamescreens.PlayState;
 
@@ -39,11 +39,11 @@ public class LaserGun extends WeaponSystem{
 	public void update(float dt) {
 		// TODO Auto-generated method stub
 		
-		HittableEntity min = null;
+		Entity min = null;
 		float min_dis = 1000;
 		
 		for(int i=0;i<targets.size();i++){
-			HittableEntity temp = targets.get(i);
+			Entity temp = targets.get(i);
 			
 			if(this.x >= (temp.getX() - temp.getWidth()/2) && this.x <= (temp.getX() + temp.getWidth()/2)){
 				

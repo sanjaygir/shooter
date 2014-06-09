@@ -92,7 +92,7 @@ public class SineBullet extends Bullet{
 			
 			for(int i=0;i<targets.size();i++){
 				
-				if(this.intersects(targets.get(i))){
+				if(targets.get(i).isHittable() && this.intersects(targets.get(i))){
 					this.remove = true;
 					targets.get(i).getHit(this.damage);
 				}

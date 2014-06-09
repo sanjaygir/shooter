@@ -1,13 +1,12 @@
 package player.weapons;
 
-import player.weapons.bullets.EnemyChaserBullet;
 import game.BulletWeaponSystem;
-import game.HittableEntity;
+import game.Entity;
 import gamescreens.PlayState;
+import player.weapons.bullets.EnemyChaserBullet;
 
 public class EnemyChaserGun extends BulletWeaponSystem{
-	
-	
+		
 	public EnemyChaserGun(float x, float y){
 			
 		super(x, y);
@@ -28,13 +27,13 @@ public class EnemyChaserGun extends BulletWeaponSystem{
 		if(cooling_down == false && shoot){
 			
 			float min_dist = 10000;
-			HittableEntity target = null;
+			Entity target = null;
 			
 			
 			for(int i=0;i<targets.size();i++){
 				
 				
-				HittableEntity temp = targets.get(i);
+				Entity temp = targets.get(i);
 				
 				
 				

@@ -1,7 +1,7 @@
 package player.weapons;
 
 import game.BulletWeaponSystem;
-import game.HittableEntity;
+import game.Entity;
 import gamescreens.PlayState;
 
 import java.util.ArrayList;
@@ -11,7 +11,7 @@ import player.weapons.bullets.SimpleLinearBullet;
 public class CrossMachineGun extends BulletWeaponSystem{
 	
 	
-	private ArrayList<HittableEntity> targets;
+	private ArrayList<Entity> targets;
 	
 	
 	public CrossMachineGun(float x, float y){

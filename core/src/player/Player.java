@@ -1,8 +1,8 @@
 package player;
 
 
+import game.Entity;
 import game.Game;
-import game.HittableEntity;
 import game.WeaponSystem;
 import gamescreens.PlayState;
 import player.weapons.EnemyChaserGun;
@@ -11,7 +11,7 @@ import player.weapons.FiveBarrelMachineGun;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
 
-public class Player extends HittableEntity{
+public class Player extends Entity{
 
 	private boolean up;
 	private boolean down;

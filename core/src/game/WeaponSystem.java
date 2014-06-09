@@ -1,13 +1,11 @@
 package game;
 
-import game.Entity;
-
 import java.util.ArrayList;
 
 public abstract class WeaponSystem extends Entity {
 
 	protected boolean shoot;
-	protected ArrayList<HittableEntity> targets;
+	protected ArrayList<Entity> targets;
 	
 			
 	public void setShoot(boolean b) {

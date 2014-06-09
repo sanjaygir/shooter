@@ -6,18 +6,18 @@ import java.util.ArrayList;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
 
-public abstract class Bullet extends HittableEntity{
+public abstract class Bullet extends Entity{
 	
 	protected float speed;
 	protected float damage;
 	
-	protected ArrayList<HittableEntity> targets;
+	protected ArrayList<Entity> targets;
 		
 	public Bullet(float x, float y){
 		super(x, y);
 	}		
 	
-	public void setTargets(ArrayList<HittableEntity> e){
+	public void setTargets(ArrayList<Entity> e){
 	
 		this.targets = e;
 				

@@ -33,6 +33,10 @@ public class TriangularPathEnemyUnit extends Enemy {
 	@Override
 	public void update(float dt) {
 		// TODO Auto-generated method stub
+		
+		super.update(dt);
+		
+		
 		timer += dt;
 		
 		

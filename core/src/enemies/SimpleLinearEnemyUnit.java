@@ -30,7 +30,8 @@ public class SimpleLinearEnemyUnit extends Enemy{
 	public void update(float dt) {
 		// TODO Auto-generated method stub
 				
-
+		super.update(dt);
+		
 		if(this.y < 0){
 			this.remove = true;
 			return;
