@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import com.badlogic.gdx.math.MathUtils;
 
 import enemies.CircleEnemyUnit;
+import enemies.CrossJumpEnemyUnit;
 import enemies.Enemy;
 import enemies.SimpleLinearEnemyUnit;
 import enemies.TriangularPathEnemyUnit;
@@ -45,9 +46,32 @@ public class EnemyUnitGenerator {
 	
 	private void createUnits(){
 		
+		for(int i=0;i<10;i++){
+	
+			enemy = new CrossJumpEnemyUnit(10, 700, CrossJumpEnemyUnit.CROSS_RIGHT);
+			generateAt(enemy, 20f + i*0.3f);
+					
+		}
+	
+		for(int i=0;i<10;i++){
+			
+			enemy = new CrossJumpEnemyUnit(750, 700, CrossJumpEnemyUnit.CROSS_LEFT);
+			generateAt(enemy, 20f + i*0.3f);
+					
+		}
+		
+		
+		
 		
 		enemy = new TripleBulletEnemyUnit(10, 700);
 		generateAt(enemy, 1f);
+		
+		enemy = new TripleBulletEnemyUnit(100, 700);
+		generateAt(enemy, 3f);
+		
+		enemy = new TripleBulletEnemyUnit(200, 700);
+		generateAt(enemy, 7f);
+		
 		
 		enemy = new TripleBulletEnemyUnit(750, 700);
 		((TripleBulletEnemyUnit)enemy).setFacingRight(false);

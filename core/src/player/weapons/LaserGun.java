@@ -60,8 +60,7 @@ public class LaserGun extends WeaponSystem{
 				
 			}
 			
-		}
-		
+		}	
 		
 		
 		
@@ -77,7 +76,7 @@ public class LaserGun extends WeaponSystem{
 		
 		if(hitting_target){
 			
-			min.getHit(5);
+			min.getHit(50);
 			
 		}
 		

@@ -84,8 +84,7 @@ public class TripleBulletAngularGun extends BulletWeaponSystem {
 					
 				bullets.add(b3);
 				
-			
-				
+							
 				
 			}
 						

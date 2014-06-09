@@ -5,7 +5,7 @@ import game.Entity;
 import game.Game;
 import game.WeaponSystem;
 import gamescreens.PlayState;
-import player.weapons.EnemyChaserGun;
+import player.weapons.DoubleLinearMissileGun;
 import player.weapons.FiveBarrelMachineGun;
 
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
@@ -32,7 +32,7 @@ public class Player extends Entity{
 		speed = 300;		
 		
 		weapon1 = new FiveBarrelMachineGun(x, y);	
-		weapon2 = new EnemyChaserGun(x, y);
+		weapon2 = new DoubleLinearMissileGun(x, y);
 						
 		remove = false;
 		

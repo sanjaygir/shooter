@@ -12,8 +12,8 @@ public class SimpleLinearEnemyUnit extends Enemy{
 		
 		remove = false;
 		
-		this.x = 400;
-		this.y = 800;		
+		this.x = x;
+		this.y = y;		
 		
 		this.width = 20;
 		this.height = 20;
