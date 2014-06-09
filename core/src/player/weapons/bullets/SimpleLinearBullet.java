@@ -7,10 +7,10 @@ import com.badlogic.gdx.math.MathUtils;
 
 public class SimpleLinearBullet extends Bullet{
 	
-	private float angle;
+	protected float angle;
 	
-	private float drift_left_speed;
-	private float drift_right_speed;
+	protected float drift_left_speed;
+	protected float drift_right_speed;
 	
 		
 	public SimpleLinearBullet(float x, float y){
@@ -66,7 +66,7 @@ public class SimpleLinearBullet extends Bullet{
 						
 			for(int i=0;i<targets.size();i++){
 				
-				if(targets.get(i).isHittable() && this.intersects(targets.get(i))){
+				if( this.intersects(targets.get(i))){
 					this.remove = true;
 					targets.get(i).getHit(this.damage);
 				}

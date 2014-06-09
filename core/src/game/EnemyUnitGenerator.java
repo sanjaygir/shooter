@@ -8,18 +8,20 @@ import enemies.CircleEnemyUnit;
 import enemies.Enemy;
 import enemies.SimpleLinearEnemyUnit;
 import enemies.TriangularPathEnemyUnit;
+import enemies.TripleBulletEnemyUnit;
 import enemies.WallCrawler;
 import gamescreens.PlayState;
 
 public class EnemyUnitGenerator {
+	
 
 	private float spawn_timer;	
 	
 	private ArrayList<Entity> enemies;
-		
-	
+			
 	private ArrayList<Float> generate_times;
 	private ArrayList<Enemy> to_generate;
+	
 	
 	
 	private Enemy enemy;
@@ -44,6 +46,13 @@ public class EnemyUnitGenerator {
 	private void createUnits(){
 		
 		
+		enemy = new TripleBulletEnemyUnit(10, 700);
+		generateAt(enemy, 1f);
+		
+		enemy = new TripleBulletEnemyUnit(750, 700);
+		((TripleBulletEnemyUnit)enemy).setFacingRight(false);
+		generateAt(enemy, 10f);
+						
 		enemy = new WallCrawler(10, 400);
 		generateAt(enemy, 2f);
 		

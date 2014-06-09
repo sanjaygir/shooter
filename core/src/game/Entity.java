@@ -13,11 +13,7 @@ public abstract class Entity {
 	
 	protected float hp;
 	protected float speed;
-	
-	protected boolean hittable;
-	
-	
-	
+		
 	public abstract void update(float dt);
 	public abstract void draw(ShapeRenderer sr);
 	
@@ -34,19 +30,9 @@ public abstract class Entity {
 		speed = 200;
 		hp = 500;
 		
-		hittable = true;
 		
 	}
 	
-	public void setHittable(boolean b){
-		this.hittable = b;
-	}
-	
-	
-	public boolean isHittable(){
-		return hittable;
-	}
-
 	
 	public void setHP(float h){
 		hp = h;

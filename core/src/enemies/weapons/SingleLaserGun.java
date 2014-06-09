@@ -30,15 +30,16 @@ public class SingleLaserGun extends BulletWeaponSystem{
 			b.setTargets(this.targets);
 			
 			if(this.targets.size() != 0){
-			
-			if(this.targets.get(0).getX() < this.x){
-				b.setSpeed(-1000);
-						
-			}
-			else{
-				b.setSpeed(1000);
 				
-			}
+				if(this.targets.get(0).getX() < this.x){
+					b.setSpeed(-1000);
+							
+				}
+				else{
+					b.setSpeed(1000);
+					
+				}
+				
 			
 			}
 			
