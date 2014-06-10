@@ -4,9 +4,17 @@ package player;
 import game.Entity;
 import game.Game;
 import game.WeaponSystem;
+import game.WeaponTypes;
 import gamescreens.PlayState;
+import player.weapons.CrossMachineGun;
 import player.weapons.DoubleLinearMissileGun;
+import player.weapons.EnemyChaserGun;
 import player.weapons.FiveBarrelMachineGun;
+import player.weapons.LaserGun;
+import player.weapons.SineMachineGun;
+import player.weapons.SingleBarrelMachineGun;
+import player.weapons.TimeBombGun;
+import player.weapons.TripleBarrelMachineGun;
 
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
@@ -31,9 +39,9 @@ public class Player extends Entity{
 		
 		speed = 300;		
 		
-		weapon1 = new FiveBarrelMachineGun(x, y);	
-		weapon2 = new DoubleLinearMissileGun(x, y);
-						
+		weapon1 = new SingleBarrelMachineGun(x, y);	
+		weapon2 = null;
+		
 		remove = false;
 		
 	}
@@ -42,13 +50,91 @@ public class Player extends Entity{
 	
 
 	public void update(float dt){
+				
+		
+				
+			for(int i=0;i<PlayState.capsules.size();i++){
+				
+				if( this.intersects(PlayState.capsules.get(i))){
+					PlayState.capsules.get(i).remove = true;
+				
+					
+					switch(PlayState.capsules.get(i).getType()){
+					
+						
+					case WeaponTypes.SINGLE_BARREL_MACHINE_GUN:
+						this.weapon1 = new SingleBarrelMachineGun(x, y);
+						
+						break;
+			
+					case WeaponTypes.TRIPLE_BARREL_MACHINE_GUN:
+						this.weapon1 = new TripleBarrelMachineGun(x, y);
+						
+						break;
+			
+					case WeaponTypes.FIVE_BARREL_MACHINE_GUN:
+						this.weapon1 = new FiveBarrelMachineGun(x, y);
+						
+						break;
+			
+					case WeaponTypes.SINE_MACHINE_GUN:
+						this.weapon1 = new SineMachineGun(x, y);
+						
+						break;
+			
+					case WeaponTypes.CROSS_MACHINE_GUN:
+						this.weapon1 = new CrossMachineGun(x, y);
+						
+						break;
+			
+						
+						
+					case WeaponTypes.LASER_GUN:
+						this.weapon2 = new LaserGun(x, y);
+						
+						break;
+			
+					case WeaponTypes.TIME_BOMB_GUN:
+						this.weapon2 = new TimeBombGun(x, y);
+						
+						break;
+			
+					case WeaponTypes.ENEMY_CHASER_GUN:
+						this.weapon2 = new EnemyChaserGun(x, y);
+						
+						break;
+			
+					case WeaponTypes.DOUBLE_LINEAR_MISSILE_GUN:
+						this.weapon2 = new DoubleLinearMissileGun(x, y);
+						
+						break;
+			
+					
+					
+					}
+					
+					
+				
+				
+				}
+				
+			}
+			
+		
+				
 		
 		
-		weapon1.setX(x);
-		weapon1.setY(y);
+		if(weapon1 != null){
+			weapon1.setX(x);
+			weapon1.setY(y);
+		}
 		
-		weapon2.setX(x);
-		weapon2.setY(y);
+		
+		
+		if(weapon2 != null){
+			weapon2.setX(x);
+			weapon2.setY(y);
+		}
 			
 		if(left && ((x - speed*dt - this.width/2) > 0)){
 			x -= speed*dt;
@@ -66,10 +152,15 @@ public class Player extends Entity{
 			y-=speed*dt;
 			
 		}
-					
-		weapon1.update(dt);
-		weapon2.update(dt);
+
 		
+		if(weapon1 != null){
+			weapon1.update(dt);
+		}
+		
+		if(weapon2 != null){
+			weapon2.update(dt);
+		}
 	}
 	
 	
@@ -80,9 +171,15 @@ public class Player extends Entity{
 		sr.rect(x - width/2, y - height/2, width, height);
 		
 		sr.end();
+
+		if(weapon1 != null){
+			weapon1.draw(sr);
+		}
 		
-		weapon1.draw(sr);
-		weapon2.draw(sr);
+		if(weapon2 != null){
+			weapon2.draw(sr);
+		}
+		
 		
 	}
 	
@@ -121,13 +218,15 @@ public class Player extends Entity{
 	
 	public void setShootA(boolean b){
 				
-		weapon1.setShoot(b);
+		if(weapon1 != null)
+			weapon1.setShoot(b);
 		
 	}
 	
 	public void setShootB(boolean b){
 		
-		weapon2.setShoot(b);
+		if(weapon2 != null)
+			weapon2.setShoot(b);
 		
 	}
 	

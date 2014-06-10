@@ -20,9 +20,6 @@ public class TripleBulletEnemyUnit extends Enemy{
 	public TripleBulletEnemyUnit(float x, float y){
 		
 		super(x, y);
-		remove = false;
-		this.x = x;
-		this.y = y;
 		
 		this.width = 50;
 		this.height = 50;

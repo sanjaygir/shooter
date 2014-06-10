@@ -17,10 +17,6 @@ public class CircleEnemyUnit extends Enemy{
 		
 		super(x, y);
 		
-		remove = false;
-		
-		this.x = x;
-		this.y = y;	
 		
 		this.width = 20;
 		this.height = 20;

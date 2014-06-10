@@ -15,25 +15,24 @@ import gamescreens.PlayState;
 
 public class EnemyUnitGenerator {
 	
-
+	
 	private float spawn_timer;	
 	
 	private ArrayList<Entity> enemies;
 			
 	private ArrayList<Float> generate_times;
-	private ArrayList<Enemy> to_generate;
-	
-	
-	
-	private Enemy enemy;
-	
-	
-	
-	public EnemyUnitGenerator(){
+	private ArrayList<Entity> to_generate;
 	
 		
+	private Enemy enemy;
+	
+	private float time;
+	
+	
+	public EnemyUnitGenerator(){	
+		
 		generate_times = new ArrayList<Float>();
-		to_generate = new ArrayList<Enemy>();
+		to_generate = new ArrayList<Entity>();
 				
 		spawn_timer = 0;
 			
@@ -44,8 +43,55 @@ public class EnemyUnitGenerator {
 	}
 	
 	
+	
+	/*
+	 * 
+	 * ENEMY
+	 * 
+	 * SimpleLinearEnemyUnit
+	 * CrossJumpEnemyUnit
+	 * TripleBulletEnemyUnit
+	 * WallCrawler
+	 * CircleEnemyUnit
+	 * TriangularPathEnemyUnit
+	 * 
+	 * PowerCapsule 
+	 */
+	
+	
+	
 	private void createUnits(){
+	
 		
+		time = 2;
+		enemy = new SimpleLinearEnemyUnit(100, 700);
+		generateAt(enemy, time);
+				
+		time += 5;
+		PowerCapsule p1 = new PowerCapsule(200, 700, WeaponTypes.LASER_GUN);
+		generateAt(p1, time);
+			
+		
+		time += 1;
+		enemy = new SimpleLinearEnemyUnit(10, 700);
+		generateAt(enemy, time);
+		
+		
+		enemy = new SimpleLinearEnemyUnit(400, 700);
+		generateAt(enemy, time);
+		
+		
+		time += 2;
+		enemy = new SimpleLinearEnemyUnit(200, 700);
+		generateAt(enemy, time);
+		
+		enemy = new SimpleLinearEnemyUnit(300, 800);
+		generateAt(enemy, time);
+		
+		
+		
+		
+		/*
 		for(int i=0;i<10;i++){
 	
 			enemy = new CrossJumpEnemyUnit(10, 700, CrossJumpEnemyUnit.CROSS_RIGHT);
@@ -119,10 +165,13 @@ public class EnemyUnitGenerator {
 			
 		}
 		
+		*/
+		
+		
 	}
 	
 	
-	public void generateAt(Enemy e, float f){
+	public void generateAt(Entity e, float f){
 		
 		to_generate.add(e);
 		generate_times.add(f);
@@ -138,10 +187,24 @@ public class EnemyUnitGenerator {
 		for(int i=0;i<generate_times.size();i++){
 			
 			if(generate_times.get(i) <= spawn_timer){
-				enemies.add(to_generate.get(i));
-				generate_times.remove(i);
-				to_generate.remove(i);
-				i--;
+				
+				if(to_generate.get(i) instanceof PowerCapsule){
+					PlayState.capsules.add((PowerCapsule)to_generate.get(i));
+					generate_times.remove(i);
+					to_generate.remove(i);
+					i--;
+					
+				}
+				else{
+					
+					PlayState.enemies.add(to_generate.get(i));
+					generate_times.remove(i);
+					to_generate.remove(i);
+					i--;
+					
+				}
+				
+				
 			}
 			
 		}

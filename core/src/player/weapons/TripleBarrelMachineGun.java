@@ -10,7 +10,7 @@ public class TripleBarrelMachineGun extends BulletWeaponSystem{
 	
 	public TripleBarrelMachineGun(float x, float y){
 		super(x, y);
-		shoot_time = 0.2f;
+		shoot_time = 0.05f;
 		shoot_timer = 0;
 		targets = PlayState.enemies;
 		
@@ -25,14 +25,20 @@ public class TripleBarrelMachineGun extends BulletWeaponSystem{
 		if(!cooling_down && shoot){
 			
 			SimpleLinearBullet b1 = new SimpleLinearBullet(x, y);
+			b1.setTargets(targets);
+			
 			b1.setSpeed(800);
 			bullets.add(b1);
 			
 			SimpleLinearBullet b2 = new SimpleLinearBullet(x-20, y);
+			b2.setTargets(targets);
+			
 			b2.setSpeed(800);
 			bullets.add(b2);
 			
 			SimpleLinearBullet b3 = new SimpleLinearBullet(x+20, y);
+			
+			b3.setTargets(targets);
 			b3.setSpeed(800);
 			bullets.add(b3);
 			

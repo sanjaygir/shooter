@@ -4,6 +4,7 @@ import game.EnemyUnitGenerator;
 import game.Entity;
 import game.Game;
 import game.GameKeys;
+import game.PowerCapsule;
 
 import java.util.ArrayList;
 
@@ -18,6 +19,9 @@ public class PlayState extends GameState{
 		
 	public static  ArrayList<Entity> enemies;
 	public static  ArrayList<Entity> players;
+	public static ArrayList<PowerCapsule> capsules;
+	
+	
 	private EnemyUnitGenerator generator;
 	
 	public static Player player;
@@ -33,6 +37,8 @@ public class PlayState extends GameState{
 				
 		enemies = new ArrayList<Entity>();
 		players = new ArrayList<Entity>();
+		capsules = new ArrayList<PowerCapsule>();
+		
 		
 		generator = new EnemyUnitGenerator();
 		
@@ -75,7 +81,27 @@ public class PlayState extends GameState{
 				
 			}
 			
+			
 		}
+		
+		
+		
+		for(int i=0;i<capsules.size();i++){
+			
+		
+			if(capsules.get(i).remove){
+				
+				capsules.remove(i);
+				i--;				
+			}
+			else{
+				capsules.get(i).update(dt);
+				
+			}
+			
+			
+		}
+		
 		
 	}
 
@@ -93,6 +119,11 @@ public class PlayState extends GameState{
 		for(int i=0;i<enemies.size();i++){
 			enemies.get(i).draw(sr);
 		}
+		
+		for(int i=0;i<capsules.size();i++){
+			capsules.get(i).draw(sr);
+		}
+		
 		
 	}
 

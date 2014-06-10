@@ -11,8 +11,7 @@ public class Game extends ApplicationAdapter {
 	private GameStateManager gsm;
 	
 	public static OrthographicCamera cam;
-	
-	
+		
 	public static final int GAME_WIDTH = 800;
 	public static final int GAME_HEIGHT = 600;
 	
@@ -20,7 +19,9 @@ public class Game extends ApplicationAdapter {
 	
 	@Override
 	public void create () {
-			
+	
+		
+		
 		gsm = new GameStateManager();
 		
 		cam = new OrthographicCamera(GAME_WIDTH, GAME_HEIGHT);
@@ -54,7 +55,8 @@ public class Game extends ApplicationAdapter {
 	
 	public void update(float dt){
 		
-		gsm.update(dt);
+		if(dt < 1)
+			gsm.update(dt);
 	}
 	
 	public void draw(){

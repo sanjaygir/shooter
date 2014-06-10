@@ -16,9 +16,7 @@ public class WallCrawler extends Enemy{
 		
 		super(x, y);
 		
-		remove = false;
-		this.x = x;
-		this.y = y;
+		
 		
 		this.width = 50;
 		this.height = 50;
