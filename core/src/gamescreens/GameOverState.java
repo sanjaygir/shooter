@@ -6,9 +6,11 @@ import game.GameStateManager;
 import game.Save;
 import game.Score;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
 
 
 public class GameOverState extends GameState{
@@ -33,10 +35,10 @@ public class GameOverState extends GameState{
 		// TODO Auto-generated method stub
 	
 		batch = new SpriteBatch();
-		font = new BitmapFont();
-		font.setColor(Color.WHITE);
 		
-		font.setScale(5);
+		FreeTypeFontGenerator gen = new FreeTypeFontGenerator(Gdx.files.internal("font.ttf"));
+		font = gen.generateFont(50);
+		
 		
 		kills = PlayState.total_kills;
 		
@@ -50,6 +52,8 @@ public class GameOverState extends GameState{
 		kills_str = Integer.toString(Save.load());
 		kills_str2 = Integer.toString(kills);
 		
+		System.out.println(kills_str);
+		System.out.println(kills_str2);
 		
 		
 	}
@@ -70,10 +74,10 @@ public class GameOverState extends GameState{
 		batch.begin();
 		
 			font.draw(batch, "Best Kills", 200, 400+100);
-			font.draw(batch, kills_str, 310, 420);
+			font.draw(batch, kills_str, 320, 420);
 			
 			font.draw(batch, "Current Kills", 160, 300);
-			font.draw(batch, kills_str2, 310, 220);
+			font.draw(batch, kills_str2, 320, 220);
 			
 			
 		batch.end();

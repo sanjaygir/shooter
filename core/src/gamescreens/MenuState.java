@@ -4,16 +4,18 @@ import game.Game;
 import game.GameKeys;
 import game.GameStateManager;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
 
 
 public class MenuState extends GameState{
 
 	private SpriteBatch batch;
-	private BitmapFont font;
-		
+	private BitmapFont font1;
+	private BitmapFont font2;		
 	
 	public MenuState(){
 		
@@ -26,10 +28,11 @@ public class MenuState extends GameState{
 		// TODO Auto-generated method stub
 	
 		batch = new SpriteBatch();
-		font = new BitmapFont();
-		font.setColor(Color.WHITE);
 		
-		font.setScale(5);
+		FreeTypeFontGenerator gen = new FreeTypeFontGenerator(Gdx.files.internal("font.ttf"));
+		font1 = gen.generateFont(50);
+		
+		font2 = gen.generateFont(40);
 		
 	}
 
@@ -47,8 +50,9 @@ public class MenuState extends GameState{
 		
 		batch.begin();
 		
-			font.draw(batch, "Line Shooter", 180, 400);
-			font.draw(batch, "Start", 300, 200);
+			font1.draw(batch, "Line Shooter", 180, 400);
+			
+			font2.draw(batch, "Start", 300, 200);
 			
 		batch.end();
 		

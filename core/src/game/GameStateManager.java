@@ -20,8 +20,7 @@ public class GameStateManager {
 	public GameStateManager(){
 		
 		setState(MENU_STATE);
-		
-		
+				
 	}
 	
 	
