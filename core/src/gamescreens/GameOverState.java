@@ -3,6 +3,8 @@ package gamescreens;
 import game.Game;
 import game.GameKeys;
 import game.GameStateManager;
+import game.Save;
+import game.Score;
 
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
@@ -16,6 +18,8 @@ public class GameOverState extends GameState{
 		
 	private int kills;
 	private String kills_str;
+	private String kills_str2;
+	
 	
 	
 	public GameOverState(){
@@ -37,7 +41,16 @@ public class GameOverState extends GameState{
 		kills = PlayState.total_kills;
 		
 		
-		kills_str = Integer.toString(kills);
+		if(kills > Save.load()){
+			Save.save(new Score(kills));
+		}
+		
+		
+		
+		kills_str = Integer.toString(Save.load());
+		kills_str2 = Integer.toString(kills);
+		
+		
 		
 	}
 
@@ -52,13 +65,16 @@ public class GameOverState extends GameState{
 		// TODO Auto-generated method stub
 		
 		batch.setProjectionMatrix(Game.cam.combined);
-			
-		
+					
 		
 		batch.begin();
 		
-			font.draw(batch, "Total Kills", 200, 400);
-			font.draw(batch, kills_str, 310, 200);
+			font.draw(batch, "Best Kills", 200, 400+100);
+			font.draw(batch, kills_str, 310, 420);
+			
+			font.draw(batch, "Current Kills", 160, 300);
+			font.draw(batch, kills_str2, 310, 220);
+			
 			
 		batch.end();
 		

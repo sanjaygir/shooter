@@ -1,5 +1,12 @@
 package game;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
@@ -17,10 +24,13 @@ public class Game extends ApplicationAdapter {
 	
 	
 	
+	public static ObjectInputStream ois;
+	public static ObjectOutputStream oos;
+	
+	
 	@Override
 	public void create () {
-	
-		
+			
 		
 		gsm = new GameStateManager();
 		
@@ -30,7 +40,10 @@ public class Game extends ApplicationAdapter {
 		
 		Gdx.input.setInputProcessor(new GameInputProcessor());
 		
-		
+		if(!Save.saveFileExists()){
+			Save.save(new Score(0));
+		}
+				
 			
 	}
 
