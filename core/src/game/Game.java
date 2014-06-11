@@ -8,7 +8,7 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 public class Game extends ApplicationAdapter {
 	
 		
-	private GameStateManager gsm;
+	public static  GameStateManager gsm;
 	
 	public static OrthographicCamera cam;
 		
@@ -46,7 +46,7 @@ public class Game extends ApplicationAdapter {
 		
 	}
 	
-	
+		
 	public void handleInput(){
 		
 		gsm.handleInput();

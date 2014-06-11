@@ -15,7 +15,7 @@ public class GameStateManager {
 	
 	public GameStateManager(){
 		
-		setState(PLAY_STATE);
+		setState(MENU_STATE);
 		
 		
 	}

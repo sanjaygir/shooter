@@ -4,6 +4,7 @@ import game.EnemyUnitGenerator;
 import game.Entity;
 import game.Game;
 import game.GameKeys;
+import game.GameStateManager;
 import game.PowerCapsule;
 
 import java.util.ArrayList;
@@ -60,6 +61,10 @@ public class PlayState extends GameState{
 	public void update(float dt) {
 		// TODO Auto-generated method stub
 		
+		
+		if(player.remove){
+			Game.gsm.setState(GameStateManager.MENU_STATE);
+		}
 		
 		generator.update(dt);
 		

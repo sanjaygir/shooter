@@ -73,12 +73,16 @@ public class EnemyUnitGenerator {
 			
 		
 		time += 1;
-		enemy = new SimpleLinearEnemyUnit(10, 700);
+		enemy = new SimpleLinearEnemyUnit(50, 700);
+		enemy.setSpeed(200);
 		generateAt(enemy, time);
 		
 		
 		enemy = new SimpleLinearEnemyUnit(400, 700);
+		enemy.setSpeed(200);
 		generateAt(enemy, time);
+		
+		
 		
 		
 		time += 2;
@@ -88,7 +92,116 @@ public class EnemyUnitGenerator {
 		enemy = new SimpleLinearEnemyUnit(300, 800);
 		generateAt(enemy, time);
 		
+		time += 2;
 		
+		for(int i=0;i<10;i++){
+			enemy = new SimpleLinearEnemyUnit(50 + i*100, 700);
+			enemy.setSpeed(100);
+			generateAt(enemy, time);
+		}
+		
+		time += 3;
+		
+		
+		for(int i=0;i<10;i++){
+			enemy = new SimpleLinearEnemyUnit(50 + i*100, 700);
+			enemy.setSpeed(100);
+			time += 0.5;
+			generateAt(enemy, time);
+		}
+		
+		for(int i=10;i>=0;i--){
+			enemy = new SimpleLinearEnemyUnit(50 + i*100, 700);
+			enemy.setSpeed(100);
+			time += 0.5;
+			generateAt(enemy, time);
+		}
+		
+		time += 3;
+		
+		
+		for(int i=10;i>=0;i--){
+			enemy = new SimpleLinearEnemyUnit(50 + i*100, 700);
+			enemy.setSpeed(100);
+			generateAt(enemy, time);
+		}
+		
+				
+		time += 1;
+		
+		
+		for(int i=10;i>=0;i--){
+			enemy = new SimpleLinearEnemyUnit(50 + i*100, 700);
+			enemy.setSpeed(100);
+			generateAt(enemy, time);
+		}
+		
+		
+		time += 7;
+		
+		
+		for(int i=10;i>=0;i--){
+			enemy = new SimpleLinearEnemyUnit(50 + i*100, 700);
+			enemy.setSpeed(100);
+			generateAt(enemy, time);
+		}
+		
+		
+		time += 1;
+		
+		for(int i=10;i>=0;i--){
+			enemy = new SimpleLinearEnemyUnit(50 + i*100, 700);
+			enemy.setSpeed(100);
+			generateAt(enemy, time);
+		}
+		
+		
+		time += 1;
+			
+		for(int i=10;i>=0;i--){
+			enemy = new SimpleLinearEnemyUnit(50 + i*100, 700);
+			enemy.setSpeed(100);
+			generateAt(enemy, time);
+		}
+		
+		
+		
+		time += 10;
+	
+		PowerCapsule p2 = new PowerCapsule(400, 700, WeaponTypes.TRIPLE_BARREL_MACHINE_GUN);
+		generateAt(p2, time);
+	
+		
+		time += 10;
+	
+
+		
+		for(int i=10;i>=0;i--){
+			enemy = new SimpleLinearEnemyUnit(50 + i*100, 700);
+			enemy.setSpeed(100);
+			generateAt(enemy, time);
+		}
+		
+		
+		time += 1;
+		
+		for(int i=10;i>=0;i--){
+			enemy = new SimpleLinearEnemyUnit(50 + i*100, 700);
+			enemy.setSpeed(100);
+			generateAt(enemy, time);
+		}
+		
+		
+		time += 1;
+			
+		for(int i=10;i>=0;i--){
+			enemy = new SimpleLinearEnemyUnit(50 + i*100, 700);
+			enemy.setSpeed(100);
+			generateAt(enemy, time);
+		}
+		
+		
+	
 		
 		
 		/*
