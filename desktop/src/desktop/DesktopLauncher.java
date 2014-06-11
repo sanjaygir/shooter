@@ -7,7 +7,7 @@ import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
 
 public class DesktopLauncher {
 	public static void main (String[] arg) {
-		
+				
 		//Main entry point
 		
 		LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();

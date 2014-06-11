@@ -27,6 +27,9 @@ public class PlayState extends GameState{
 	
 	public static Player player;
 	
+	public static int total_kills;
+	
+	
 	
 	public PlayState(){
 		init();
@@ -42,6 +45,8 @@ public class PlayState extends GameState{
 		
 		
 		generator = new EnemyUnitGenerator();
+		
+		total_kills = 0;
 		
 		
 		sr = new ShapeRenderer();
@@ -63,7 +68,7 @@ public class PlayState extends GameState{
 		
 		
 		if(player.remove){
-			Game.gsm.setState(GameStateManager.MENU_STATE);
+			Game.gsm.setState(GameStateManager.GAME_OVER_STATE);
 		}
 		
 		generator.update(dt);

@@ -1,5 +1,6 @@
 package game;
 
+import gamescreens.GameOverState;
 import gamescreens.GameState;
 import gamescreens.MenuState;
 import gamescreens.PlayState;
@@ -9,6 +10,8 @@ public class GameStateManager {
 	
 	public static final int MENU_STATE = 0;
 	public static final int PLAY_STATE = 1;
+	public static final int GAME_OVER_STATE = 2;
+	
 	
 	
 	private GameState current_state;
@@ -31,6 +34,11 @@ public class GameStateManager {
 		else if(s == PLAY_STATE){
 			
 			current_state = new PlayState();
+			
+		}
+		else if(s == GAME_OVER_STATE){
+			
+			current_state = new GameOverState();
 			
 		}
 		

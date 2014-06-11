@@ -13,8 +13,7 @@ public class MenuState extends GameState{
 
 	private SpriteBatch batch;
 	private BitmapFont font;
-	
-	
+		
 	
 	public MenuState(){
 		
@@ -48,8 +47,9 @@ public class MenuState extends GameState{
 		
 		batch.begin();
 		
-			font.draw(batch, "Shooter", 260, 400);
-				
+			font.draw(batch, "Line Shooter", 180, 400);
+			font.draw(batch, "Start", 300, 200);
+			
 		batch.end();
 		
 	}

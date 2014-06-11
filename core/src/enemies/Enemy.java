@@ -19,7 +19,6 @@ public abstract class Enemy extends Entity{
 					
 					this.remove = true;
 					PlayState.players.get(i).getHit(100);
-					System.out.println("yes");
 					
 				}
 				

@@ -54,6 +54,7 @@ public class EnemyChaserBullet extends Bullet{
 				if( this.intersects(targets.get(i))){
 					this.remove = true;
 					targets.get(i).getHit(this.damage);
+					
 				}
 				
 			}

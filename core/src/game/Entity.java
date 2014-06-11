@@ -2,6 +2,9 @@ package game;
 
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 
+import enemies.Enemy;
+import gamescreens.PlayState;
+
 public abstract class Entity {
 
 	protected float x;
@@ -61,6 +64,10 @@ public abstract class Entity {
 		
 		if(this.hp < 0){
 			this.remove = true;
+			
+			if(this instanceof Enemy){
+				PlayState.total_kills++;
+			}
 			
 		}
 		
