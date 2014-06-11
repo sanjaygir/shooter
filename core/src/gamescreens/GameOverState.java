@@ -52,8 +52,6 @@ public class GameOverState extends GameState{
 		kills_str = Integer.toString(Save.load());
 		kills_str2 = Integer.toString(kills);
 		
-		System.out.println(kills_str);
-		System.out.println(kills_str2);
 		
 		
 	}
