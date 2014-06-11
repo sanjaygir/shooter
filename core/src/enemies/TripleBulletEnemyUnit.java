@@ -8,7 +8,6 @@ import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
 
 public class TripleBulletEnemyUnit extends Enemy{
-
 	
 
 	private TripleBulletAngularGun weapon;
@@ -34,14 +33,13 @@ public class TripleBulletEnemyUnit extends Enemy{
 		timer = 0f;
 		
 		
-		setFacingRight(true);
-		
+		setDirection(TripleBulletAngularGun.DOWN);
 		
 	}
 	
 	
-	public void setFacingRight(boolean b){
-		weapon.setFacingRight(b);
+	public void setDirection (int d){
+		weapon.setDirection(d);
 	}
 	
 	@Override

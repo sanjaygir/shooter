@@ -6,7 +6,16 @@ import gamescreens.PlayState;
 
 public class SingleLaserGun extends BulletWeaponSystem{
 		
-	public SingleLaserGun(float x, float y){
+	private int direction;
+	
+	
+	public static final int UP = 0;
+	public static final int DOWN = 1;
+	public static final int LEFT = 2;
+	public static final int RIGHT = 3;
+	
+	
+	public SingleLaserGun(float x, float y, int direction){
 		
 		super(x, y);
 		
@@ -15,6 +24,12 @@ public class SingleLaserGun extends BulletWeaponSystem{
 		
 		targets = PlayState.players;
 		
+		this.direction = direction;
+		
+	}
+	
+	public void setDirection(int d){
+		this.direction = d;
 	}
 	
 	
@@ -26,22 +41,26 @@ public class SingleLaserGun extends BulletWeaponSystem{
 				
 		if(!cooling_down && shoot){
 
-			LinearLaserBullet b = new LinearLaserBullet(x, y);
-			b.setTargets(this.targets);
+			LinearLaserBullet b = null;
 			
-			if(this.targets.size() != 0){
-				
-				if(this.targets.get(0).getX() < this.x){
-					b.setSpeed(-1000);
-							
-				}
-				else{
-					b.setSpeed(1000);
-					
-				}
-				
-			
+			if(direction == LEFT){
+				b = new LinearLaserBullet(x, y, LinearLaserBullet.LEFT);
+				b.setTargets(this.targets);					
 			}
+			else if(direction == RIGHT){
+				b = new LinearLaserBullet(x, y, LinearLaserBullet.RIGHT);
+				b.setTargets(this.targets);					
+			}
+			else if(direction == UP){
+				b = new LinearLaserBullet(x, y, LinearLaserBullet.UP);
+				b.setTargets(this.targets);					
+			}
+			else if(direction == DOWN){
+				b = new LinearLaserBullet(x, y, LinearLaserBullet.DOWN);
+				b.setTargets(this.targets);					
+			}
+			
+			b.setSpeed(700);
 			
 			
 			PlayState.enemies.add(b);

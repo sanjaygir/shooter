@@ -10,13 +10,20 @@ import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
 public class WallCrawler extends Enemy{
 
 	private WeaponSystem weapon;
-
 	
-	public WallCrawler(float x, float y){
+	private boolean vertical;
 		
-		super(x, y);
+	
+	public static final int UP = 0;
+	public static final int DOWN = 1;
+	public static final int LEFT = 2;
+	public static final int RIGHT = 3;
 		
+	private int place;
+	
+	public WallCrawler(float x, float y, int p){
 		
+		super(x, y);	
 		
 		this.width = 50;
 		this.height = 50;
@@ -25,16 +32,43 @@ public class WallCrawler extends Enemy{
 		
 		speed = 100f;
 		
-		weapon = new SingleLaserGun(this.x, this.y);
+		this.place = p;
+	
 		
+		if(place == UP){
+			weapon = new SingleLaserGun(this.x, this.y, SingleLaserGun.DOWN);
+						
+		}
+		else if(place == DOWN){
+			
+			weapon = new SingleLaserGun(this.x, this.y, SingleLaserGun.UP);
+			
+		}
+		else if(place ==  LEFT){
+			
+			weapon = new SingleLaserGun(this.x, this.y, SingleLaserGun.RIGHT);
+			
+		}
+		else if(place == RIGHT){
+			
+			weapon = new SingleLaserGun(this.x, this.y, SingleLaserGun.LEFT);
+			
+		}
+
+		vertical = true;
+	}
+	
+	
+	public void setMovesVertical(boolean b){
+		
+		this.vertical = b;
 		
 	}
 	
 	@Override
 	public void update(float dt) {
 		// TODO Auto-generated method stub
-		
-		
+				
 		super.update(dt);
 		
 		
@@ -42,28 +76,57 @@ public class WallCrawler extends Enemy{
 		weapon.setY(this.y);
 	
 		
+		
 		if(PlayState.player.remove){
 			speed = 0;
 			weapon.setShoot(false);
-		}
-		else if(Math.abs(this.y - PlayState.player.getY()) < 5 && !PlayState.player.remove){
-			weapon.setShoot(true);
+			return;
 		}
 		
-		else if(PlayState.player.getY() < this.y){
-			this.y -= speed*dt;
-			weapon.setShoot(false);
+		
+		
+		if(vertical){
+			
+			if(Math.abs(this.y - PlayState.player.getY()) < 5 && !PlayState.player.remove){
+				weapon.setShoot(true);
+			}
+			
+			else if(PlayState.player.getY() < this.y){
+				this.y -= speed*dt;
+				weapon.setShoot(false);
+				
+			}
+			else if(PlayState.player.getY() > this.y){
+				this.y += speed*dt;
+				weapon.setShoot(false);
+				
+			}
+			
+		
+		}
+		else{
+			
+
+			if(Math.abs(this.x - PlayState.player.getX()) < 5 && !PlayState.player.remove){
+				weapon.setShoot(true);
+			}
+			
+			else if(PlayState.player.getX() < this.x){
+				this.x -= speed*dt;
+				weapon.setShoot(false);
+				
+			}
+			else if(PlayState.player.getX() > this.x){
+				this.x += speed*dt;
+				weapon.setShoot(false);
+				
+			}
+			
 			
 		}
-		else if(PlayState.player.getY() > this.y){
-			this.y += speed*dt;
-			weapon.setShoot(false);
-			
-		}
 		
 		
-		
-		
+				
 		weapon.update(dt);
 		
 		

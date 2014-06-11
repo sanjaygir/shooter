@@ -7,7 +7,12 @@ import gamescreens.PlayState;
 
 public class TripleBulletAngularGun extends BulletWeaponSystem {
 
-	private boolean facing_right;
+	private int direction;
+	
+	public static final int RIGHT = 0;
+	public static final int LEFT = 1;
+	public static final int DOWN = 2;
+	
 	
 	
 	public TripleBulletAngularGun(float x, float y){
@@ -18,13 +23,13 @@ public class TripleBulletAngularGun extends BulletWeaponSystem {
 		
 		targets = PlayState.players;
 	
-		facing_right = true;
-		
+		direction = DOWN;
 		
 	}
 	
-	public void setFacingRight(boolean b){
-		this.facing_right = b;		
+	
+	public void setDirection(int b){
+		this.direction = b;
 	}
 	
 	
@@ -38,7 +43,7 @@ public class TripleBulletAngularGun extends BulletWeaponSystem {
 
 			
 			
-			if(facing_right){
+			if(direction == RIGHT){
 
 				LinearUndestructableBullet b1 = new LinearUndestructableBullet(x, y);
 				b1.setAngle(270 + 10);
@@ -61,7 +66,7 @@ public class TripleBulletAngularGun extends BulletWeaponSystem {
 				
 				
 			}
-			else
+			else if(direction == LEFT)
 			{
 			
 				
@@ -85,6 +90,33 @@ public class TripleBulletAngularGun extends BulletWeaponSystem {
 				bullets.add(b3);
 				
 							
+				
+			}
+			else if(direction == DOWN){
+				
+			
+				
+				LinearUndestructableBullet b1 = new LinearUndestructableBullet(x, y);
+				b1.setAngle(270);
+				b1.setTargets(this.targets);
+					
+				bullets.add(b1);
+				
+				
+				LinearUndestructableBullet b2 = new LinearUndestructableBullet(x, y);
+				b2.setAngle(270 - 10 - 30);
+				b2.setTargets(this.targets);
+					
+				bullets.add(b2);
+				
+				LinearUndestructableBullet b3 = new LinearUndestructableBullet(x, y);
+				b3.setAngle(270 + 10 + 30);
+				b3.setTargets(this.targets);
+					
+				bullets.add(b3);
+				
+				
+				
 				
 			}
 						

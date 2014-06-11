@@ -6,19 +6,46 @@ import game.Game;
 
 public class LinearLaserBullet extends Bullet{
 
-	public LinearLaserBullet(float x, float y){
+	
+	private int direction;
+	
+	public static final int DOWN =  0;
+	public static final int UP =    1;
+	public static final int LEFT =  2;
+	public static final int RIGHT = 3;
+	
+	
+	
+	
+	public LinearLaserBullet(float x, float y, int direction){
 		super(x, y);
 	
 		speed = 300;		
-		width = 50;
-		height = 5;				
+		
 		damage = 100;
 		
 		this.hp = 1;
 		
+		this.direction = direction;
+		
+		if(direction == DOWN || direction == UP){
+			
+			width = 5;
+			height = 50;				
+			
+		}
+		else if(direction == LEFT || direction == RIGHT){
+			width = 50;
+			height = 5;				
 				
+		}	
+		
 	}
 	
+	
+	public void setDirection(int d){
+		this.direction = d;		
+	}
 	
 	public void update(float dt){
 		
@@ -38,7 +65,22 @@ public class LinearLaserBullet extends Bullet{
 			
 		}
 		
-		x += speed * dt;
+		if(direction == UP){
+			y += speed * dt;
+					
+		}
+		else if(direction == DOWN){
+			y -= speed * dt;
+			
+		}
+		else if(direction == LEFT){
+			x -= speed * dt;
+			
+		}
+		else if(direction == RIGHT){
+			x += speed * dt;
+				
+		}	
 	
 		
 	}

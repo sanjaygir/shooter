@@ -2,14 +2,8 @@ package game;
 
 import java.util.ArrayList;
 
-import com.badlogic.gdx.math.MathUtils;
-
-import enemies.CircleEnemyUnit;
-import enemies.CrossJumpEnemyUnit;
 import enemies.Enemy;
-import enemies.SimpleLinearEnemyUnit;
-import enemies.TriangularPathEnemyUnit;
-import enemies.TripleBulletEnemyUnit;
+import enemies.MainBoss;
 import enemies.WallCrawler;
 import gamescreens.PlayState;
 
@@ -57,11 +51,13 @@ public class EnemyUnitGenerator {
 	 * 
 	 * PowerCapsule 
 	 */
-	
-	
+		
 	
 	private void createUnits(){
 	
+		
+		
+		/*
 		
 		time = 2;
 		enemy = new SimpleLinearEnemyUnit(100, 700);
@@ -201,7 +197,8 @@ public class EnemyUnitGenerator {
 		}
 		
 		
-	
+	*/
+		
 		
 		
 		/*
@@ -279,6 +276,46 @@ public class EnemyUnitGenerator {
 		}
 		
 		*/
+		
+		
+		
+
+		//BOSS
+		
+		time = 2;
+		enemy = new MainBoss(370, 550);
+		enemy.setHP(10000);
+		
+		generateAt(enemy, time);
+		
+		
+		enemy = new WallCrawler(750, 100,  WallCrawler.RIGHT);
+		((WallCrawler)enemy).setMovesVertical(true);
+		enemy.setHP(1000);
+		
+		generateAt(enemy, time);
+		
+		
+		enemy = new WallCrawler(10, 100, WallCrawler.LEFT);
+		((WallCrawler)enemy).setMovesVertical(true);
+		enemy.setHP(1000);
+		
+		generateAt(enemy, time);
+		
+		
+		
+		
+		enemy = new WallCrawler(10, 550,  WallCrawler.UP);
+		((WallCrawler)enemy).setMovesVertical(false);
+		enemy.setHP(1000);
+		
+		generateAt(enemy, time);
+		
+		enemy = new WallCrawler(10, 10, WallCrawler.DOWN);
+		((WallCrawler)enemy).setMovesVertical(false);
+		enemy.setHP(1000);
+		
+		generateAt(enemy, time);
 		
 		
 	}
