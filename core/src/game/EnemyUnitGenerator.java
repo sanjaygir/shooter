@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import enemies.Enemy;
 import enemies.MainBoss;
+import enemies.SimpleLinearEnemyUnit;
 import enemies.WallCrawler;
 import gamescreens.PlayState;
 
@@ -55,9 +56,7 @@ public class EnemyUnitGenerator {
 	
 	private void createUnits(){
 	
-		
-		
-		/*
+	
 		
 		time = 2;
 		enemy = new SimpleLinearEnemyUnit(100, 700);
@@ -66,7 +65,10 @@ public class EnemyUnitGenerator {
 		time += 5;
 		PowerCapsule p1 = new PowerCapsule(200, 700, WeaponTypes.LASER_GUN);
 		generateAt(p1, time);
-			
+		
+		p1 = new PowerCapsule(400, 700, WeaponTypes.ENEMY_CHASER_GUN);
+		generateAt(p1, time);
+		
 		
 		time += 1;
 		enemy = new SimpleLinearEnemyUnit(50, 700);
@@ -114,6 +116,12 @@ public class EnemyUnitGenerator {
 		}
 		
 		time += 3;
+		
+		p1 = new PowerCapsule(200, 700, WeaponTypes.SINE_MACHINE_GUN);
+		generateAt(p1, time);
+		
+		time += 10;
+		
 		
 		
 		for(int i=10;i>=0;i--){
@@ -163,6 +171,7 @@ public class EnemyUnitGenerator {
 		
 		
 		time += 10;
+		
 	
 		PowerCapsule p2 = new PowerCapsule(400, 700, WeaponTypes.TRIPLE_BARREL_MACHINE_GUN);
 		generateAt(p2, time);
@@ -197,7 +206,6 @@ public class EnemyUnitGenerator {
 		}
 		
 		
-	*/
 		
 		
 		
@@ -279,10 +287,16 @@ public class EnemyUnitGenerator {
 		
 		
 		
+		
+		time += 10;
+		
+		p2 = new PowerCapsule(400, 700, WeaponTypes.FIVE_BARREL_MACHINE_GUN);
+		generateAt(p2, time);
+	
 
 		//BOSS
 		
-		time = 2;
+		time += 10;
 		enemy = new MainBoss(370, 550);
 		enemy.setHP(10000);
 		
@@ -301,8 +315,7 @@ public class EnemyUnitGenerator {
 		enemy.setHP(1000);
 		
 		generateAt(enemy, time);
-		
-		
+				
 		
 		
 		enemy = new WallCrawler(10, 550,  WallCrawler.UP);

@@ -3,6 +3,7 @@ package game;
 import gamescreens.GameOverState;
 import gamescreens.GameState;
 import gamescreens.MenuState;
+import gamescreens.MissionCompleteState;
 import gamescreens.PlayState;
 
 public class GameStateManager {
@@ -11,9 +12,9 @@ public class GameStateManager {
 	public static final int MENU_STATE = 0;
 	public static final int PLAY_STATE = 1;
 	public static final int GAME_OVER_STATE = 2;
+	public static final int MISSION_COMPLETE_STATE = 3;
 	
-	
-	
+		
 	private GameState current_state;
 	
 	public GameStateManager(){
@@ -39,6 +40,11 @@ public class GameStateManager {
 		else if(s == GAME_OVER_STATE){
 			
 			current_state = new GameOverState();
+			
+		}
+		else if(s == MISSION_COMPLETE_STATE){
+			
+			current_state = new MissionCompleteState();
 			
 		}
 		

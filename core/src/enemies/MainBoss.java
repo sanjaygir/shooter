@@ -5,6 +5,8 @@ import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
 import com.badlogic.gdx.math.MathUtils;
 
 import enemies.weapons.TripleBulletAngularGun;
+import game.Game;
+import game.GameStateManager;
 
 public class MainBoss extends Enemy{
 
@@ -48,10 +50,14 @@ public class MainBoss extends Enemy{
 	public void update(float dt) {
 		// TODO Auto-generated method stub
 		
+				
 		timer += dt;
 		
 		super.update(dt);
-				
+		
+		
+		
+		
 		weapon_left.setX(this.x);
 		weapon_left.setY(this.y);
 	

@@ -1,5 +1,6 @@
 package gamescreens;
 
+import enemies.MainBoss;
 import game.EnemyUnitGenerator;
 import game.Entity;
 import game.Game;
@@ -83,8 +84,16 @@ public class PlayState extends GameState{
 		
 			if(enemies.get(i).remove){
 				
+
+				if(enemies.get(i) instanceof MainBoss){
+					
+					Game.gsm.setState(GameStateManager.MISSION_COMPLETE_STATE);
+											
+				}
+					
 				enemies.remove(i);
 				i--;				
+				
 			}
 			else{
 				enemies.get(i).update(dt);
