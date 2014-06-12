@@ -62,7 +62,7 @@ public class EnemyUnitGenerator {
 		generateAt(enemy, time);
 				
 		time += 5;
-		PowerCapsule p1 = new PowerCapsule(200, 700, WeaponTypes.DOUBLE_LASER_GUN);
+		PowerCapsule p1 = new PowerCapsule(200, 700, WeaponTypes.CROSS_MACHINE_GUN);
 		generateAt(p1, time);
 		
 		p1 = new PowerCapsule(400, 700, WeaponTypes.ENEMY_CHASER_GUN);
