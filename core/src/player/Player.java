@@ -7,6 +7,7 @@ import game.WeaponSystem;
 import game.WeaponTypes;
 import gamescreens.PlayState;
 import player.weapons.CrossMachineGun;
+import player.weapons.DoubleLaserGun;
 import player.weapons.DoubleLinearMissileGun;
 import player.weapons.EnemyChaserGun;
 import player.weapons.FiveBarrelMachineGun;
@@ -106,6 +107,11 @@ public class Player extends Entity{
 			
 					case WeaponTypes.DOUBLE_LINEAR_MISSILE_GUN:
 						this.weapon2 = new DoubleLinearMissileGun(x, y);
+						
+						break;
+			
+					case WeaponTypes.DOUBLE_LASER_GUN:
+						this.weapon2 = new DoubleLaserGun(x, y);
 						
 						break;
 			

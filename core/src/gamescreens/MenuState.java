@@ -50,10 +50,9 @@ public class MenuState extends GameState{
 		
 		batch.begin();
 		
-			font1.draw(batch, "Line Shooter", 180, 400);
-			
-			font2.draw(batch, "Start", 300, 200);
-			
+			font1.draw(batch, "Line Shooter", (Game.GAME_WIDTH - font2.getBounds("Line Shooter").width)/2 - 50, 400);
+			font2.draw(batch, "Start", (Game.GAME_WIDTH - font2.getBounds("Start").width)/2 - 10, 200);
+						
 		batch.end();
 		
 	}

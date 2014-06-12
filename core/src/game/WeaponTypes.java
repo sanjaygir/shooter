@@ -13,5 +13,6 @@ public class WeaponTypes {
 	public static final int ENEMY_CHASER_GUN = 6;
 	public static final int LASER_GUN = 7;
 	public static final int TIME_BOMB_GUN = 8;
+	public static final int DOUBLE_LASER_GUN = 9;
 	
 }

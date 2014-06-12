@@ -100,6 +100,13 @@ public class PowerCapsule extends Entity{
 			sr.rect(x-width/2, y, width, 5);
 			
 		}
+		else if(type == WeaponTypes.DOUBLE_LASER_GUN){
+			
+			sr.rect(x-width/2, y+10, width+5, 5);
+			sr.rect(x-width/2, y-10, width+5, 5);
+			
+		}
+		
 		sr.end();
 
 		
