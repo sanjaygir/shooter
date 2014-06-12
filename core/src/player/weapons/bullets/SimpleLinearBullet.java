@@ -1,7 +1,9 @@
 package player.weapons.bullets;
 
+import player.Player;
 import game.Bullet;
 import game.Game;
+import gamescreens.PlayState;
 
 import com.badlogic.gdx.math.MathUtils;
 
@@ -56,22 +58,30 @@ public class SimpleLinearBullet extends Bullet{
 	
 	public void update(float dt){
 	
-		if(this.y >= Game.GAME_HEIGHT){
-			this.remove = true;
-			return;
-		}
 		
+		super.update(dt);
+					
 		
 		if(!remove){
 						
+					
 			for(int i=0;i<targets.size();i++){
 				
-				if( this.intersects(targets.get(i))){
+				if(this.intersects(targets.get(i)) && (targets.get(i) instanceof Player) && PlayState.player.isInvincible()){
+					
+				}
+				else if(this.intersects(targets.get(i)) && (targets.get(i) instanceof Player)){
+					PlayState.player.setDecrementLife();					
+					
+				}
+				else if(this.intersects(targets.get(i))){
 					this.remove = true;
 					targets.get(i).getHit(this.damage);
+					
 				}
-				
 			}
+		
+			
 			
 			
 			y += speed * MathUtils.sin(angle * MathUtils.PI/180f) * dt;

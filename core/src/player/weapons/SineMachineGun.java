@@ -29,6 +29,7 @@ public class SineMachineGun extends BulletWeaponSystem{
 			
 			SineBullet b1 = new SineBullet(x, y);
 			b1.setSpeed(800);
+			
 			b1.setTargets(targets);
 			
 			

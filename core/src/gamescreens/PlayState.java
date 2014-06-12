@@ -12,7 +12,12 @@ import java.util.ArrayList;
 
 import player.Player;
 
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
+import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
 
 
 public class PlayState extends GameState{
@@ -22,6 +27,9 @@ public class PlayState extends GameState{
 	public static  ArrayList<Entity> enemies;
 	public static  ArrayList<Entity> players;
 	public static ArrayList<PowerCapsule> capsules;
+	
+	private SpriteBatch batch;
+	private BitmapFont font1;
 	
 	
 	private EnemyUnitGenerator generator;
@@ -40,6 +48,14 @@ public class PlayState extends GameState{
 	public void init() {
 		// TODO Auto-generated method stub
 				
+		
+				
+		batch = new SpriteBatch();
+		
+		FreeTypeFontGenerator gen = new FreeTypeFontGenerator(Gdx.files.internal("font.ttf"));
+		font1 = gen.generateFont(15);
+		
+		
 		enemies = new ArrayList<Entity>();
 		players = new ArrayList<Entity>();
 		capsules = new ArrayList<PowerCapsule>();
@@ -68,7 +84,7 @@ public class PlayState extends GameState{
 		// TODO Auto-generated method stub
 		
 		
-		if(player.remove){
+		if(player.lives < 0){
 			Game.gsm.setState(GameStateManager.GAME_OVER_STATE);
 		}
 		
@@ -143,6 +159,24 @@ public class PlayState extends GameState{
 			capsules.get(i).draw(sr);
 		}
 		
+		
+		batch.setProjectionMatrix(Game.cam.combined);
+		
+		batch.begin();
+		
+			font1.draw(batch, "LIVES", 10, 590);
+						
+		batch.end();
+		
+		sr.begin(ShapeType.Line);
+			
+			for(int i=0;i<player.lives;i++){
+				
+				sr.line(10 + i*10, 560, 10 + i*10, 570);
+				
+			}
+		
+		sr.end();
 		
 	}
 

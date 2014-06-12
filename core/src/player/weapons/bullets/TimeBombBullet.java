@@ -39,6 +39,8 @@ public class TimeBombBullet extends Bullet{
 	
 	public void update(float dt){
 	
+		super.update(dt);
+		
 		
 		explode_timer += dt;
 				

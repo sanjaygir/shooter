@@ -3,6 +3,8 @@ package enemies.weapons.bullets;
 
 import game.Bullet;
 import game.Game;
+import gamescreens.PlayState;
+import player.Player;
 
 public class LinearLaserBullet extends Bullet{
 
@@ -49,19 +51,39 @@ public class LinearLaserBullet extends Bullet{
 	
 	public void update(float dt){
 		
-		if(this.x >= Game.GAME_WIDTH){
-			this.remove = true;
-			return;
-		}
-	
+		super.update(dt);
+		
 		if(!remove){
 			
+			
 			for(int i=0;i<targets.size();i++){
-				if(this.intersects(targets.get(i))){
+						
+
+				if(this.intersects(targets.get(i)) && (targets.get(i) instanceof Player) && PlayState.player.isInvincible()){
+					
+				}
+				else if(this.intersects(targets.get(i)) && (targets.get(i) instanceof Player)){
+					PlayState.player.setDecrementLife();					
+					
+				}
+				else if(this.intersects(targets.get(i))){
 					this.remove = true;
 					targets.get(i).getHit(this.damage);
+					
 				}
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
 			}
+						
+			
 			
 		}
 		

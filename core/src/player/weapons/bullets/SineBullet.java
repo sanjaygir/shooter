@@ -80,12 +80,10 @@ public class SineBullet extends Bullet{
 	
 	public void update(float dt){
 	
-		time_accum += dt;
+		
+		super.update(dt);
 				
-		if(this.y >= Game.GAME_HEIGHT){
-			this.remove = true;
-			return;
-		}
+		time_accum += dt;
 		
 		
 		if(!remove){

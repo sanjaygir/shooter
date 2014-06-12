@@ -41,10 +41,7 @@ public class EnemyChaserBullet extends Bullet{
 	
 	public void update(float dt){
 			
-		if(this.y >= Game.GAME_HEIGHT || this.y <= 0  ||  this.x <= 0 || this.x >= Game.GAME_WIDTH){
-			this.remove = true;
-			return;
-		}
+		super.update(dt);
 		
 		
 		if(!remove){

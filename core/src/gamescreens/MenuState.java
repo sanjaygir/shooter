@@ -15,6 +15,7 @@ public class MenuState extends GameState{
 
 	private SpriteBatch batch;
 	private BitmapFont font1;
+	
 	private BitmapFont font2;		
 	
 	public MenuState(){

@@ -43,6 +43,11 @@ public abstract class Bullet extends Entity{
 	
 	public void update(float dt){
 			
+		if(this.x < 0 || this.x > Game.GAME_WIDTH || this.y < 0 || this.y > Game.GAME_HEIGHT){
+			this.remove = true;
+			
+		}
+		
 	}
 
 	

@@ -31,9 +31,24 @@ public class Player extends Entity{
 	private WeaponSystem weapon2;
 
 	
+	private boolean invincible;
+	
+	private float invincible_timer;
+	private float invincible_time;
+	
+	public int lives;
+	
 	public Player(float x, float y, PlayState p){
 						
-		super(x, y);		
+		super(x, y);
+		
+		lives = 3;
+		
+		invincible = false;
+		
+		invincible_timer = 0;
+		invincible_time = 3;
+				
 		
 		width = 100;
 		height = 10;
@@ -45,13 +60,38 @@ public class Player extends Entity{
 		
 		remove = false;
 		
+		
 	}
 		
 
 	
+	public void setDecrementLife(){
+		
+		lives --;
+		
+		invincible_timer = 0;
+		invincible = true;		
+		
+		
+	}
+	
+	public boolean isInvincible(){
+		return this.invincible;
+	}
+	
 
 	public void update(float dt){
 				
+		
+			if(invincible){
+				
+				invincible_timer += dt;
+				
+				if(invincible_timer > invincible_time){
+					invincible_timer = 0;
+					invincible = false;
+				}
+			}
 		
 				
 			for(int i=0;i<PlayState.capsules.size();i++){
@@ -80,6 +120,7 @@ public class Player extends Entity{
 			
 					case WeaponTypes.SINE_MACHINE_GUN:
 						this.weapon1 = new SineMachineGun(x, y);
+						
 						
 						break;
 			

@@ -57,7 +57,6 @@ public class EnemyUnitGenerator {
 	private void createUnits(){
 	
 	
-		
 		time = 2;
 		enemy = new SimpleLinearEnemyUnit(100, 700);
 		generateAt(enemy, time);
@@ -188,7 +187,7 @@ public class EnemyUnitGenerator {
 		}
 		
 		
-		time += 1;
+		time += 2;
 		
 		for(int i=10;i>=0;i--){
 			enemy = new SimpleLinearEnemyUnit(50 + i*100, 700);
@@ -197,7 +196,7 @@ public class EnemyUnitGenerator {
 		}
 		
 		
-		time += 1;
+		time += 2;
 			
 		for(int i=10;i>=0;i--){
 			enemy = new SimpleLinearEnemyUnit(50 + i*100, 700);
