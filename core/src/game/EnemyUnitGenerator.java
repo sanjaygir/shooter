@@ -311,7 +311,7 @@ public class EnemyUnitGenerator {
 			enemy = new CrossJumpEnemyUnit(750, 700, CrossJumpEnemyUnit.CROSS_LEFT);
 			generateAt(enemy, time);
 			
-			time += i*0.1f;			
+			time += 0.1f;			
 		}
 	
 		
@@ -388,6 +388,8 @@ public class EnemyUnitGenerator {
 		enemy = new WallCrawler(750, 100,  WallCrawler.RIGHT);
 		((WallCrawler)enemy).setMovesVertical(true);
 		enemy.setHP(5000);
+		enemy.setSpeed(200);
+		
 		
 		generateAt(enemy, time);
 		
@@ -395,6 +397,7 @@ public class EnemyUnitGenerator {
 		enemy = new WallCrawler(10, 100, WallCrawler.LEFT);
 		((WallCrawler)enemy).setMovesVertical(true);
 		enemy.setHP(5000);
+		enemy.setSpeed(200);
 		
 		generateAt(enemy, time);
 						
@@ -402,12 +405,14 @@ public class EnemyUnitGenerator {
 		enemy = new WallCrawler(10, 550,  WallCrawler.UP);
 		((WallCrawler)enemy).setMovesVertical(false);
 		enemy.setHP(5000);
+		enemy.setSpeed(200);
 		
 		generateAt(enemy, time);
 		
 		enemy = new WallCrawler(10, 10, WallCrawler.DOWN);
 		((WallCrawler)enemy).setMovesVertical(false);
 		enemy.setHP(5000);
+		enemy.setSpeed(200);
 		
 		generateAt(enemy, time);
 		
