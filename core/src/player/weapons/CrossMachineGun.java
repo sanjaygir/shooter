@@ -54,10 +54,7 @@ public class CrossMachineGun extends BulletWeaponSystem{
 			b.setTargets(targets);
 			b.setSpeed(1000);
 			b.setAngle(0);
-			bullets.add(b);
-						
-
-						
+			bullets.add(b);						
 
 			b = new SimpleLinearBullet(x, y);
 			b.setTargets(targets);

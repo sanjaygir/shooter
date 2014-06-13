@@ -9,9 +9,12 @@ public class TripleBulletAngularGun extends BulletWeaponSystem {
 
 	private int direction;
 	
-	public static final int RIGHT = 0;
-	public static final int LEFT = 1;
+	public static final int RIGHT_DOWN = 0;
+	public static final int LEFT_DOWN = 1;
 	public static final int DOWN = 2;
+	public static final int LEFT = 3;
+	public static final int RIGHT = 4;
+	
 	
 	
 	
@@ -42,8 +45,31 @@ public class TripleBulletAngularGun extends BulletWeaponSystem {
 		if(!cooling_down && shoot){
 
 			
-			
 			if(direction == RIGHT){
+			
+				LinearUndestructableBullet b1 = new LinearUndestructableBullet(x, y);
+				b1.setAngle(0);
+				b1.setTargets(this.targets);
+					
+				bullets.add(b1);
+				
+				
+				LinearUndestructableBullet b2 = new LinearUndestructableBullet(x, y);
+				b2.setAngle(45);
+				b2.setTargets(this.targets);
+					
+				bullets.add(b2);
+				
+				LinearUndestructableBullet b3 = new LinearUndestructableBullet(x, y);
+				b3.setAngle(270 + 45);
+				b3.setTargets(this.targets);
+					
+				bullets.add(b3);
+				
+			
+				
+			}
+			else if(direction == RIGHT_DOWN){
 
 				LinearUndestructableBullet b1 = new LinearUndestructableBullet(x, y);
 				b1.setAngle(270 + 10);
@@ -66,7 +92,31 @@ public class TripleBulletAngularGun extends BulletWeaponSystem {
 				
 				
 			}
-			else if(direction == LEFT)
+			else if(direction == LEFT){
+			
+				LinearUndestructableBullet b1 = new LinearUndestructableBullet(x, y);
+				b1.setAngle(180);
+				b1.setTargets(this.targets);
+					
+				bullets.add(b1);
+				
+				
+				LinearUndestructableBullet b2 = new LinearUndestructableBullet(x, y);
+				b2.setAngle(90+45);
+				b2.setTargets(this.targets);
+					
+				bullets.add(b2);
+				
+				LinearUndestructableBullet b3 = new LinearUndestructableBullet(x, y);
+				b3.setAngle(180 + 45);
+				b3.setTargets(this.targets);
+					
+				bullets.add(b3);
+				
+			
+				
+			}
+			else if(direction == LEFT_DOWN)
 			{
 			
 				
