@@ -56,13 +56,129 @@ public class EnemyUnitGenerator {
 	
 	private void createUnits(){
 	
-	
+		PowerCapsule p;
+		
+		
 		time = 2;
-		enemy = new SimpleLinearEnemyUnit(100, 700);
+		enemy = new SimpleLinearEnemyUnit(300, 700);
+		enemy.setSpeed(200);
 		generateAt(enemy, time);
 				
+		
+		time += 3;
+		enemy = new SimpleLinearEnemyUnit(100, 700);
+		enemy.setSpeed(200);
+		generateAt(enemy, time);
+				
+		enemy = new SimpleLinearEnemyUnit(400, 700);
+		enemy.setSpeed(200);
+		generateAt(enemy, time);
+		
+		
 		time += 5;
-		PowerCapsule p1 = new PowerCapsule(200, 700, WeaponTypes.CROSS_MACHINE_GUN);
+		
+		for(int i=0;i<3;i++){
+			enemy = new SimpleLinearEnemyUnit(100 + i*100, 700);
+			enemy.setSpeed(200);
+			generateAt(enemy, time);
+		}
+		
+		
+		time += 5;
+		
+		p = new PowerCapsule(300, 700, WeaponTypes.DOUBLE_LINEAR_MISSILE_GUN);
+		p.setSpeed(200);
+		generateAt(p, time);
+		
+		
+		time += 5;
+		
+		for(int i=0;i<6;i++){
+			
+			enemy = new SimpleLinearEnemyUnit(200 + 100*i, 700);
+			enemy.setSpeed(100);
+			generateAt(enemy, time);
+		}
+		
+		
+		time += 7;
+		
+		for(int i=0;i<7;i++){
+			
+			enemy = new SimpleLinearEnemyUnit(50 + 100*i, 700);
+			enemy.setSpeed(100);
+			generateAt(enemy, time);
+		}
+		
+		
+		
+		
+		time += 3;
+		
+		p = new PowerCapsule(300, 700, WeaponTypes.LASER_GUN);
+		p.setSpeed(200);
+		generateAt(p, time);
+		
+		
+		
+		time += 7;
+		
+		for(int i=0;i<7;i++){
+			
+			enemy = new SimpleLinearEnemyUnit(50 + 100*i, 700);
+			enemy.setSpeed(100);
+			generateAt(enemy, time);
+		}		
+		
+		time += 1;
+		
+		for(int i=0;i<7;i++){
+			
+			enemy = new SimpleLinearEnemyUnit(50 + 100*i, 700);
+			enemy.setSpeed(100);
+			generateAt(enemy, time);
+		}
+		
+		time += 10;
+		
+		for(int i=0;i<12;i++){
+			
+			enemy = new SimpleLinearEnemyUnit(200, 700 + i*40);
+			enemy.setSpeed(300);
+			generateAt(enemy, time);
+		
+		}
+		
+		
+		time += 5;
+				
+		
+		p = new PowerCapsule(300, 700, WeaponTypes.TRIPLE_BARREL_MACHINE_GUN);
+		p.setSpeed(200);
+		generateAt(p, time);
+		
+		
+		time += 5;
+				
+		
+		for(int i=0;i<5;i++){
+					
+			enemy = new SimpleLinearEnemyUnit(100 + i*100, 700 + i*40);
+			enemy.setSpeed(200);
+			generateAt(enemy, time);
+		
+			
+		}
+		
+		
+		
+		
+		/*
+		
+		
+		
+		time += 5;
+		PowerCapsule p1 = new PowerCapsule(200, 700, WeaponTypes.SINE_MACHINE_GUN);
 		generateAt(p1, time);
 		
 		p1 = new PowerCapsule(400, 700, WeaponTypes.ENEMY_CHASER_GUN);
@@ -206,6 +322,7 @@ public class EnemyUnitGenerator {
 		
 		
 		
+		*/
 		
 		
 		/*
@@ -286,7 +403,7 @@ public class EnemyUnitGenerator {
 		
 		
 		
-		
+		/*
 		time += 10;
 		
 		p2 = new PowerCapsule(400, 700, WeaponTypes.FIVE_BARREL_MACHINE_GUN);
@@ -329,6 +446,7 @@ public class EnemyUnitGenerator {
 		
 		generateAt(enemy, time);
 		
+		*/
 		
 	}
 	

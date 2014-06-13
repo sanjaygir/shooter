@@ -15,7 +15,7 @@ public class SimpleLinearEnemyUnit extends Enemy{
 		
 		this.hp = 200;
 		
-		speed = 200f;
+		speed = 100f;
 				
 	}
 	

@@ -12,7 +12,7 @@ public class DoubleLinearMissileGun extends BulletWeaponSystem{
 			
 		super(x, y);
 		
-		shoot_time = 0.4f;
+		shoot_time = 0.3f;
 		shoot_timer = 0;
 		
 		targets = PlayState.enemies;
