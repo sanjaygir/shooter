@@ -29,7 +29,6 @@ public class Player extends Entity{
 			
 	private WeaponSystem weapon1;
 	private WeaponSystem weapon2;
-
 	
 	private boolean invincible;
 	
@@ -37,6 +36,13 @@ public class Player extends Entity{
 	private float invincible_time;
 	
 	public int lives;
+	
+	
+	private float blink_time;
+	private float blink_timer;
+	
+	private boolean visible;
+	
 	
 	public Player(float x, float y, PlayState p){
 						
@@ -46,9 +52,13 @@ public class Player extends Entity{
 		
 		invincible = false;
 		
+		
 		invincible_timer = 0;
 		invincible_time = 3;
-				
+		
+		blink_time = 0.05f;
+		blink_timer = 0;
+		
 		
 		width = 100;
 		height = 10;
@@ -59,6 +69,8 @@ public class Player extends Entity{
 		weapon2 = null;
 		
 		remove = false;
+		
+		visible = true;
 		
 		
 	}
@@ -81,8 +93,27 @@ public class Player extends Entity{
 	
 
 	public void update(float dt){
+						
+			
+			if(invincible){
 				
-		
+				blink_timer += dt;
+				
+				if(blink_timer > blink_time){
+					if(visible){
+						visible = false;
+					}
+					else{
+						visible = true;
+					}
+					blink_timer = 0;
+				}
+								
+			}
+			
+			
+			
+
 			if(invincible){
 				
 				invincible_timer += dt;
@@ -90,6 +121,7 @@ public class Player extends Entity{
 				if(invincible_timer > invincible_time){
 					invincible_timer = 0;
 					invincible = false;
+					visible = true;
 				}
 			}
 		
@@ -213,12 +245,18 @@ public class Player extends Entity{
 	
 	public void draw(ShapeRenderer sr){
 		
-		sr.begin(ShapeType.Line);
+		if(visible){
 		
-		sr.rect(x - width/2, y - height/2, width, height);
+			sr.begin(ShapeType.Line);
+			
+			sr.rect(x - width/2, y - height/2, width, height);
+			
+			sr.end();
+				
+		}
 		
-		sr.end();
-
+		
+		
 		if(weapon1 != null){
 			weapon1.draw(sr);
 		}
@@ -226,7 +264,6 @@ public class Player extends Entity{
 		if(weapon2 != null){
 			weapon2.draw(sr);
 		}
-		
 		
 	}
 	

@@ -21,7 +21,7 @@ public class TimeBombBullet extends Bullet{
 					
 		this.damage = 1000;
 				
-		blast_radius = 500;
+		blast_radius = 100;
 				
 		this.explode_time = 3;
 				

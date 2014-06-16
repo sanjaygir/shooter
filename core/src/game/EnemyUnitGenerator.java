@@ -28,6 +28,9 @@ public class EnemyUnitGenerator {
 	
 	private float time;
 	
+	private PowerCapsule p;
+	
+	
 	
 	public EnemyUnitGenerator(){	
 		
@@ -61,353 +64,252 @@ public class EnemyUnitGenerator {
 	
 	private void createUnits(){
 		
-			
-		
-		
-/*
-		for(int i=0;i<10;i++){
-	
-			enemy = new MarchAndThrowEnemyUnit(100, 100);
-						
-				
-			generateAt(enemy, time);
-						
-									
-			time += 0.2f;			
-		}
-	*/
-		
-		
-		
-		/*
-		PowerCapsule p;
+
 		
 		
 		time = 2;
 		enemy = new SimpleLinearEnemyUnit(300, 700);
-		enemy.setSpeed(200);
+		enemy.setSpeed(250);
 		generateAt(enemy, time);
-				
-		
+						
 		time += 3;
 		enemy = new SimpleLinearEnemyUnit(100, 700);
+		enemy.setSpeed(250);
+		generateAt(enemy, time);
+				
+		enemy = new SimpleLinearEnemyUnit(300, 700);
 		enemy.setSpeed(200);
 		generateAt(enemy, time);
 				
-		enemy = new SimpleLinearEnemyUnit(400, 700);
-		enemy.setSpeed(200);
-		generateAt(enemy, time);
 				
-		
 		time += 3;
 		
 		p = new PowerCapsule(300, 700, WeaponTypes.DOUBLE_LINEAR_MISSILE_GUN);
-		p.setSpeed(200);
+		p.setSpeed(250);
 		generateAt(p, time);
-		
-		
-		time += 5;
-		
-
-		
-		for(int i=0;i<10;i++){
-			enemy = new CircleEnemyUnit(100, Game.GAME_HEIGHT  + i*40);
-			((CircleEnemyUnit)enemy).setAngleAmount(2);
-			((CircleEnemyUnit)enemy).setTurnDistance(300);
-			generateAt(enemy, time + i*0.1f);
-						
-		}
-		
-		
-		
-		
-		time += 2;
-		
-		p = new PowerCapsule(300, 700, WeaponTypes.TRIPLE_BARREL_MACHINE_GUN);
-		p.setSpeed(200);
-		generateAt(p, time);
-		
-		
-				
-		
-		time += 7;
-		
-		for(int i=0;i<7;i++){
-			
-			enemy = new SimpleLinearEnemyUnit(50 + 100*i, 700);
-			enemy.setSpeed(100);
-			generateAt(enemy, time);
-		}
-		
-				
 		
 		time += 3;
 		
-		p = new PowerCapsule(300, 700, WeaponTypes.LASER_GUN);
-		p.setSpeed(200);
+		for(int i=0;i<10;i++){
+			
+			if(i % 2 == 0){
+				enemy = new SimpleLinearEnemyUnit(50 + i*70, 700);
+				enemy.setSpeed(250);
+				
+			}
+			else
+			{
+				enemy = new SimpleLinearEnemyUnit(50 + i*70, 700);
+				enemy.setSpeed(200);
+				
+			}
+						
+			generateAt(enemy, time);
+		}
+		
+		
+		time += 3;
+		
+		
+		p  = new PowerCapsule(400, 700, WeaponTypes.TRIPLE_BARREL_MACHINE_GUN);
+		p.setSpeed(250);
 		generateAt(p, time);
 		
 		
-		
-		
-		time += 5;
-		
+		time += 3;
 		
 		for(int i=0;i<10;i++){
 			
-			enemy = new TriangularPathEnemyUnit(300, 700);
-			((TriangularPathEnemyUnit)enemy).setTurnAngle(20);
-			((TriangularPathEnemyUnit)enemy).setChangePathTime(3);
-			
-			enemy.setSpeed(200);
-			generateAt(enemy, time);
-			time += 0.3;
-			
-		}
-		
-		
-		
-		time += 5;
-		
-		for(int i=0;i<7;i++){
-			
-			enemy = new SimpleLinearEnemyUnit(50 + 100*i, 700);
-			enemy.setSpeed(100);
-			generateAt(enemy, time);
-		}
-		
-		
-		time += 5;
-				
-		
-		p = new PowerCapsule(300, 700, WeaponTypes.CROSS_MACHINE_GUN);
-		p.setSpeed(200);
-		generateAt(p, time);
-				
-				
-		
-		time += 5;
-		
-		for(int i=0;i<12;i++){
-			
-			enemy = new SimpleLinearEnemyUnit(200, 700 + i*40);
+			enemy = new TriangularPathEnemyUnit(350, 700);		
 			enemy.setSpeed(300);
 			generateAt(enemy, time);
-		
+			time += 0.2;
 		}
 		
+		time += 3;
 		
-				
-		time += 5;
-				
-		
-		for(int i=0;i<5;i++){
-					
-			enemy = new SimpleLinearEnemyUnit(100 + i*100, 700 + i*40);
-			enemy.setSpeed(200);
-			generateAt(enemy, time);
-		
-			
-		}
-		
-			
-		
-		time += 5;
-		
-		p = new PowerCapsule(300, 700, WeaponTypes.FIVE_BARREL_MACHINE_GUN);
-		p.setSpeed(200);
+		p = new PowerCapsule(200, 700, WeaponTypes.LASER_GUN);
+		p.setSpeed(250);
 		generateAt(p, time);
-				
 		
-		
-		for(int i=5;i>=0;i--){
-			
-			enemy = new SimpleLinearEnemyUnit(100 + i*100, 700 + i*40);
-			enemy.setSpeed(200);
-			generateAt(enemy, time);
-		
-			
-		}
-		
-		time += 5;
-
-		
-		
-		
+		time += 3;
 		
 		for(int i=0;i<10;i++){
 			
-			enemy = new TriangularPathEnemyUnit(300, 700);
-			enemy.setSpeed(200);
+			enemy = new CircleEnemyUnit(100, 700);
+			((CircleEnemyUnit)enemy).setAngleAmount(1);
+			((CircleEnemyUnit)enemy).setTurnDistance(250);
 			generateAt(enemy, time);
-			time += 0.3;
 			
-		}
-		
-		
-		
-		p = new PowerCapsule(300, 700, WeaponTypes.SINE_MACHINE_GUN);
-		p.setSpeed(200);
-		generateAt(p, time);
-		
-		
-		
-		time += 5;
-		
-
-		enemy = new WallCrawler(10, 700,  WallCrawler.LEFT);
-		((WallCrawler)enemy).setMovesVertical(true);
-		enemy.setHP(1000);
-		generateAt(enemy, time);
-		
-		time += 2;
-		
-		enemy = new WallCrawler(10, -10,  WallCrawler.LEFT);
-		((WallCrawler)enemy).setMovesVertical(true);
-		enemy.setHP(1000);
-		generateAt(enemy, time);
-
-
-		
-		time += 5;
 						
-
-		for(int i=0;i<20;i++){
-			enemy = new CircleEnemyUnit(100, Game.GAME_HEIGHT  + i*40);
-			generateAt(enemy, time + i*0.1f);
-			
+			time += 0.1;			
 		}
 		
 		
+		time += 3;
 		
-		
-		
-		time += 5;
-		
-		
-		for(int i=0;i<10;i++){
-			
-			enemy = new TriangularPathEnemyUnit(200, 700);
-			enemy.setSpeed(200);
-			generateAt(enemy, time);
-		
-			enemy = new TriangularPathEnemyUnit(500, 700);
-			enemy.setSpeed(200);
-			generateAt(enemy, time);
-		
-			time += 0.3;
-			
-		}
-		
-		
-		
-		time += 10;
-		
-		
-		p = new PowerCapsule(300, 700, WeaponTypes.ENEMY_CHASER_GUN);
-		p.setSpeed(200);
-		generateAt(p, time);
-				
-		
-		time += 5;
-		
-		
-		enemy = new WallCrawler(10, 700,  WallCrawler.LEFT);
-		((WallCrawler)enemy).setMovesVertical(true);
-		enemy.setHP(1000);
-		generateAt(enemy, time);
-		
-
-		enemy = new WallCrawler(10, -20,  WallCrawler.LEFT);
-		((WallCrawler)enemy).setMovesVertical(true);
-		enemy.setHP(1000);
-		generateAt(enemy, time);
-		
-
-		enemy = new WallCrawler(780, 700,  WallCrawler.RIGHT);
-		((WallCrawler)enemy).setMovesVertical(true);
-		enemy.setHP(1000);
-		generateAt(enemy, time);
-		
-
-		enemy = new WallCrawler(780, -50,  WallCrawler.RIGHT);
-		((WallCrawler)enemy).setMovesVertical(true);
-		enemy.setHP(1000);
-		generateAt(enemy, time);
-		
-		
-		time += 10;
-		
-		
-		p = new PowerCapsule(300, 700, WeaponTypes.DOUBLE_LASER_GUN);
-		p.setSpeed(200);
+		p = new PowerCapsule(500, 700, WeaponTypes.CROSS_MACHINE_GUN);
+		p.setSpeed(250);
 		generateAt(p, time);
 		
-
-		//comment
+		time += 3;
 		
-		for(int i=0;i<10;i++){
-	
-			enemy = new CrossJumpEnemyUnit(10, 700, CrossJumpEnemyUnit.CROSS_RIGHT);
-			generateAt(enemy, time);
-						
-			enemy = new CrossJumpEnemyUnit(750, 700, CrossJumpEnemyUnit.CROSS_LEFT);
+		for(int i=0; i<10;i++){
+			enemy = new SimpleLinearEnemyUnit(100, 700);
+			enemy.setSpeed(250);
 			generateAt(enemy, time);
 			
-			time += 0.2f;			
+			
+			enemy = new SimpleLinearEnemyUnit(400, 700);
+			enemy.setSpeed(200);
+			generateAt(enemy, time);
+			
+			
+			enemy = new SimpleLinearEnemyUnit(700, 700);
+			enemy.setSpeed(250);
+			generateAt(enemy, time);
+			
+			
+			time += 0.1;
+			
 		}
-	
-		
-			
-		
-		time += 5;
-		
-				
-		enemy = new TripleBulletEnemyUnit(10, 700);
-		
-		((TripleBulletEnemyUnit)enemy).setDirection(TripleBulletAngularGun.RIGHT);
-				
-		generateAt(enemy, time);
-		
-				
-		
-		time += 5;
-		
-		
-		
-		enemy = new TripleBulletEnemyUnit(300, 700);
-				
-		generateAt(enemy, time);
 		
 		
 		time += 3;
 		
 		
-
-		p = new PowerCapsule(300, 700, WeaponTypes.TIME_BOMB_GUN);
-		p.setSpeed(200);
+		p = new PowerCapsule(200, 700, WeaponTypes.SINE_MACHINE_GUN);
+		p.setSpeed(250);
 		generateAt(p, time);
-		
 		
 		time += 3;
 		
 		
 
-		for(int i=0;i<10;i++){
-			
+		
+		for(int i=0; i<10;i++){
 			enemy = new TriangularPathEnemyUnit(200, 700);
 			enemy.setSpeed(200);
 			generateAt(enemy, time);
-		
+			
+			
+			enemy = new TriangularPathEnemyUnit(400, 700);
+			enemy.setSpeed(200);
+			generateAt(enemy, time);
+			
+			
 			enemy = new TriangularPathEnemyUnit(600, 700);
 			enemy.setSpeed(200);
 			generateAt(enemy, time);
-		
-			time += 0.3;
+						
+			time += 0.2;
 			
 		}
 		
+		
+		time += 3;
+		
+		
+		p = new PowerCapsule(200, 700, WeaponTypes.DOUBLE_LASER_GUN);
+		p.setSpeed(250);
+		generateAt(p, time);
+		
+		time += 3;
+		
 				
+
+		for(int i=0;i<10;i++){
+			
+			enemy = new SimpleLinearEnemyUnit(50 + i*70, 700);
+			enemy.setSpeed(250);
+							
+			generateAt(enemy, time);
+				
+			enemy = new SimpleLinearEnemyUnit(50 + i*70, 750);
+			enemy.setSpeed(250);
+			
+			generateAt(enemy, time);
+			
+			time += 0.4;
+		}
+		
+		
+		
+		time += 3;
+		
+
+		p = new PowerCapsule(400, 700, WeaponTypes.ENEMY_CHASER_GUN);
+		p.setSpeed(250);
+		generateAt(p, time);
+		
+		time += 3;
+		
+		
+		enemy = new WallCrawler(WallCrawler.SIT_LEFT, WallCrawler.ENTRY_FROM_DOWN);
+		generateAt(enemy, time);
+		
+		
+		time += 1;
+		
+		enemy = new WallCrawler(WallCrawler.SIT_RIGHT, WallCrawler.ENTRY_FROM_UP);
+		generateAt(enemy, time);
+		
+		
+		time += 3;
+						
+		
+		p = new PowerCapsule(400, 700, WeaponTypes.TIME_BOMB_GUN);
+		p.setSpeed(250);
+		generateAt(p, time);
+		
+		time += 3;
+		
+		
+
+		for(int i=0;i<20;i++){
+			
+			enemy = new SimpleLinearEnemyUnit(50 + i*70, 700);
+			enemy.setSpeed(250);
+							
+			generateAt(enemy, time);
+				
+			enemy = new SimpleLinearEnemyUnit(50 + i*70, 750);
+			enemy.setSpeed(250);
+			
+			generateAt(enemy, time);
+			
+			time += 0.4;
+		}
+		
+		
+		time += 3;
+		
+
+		p = new PowerCapsule(400, 700, WeaponTypes.FIVE_BARREL_MACHINE_GUN);
+		p.setSpeed(250);
+		generateAt(p, time);
+		
+		time += 3;
+		
+		enemy = new TripleBulletEnemyUnit(300, 700);
+		((TripleBulletEnemyUnit)enemy).setShootDirection(TripleBulletEnemyUnit.DOWN);
+		generateAt(enemy, time);
+		
+		
+		time += 3;
+		
+		
+		
+
+		
+		
+			
+	////////////////////////////////////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////////////////////////////////////
+	/////////BOSS//////////////////////////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////////////////////////////////////
+			
+			
 		
 		time += 10;
 		enemy = new MainBoss(370, 550);
@@ -416,8 +318,7 @@ public class EnemyUnitGenerator {
 		generateAt(enemy, time);
 		
 		
-		enemy = new WallCrawler(750, 100,  WallCrawler.RIGHT);
-		((WallCrawler)enemy).setMovesVertical(true);
+		enemy = new WallCrawler(WallCrawler.SIT_RIGHT, WallCrawler.ENTRY_FROM_DOWN);
 		enemy.setHP(5000);
 		enemy.setSpeed(150);
 		
@@ -425,32 +326,31 @@ public class EnemyUnitGenerator {
 		generateAt(enemy, time);
 		
 		
-		enemy = new WallCrawler(10, 100, WallCrawler.LEFT);
-		((WallCrawler)enemy).setMovesVertical(true);
+		enemy = new WallCrawler(WallCrawler.SIT_LEFT, WallCrawler.ENTRY_FROM_UP);
 		enemy.setHP(5000);
 		enemy.setSpeed(150);
 		
 		generateAt(enemy, time);
 						
 		
-		enemy = new WallCrawler(10, 550,  WallCrawler.UP);
-		((WallCrawler)enemy).setMovesVertical(false);
+		enemy = new WallCrawler(WallCrawler.SIT_UP, WallCrawler.ENTRY_FROM_LEFT);
+		enemy.setHP(5000);
+		enemy.setSpeed(150);
+		
+		
+		
+		generateAt(enemy, time);
+		
+		enemy = new WallCrawler(WallCrawler.SIT_DOWN, WallCrawler.ENTRY_FROM_LEFT);
 		enemy.setHP(5000);
 		enemy.setSpeed(150);
 		
 		generateAt(enemy, time);
-		
-		enemy = new WallCrawler(10, 10, WallCrawler.DOWN);
-		((WallCrawler)enemy).setMovesVertical(false);
-		enemy.setHP(5000);
-		enemy.setSpeed(150);
-		
-		generateAt(enemy, time);
-		
-		*/
 		
 		
 	}
+	
+	
 	
 	
 	public void generateAt(Entity e, float f){

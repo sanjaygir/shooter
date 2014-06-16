@@ -120,7 +120,7 @@ public class WallCrawler extends Enemy{
 		
 		this.hp = 500;
 		
-		speed = 100f;
+		speed = 200f;
 		
 
 	}

@@ -23,7 +23,7 @@ public class SineBullet extends Bullet{
 		
 		speed = 300;
 		
-		this.damage = 100;
+		this.damage = 200;
 		
 		
 		width = 5;
