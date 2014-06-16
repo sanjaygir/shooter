@@ -44,11 +44,11 @@ public class MainBoss extends Enemy{
 		time = 3f;
 		
 		
-		weapon_left_down.setDirection(TripleBulletAngularGun.LEFT_DOWN);
-		weapon_down.setDirection(TripleBulletAngularGun.DOWN);
-		weapon_right_down.setDirection(TripleBulletAngularGun.RIGHT_DOWN);
-		weapon_right.setDirection(TripleBulletAngularGun.RIGHT);
-		weapon_left.setDirection(TripleBulletAngularGun.LEFT);
+		weapon_left_down.setShootDirection(TripleBulletAngularGun.LEFT_DOWN);
+		weapon_down.setShootDirection(TripleBulletAngularGun.DOWN);
+		weapon_right_down.setShootDirection(TripleBulletAngularGun.RIGHT_DOWN);
+		weapon_right.setShootDirection(TripleBulletAngularGun.RIGHT);
+		weapon_left.setShootDirection(TripleBulletAngularGun.LEFT);
 		
 
 		

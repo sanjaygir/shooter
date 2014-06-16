@@ -31,7 +31,7 @@ public class TripleBulletAngularGun extends BulletWeaponSystem {
 	}
 	
 	
-	public void setDirection(int b){
+	public void setShootDirection(int b){
 		this.direction = b;
 	}
 	

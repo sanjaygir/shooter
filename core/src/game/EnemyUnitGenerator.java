@@ -3,7 +3,7 @@ package game;
 import java.util.ArrayList;
 
 import enemies.CircleEnemyUnit;
-import enemies.CrossJumpEnemyUnit;
+import enemies.MarchAndThrowEnemyUnit;
 import enemies.Enemy;
 import enemies.MainBoss;
 import enemies.SimpleLinearEnemyUnit;
@@ -60,7 +60,26 @@ public class EnemyUnitGenerator {
 		
 	
 	private void createUnits(){
+		
+			
+		
+		
+/*
+		for(int i=0;i<10;i++){
 	
+			enemy = new MarchAndThrowEnemyUnit(100, 100);
+						
+				
+			generateAt(enemy, time);
+						
+									
+			time += 0.2f;			
+		}
+	*/
+		
+		
+		
+		/*
 		PowerCapsule p;
 		
 		
@@ -78,18 +97,9 @@ public class EnemyUnitGenerator {
 		enemy = new SimpleLinearEnemyUnit(400, 700);
 		enemy.setSpeed(200);
 		generateAt(enemy, time);
+				
 		
-		
-		time += 5;
-		
-		for(int i=0;i<3;i++){
-			enemy = new SimpleLinearEnemyUnit(100 + i*100, 700);
-			enemy.setSpeed(200);
-			generateAt(enemy, time);
-		}
-		
-		
-		time += 5;
+		time += 3;
 		
 		p = new PowerCapsule(300, 700, WeaponTypes.DOUBLE_LINEAR_MISSILE_GUN);
 		p.setSpeed(200);
@@ -98,13 +108,27 @@ public class EnemyUnitGenerator {
 		
 		time += 5;
 		
-		for(int i=0;i<6;i++){
-			
-			enemy = new SimpleLinearEnemyUnit(200 + 100*i, 700);
-			enemy.setSpeed(100);
-			generateAt(enemy, time);
+
+		
+		for(int i=0;i<10;i++){
+			enemy = new CircleEnemyUnit(100, Game.GAME_HEIGHT  + i*40);
+			((CircleEnemyUnit)enemy).setAngleAmount(2);
+			((CircleEnemyUnit)enemy).setTurnDistance(300);
+			generateAt(enemy, time + i*0.1f);
+						
 		}
 		
+		
+		
+		
+		time += 2;
+		
+		p = new PowerCapsule(300, 700, WeaponTypes.TRIPLE_BARREL_MACHINE_GUN);
+		p.setSpeed(200);
+		generateAt(p, time);
+		
+		
+				
 		
 		time += 7;
 		
@@ -115,8 +139,7 @@ public class EnemyUnitGenerator {
 			generateAt(enemy, time);
 		}
 		
-		
-		
+				
 		
 		time += 3;
 		
@@ -126,16 +149,25 @@ public class EnemyUnitGenerator {
 		
 		
 		
-		time += 7;
 		
-		for(int i=0;i<7;i++){
+		time += 5;
+		
+		
+		for(int i=0;i<10;i++){
 			
-			enemy = new SimpleLinearEnemyUnit(50 + 100*i, 700);
-			enemy.setSpeed(100);
+			enemy = new TriangularPathEnemyUnit(300, 700);
+			((TriangularPathEnemyUnit)enemy).setTurnAngle(20);
+			((TriangularPathEnemyUnit)enemy).setChangePathTime(3);
+			
+			enemy.setSpeed(200);
 			generateAt(enemy, time);
-		}		
+			time += 0.3;
+			
+		}
 		
-		time += 1;
+		
+		
+		time += 5;
 		
 		for(int i=0;i<7;i++){
 			
@@ -144,7 +176,17 @@ public class EnemyUnitGenerator {
 			generateAt(enemy, time);
 		}
 		
-		time += 10;
+		
+		time += 5;
+				
+		
+		p = new PowerCapsule(300, 700, WeaponTypes.CROSS_MACHINE_GUN);
+		p.setSpeed(200);
+		generateAt(p, time);
+				
+				
+		
+		time += 5;
 		
 		for(int i=0;i<12;i++){
 			
@@ -155,15 +197,7 @@ public class EnemyUnitGenerator {
 		}
 		
 		
-		time += 5;
 				
-		
-		p = new PowerCapsule(300, 700, WeaponTypes.TRIPLE_BARREL_MACHINE_GUN);
-		p.setSpeed(200);
-		generateAt(p, time);
-		
-		
-		
 		time += 5;
 				
 		
@@ -176,7 +210,14 @@ public class EnemyUnitGenerator {
 			
 		}
 		
+			
+		
 		time += 5;
+		
+		p = new PowerCapsule(300, 700, WeaponTypes.FIVE_BARREL_MACHINE_GUN);
+		p.setSpeed(200);
+		generateAt(p, time);
+				
 		
 		
 		for(int i=5;i>=0;i--){
@@ -191,6 +232,9 @@ public class EnemyUnitGenerator {
 		time += 5;
 
 		
+		
+		
+		
 		for(int i=0;i<10;i++){
 			
 			enemy = new TriangularPathEnemyUnit(300, 700);
@@ -199,6 +243,13 @@ public class EnemyUnitGenerator {
 			time += 0.3;
 			
 		}
+		
+		
+		
+		p = new PowerCapsule(300, 700, WeaponTypes.SINE_MACHINE_GUN);
+		p.setSpeed(200);
+		generateAt(p, time);
+		
 		
 		
 		time += 5;
@@ -219,16 +270,9 @@ public class EnemyUnitGenerator {
 
 		
 		time += 5;
-		
-		p = new PowerCapsule(300, 700, WeaponTypes.FIVE_BARREL_MACHINE_GUN);
-		p.setSpeed(200);
-		generateAt(p, time);
-				
-		
-		time += 5;
-				
+						
 
-		for(int i=0;i<50;i++){
+		for(int i=0;i<20;i++){
 			enemy = new CircleEnemyUnit(100, Game.GAME_HEIGHT  + i*40);
 			generateAt(enemy, time + i*0.1f);
 			
@@ -236,12 +280,6 @@ public class EnemyUnitGenerator {
 		
 		
 		
-		time += 10;
-		
-		
-		p = new PowerCapsule(300, 700, WeaponTypes.SINE_MACHINE_GUN);
-		p.setSpeed(200);
-		generateAt(p, time);
 		
 		
 		time += 5;
@@ -269,8 +307,7 @@ public class EnemyUnitGenerator {
 		p = new PowerCapsule(300, 700, WeaponTypes.ENEMY_CHASER_GUN);
 		p.setSpeed(200);
 		generateAt(p, time);
-		
-		
+				
 		
 		time += 5;
 		
@@ -301,6 +338,11 @@ public class EnemyUnitGenerator {
 		
 		time += 10;
 		
+		
+		p = new PowerCapsule(300, 700, WeaponTypes.DOUBLE_LASER_GUN);
+		p.setSpeed(200);
+		generateAt(p, time);
+		
 
 		//comment
 		
@@ -316,13 +358,7 @@ public class EnemyUnitGenerator {
 		}
 	
 		
-		time += 5;
-		
-		
-		p = new PowerCapsule(300, 700, WeaponTypes.DOUBLE_LASER_GUN);
-		p.setSpeed(200);
-		generateAt(p, time);
-		
+			
 		
 		time += 5;
 		
@@ -337,12 +373,6 @@ public class EnemyUnitGenerator {
 		
 		time += 5;
 		
-		p = new PowerCapsule(300, 700, WeaponTypes.CROSS_MACHINE_GUN);
-		p.setSpeed(200);
-		generateAt(p, time);
-		
-		
-		time += 3;
 		
 		
 		enemy = new TripleBulletEnemyUnit(300, 700);
@@ -417,6 +447,7 @@ public class EnemyUnitGenerator {
 		
 		generateAt(enemy, time);
 		
+		*/
 		
 		
 	}

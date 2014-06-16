@@ -8,8 +8,27 @@ import com.badlogic.gdx.math.MathUtils;
 public class CircleEnemyUnit extends Enemy{
 
 
+	/*
+	 * 
+	 * 
+	 * THE BEHAVIOR OF THIS CLASS IS IT TRAVELS TO CERTAIN DISTANCE GIVEN BY SCREEN Y COORDINATE AND IT STARTS 
+	 * TURNING GIVEN BY THE TURN RATE OR ANGLE_AMOUNT* 
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
+	 */
+	
+	
+	//THE ANGLE IT IS TRAVELING -> 0 MEANS GOING RIGHT, 180 GOING LEFT, 90 GOING UP
 	private float angle;
+	
+	//HOW MUCH TO TURN THE ANGLE BY .. RATE OF CHANGE OF ANGLE OR ANGULAR SPEED
 	private float angle_amount;
+	
+	//WHEN TO START TURNING
+	private int turn_distance;
 	
 	
 	
@@ -24,13 +43,22 @@ public class CircleEnemyUnit extends Enemy{
 		this.hp = 200;
 		
 		speed = 300f;
-				
-		angle = 0f;
-		
 		angle_amount = 1f;
-			
 		angle = 270;
 		
+		turn_distance = 400;
+		
+	}
+	
+	public void setAngleAmount(float d){
+		
+		angle_amount = d;
+		
+	}
+	
+	public void setTurnDistance(int d){
+		
+		turn_distance = d;
 		
 	}
 	
@@ -43,7 +71,7 @@ public class CircleEnemyUnit extends Enemy{
 		super.update(dt);
 		
 		
-		if(this.y < 400){
+		if(this.y < turn_distance){
 			angle += angle_amount;
 		}
 		

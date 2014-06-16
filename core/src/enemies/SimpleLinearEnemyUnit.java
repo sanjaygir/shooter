@@ -6,6 +6,17 @@ import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
 
 public class SimpleLinearEnemyUnit extends Enemy{
 	
+	
+
+	/*
+	 * 
+	 * 
+	 * THE SIMPLEST CLASS WHICH JUST MOVES DOWN WITH GIVEN SPEED
+	 * 
+	 * 
+	 * 
+	 */
+	
 	public SimpleLinearEnemyUnit(float x, float y){
 		
 		super(x, y);

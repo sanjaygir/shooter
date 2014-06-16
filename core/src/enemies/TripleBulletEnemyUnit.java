@@ -9,14 +9,35 @@ import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
 
 public class TripleBulletEnemyUnit extends Enemy{
 	
+	
 
+	/*
+	 * 
+	 * 
+	 * THIS CLASS SHOOTS TRIPLE BULLET IN ONE OF 5 DIRECTIONS...RIGHT, UP, LEFT, RIGHT_DOWN, LEFT_DOWN 
+	 * 
+	 * 
+	 * 
+	 */
+	
 	private TripleBulletAngularGun weapon;
 
 	private float timer;
 	private float time;
 	
 	
+	public static final int RIGHT_DOWN = 0;
+	public static final int LEFT_DOWN = 1;
+	public static final int DOWN = 2;
+	public static final int LEFT = 3;
+	public static final int RIGHT = 4;
+	
+	
+	
+	
 	public TripleBulletEnemyUnit(float x, float y){
+		
+		
 		
 		super(x, y);
 		
@@ -33,13 +54,18 @@ public class TripleBulletEnemyUnit extends Enemy{
 		timer = 0f;
 		
 		
-		setDirection(TripleBulletAngularGun.DOWN);
+		setShootDirection(TripleBulletAngularGun.DOWN);
 		
 	}
 	
 	
-	public void setDirection (int d){
-		weapon.setDirection(d);
+	
+	public void setShootDirection (int d){
+		weapon.setShootDirection(d);
+	}
+	
+	public void setShootTime(float t){
+		time = t;
 	}
 	
 	@Override
@@ -63,9 +89,7 @@ public class TripleBulletEnemyUnit extends Enemy{
 		}
 		
 		this.y -= speed * dt;
-		
-		
-				
+					
 		
 		weapon.update(dt);
 		
