@@ -13,8 +13,7 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 
 public class Game extends ApplicationAdapter {
-	
-		
+			
 	public static  GameStateManager gsm;
 	
 	public static OrthographicCamera cam;
@@ -22,8 +21,8 @@ public class Game extends ApplicationAdapter {
 	public static final int GAME_WIDTH = 800;
 	public static final int GAME_HEIGHT = 600;
 	
-	
-	
+	public static final float FRAME_TIME = 1f/60f;
+		
 	public static ObjectInputStream ois;
 	public static ObjectOutputStream oos;
 	
@@ -51,7 +50,7 @@ public class Game extends ApplicationAdapter {
 	public void render () {
 		Gdx.gl.glClearColor(0, 0, 0, 1);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-			
+		
 		handleInput();
 		update(Gdx.graphics.getDeltaTime());
 		draw();		
@@ -68,8 +67,7 @@ public class Game extends ApplicationAdapter {
 	
 	public void update(float dt){
 		
-		if(dt < 1)
-			gsm.update(dt);
+			gsm.update(FRAME_TIME);
 	}
 	
 	public void draw(){

@@ -65,9 +65,11 @@ public class EnemyUnitGenerator {
 	private void createUnits(){
 		
 
-		
-		
 		time = 2;
+		
+		/*
+		
+		
 		enemy = new SimpleLinearEnemyUnit(300, 700);
 		enemy.setSpeed(250);
 		generateAt(enemy, time);
@@ -297,12 +299,47 @@ public class EnemyUnitGenerator {
 		
 		
 		time += 3;
+		*/
+				
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+				
+			for(int i=0;i<10;i++){
+				
+				enemy = new CircleEnemyUnit(100, 700);
+				((CircleEnemyUnit)enemy).setAngleAmount(3);
+				((CircleEnemyUnit)enemy).setSpeed(400);
+				((CircleEnemyUnit)enemy).setTurnStopAngle(360*3);
+				((CircleEnemyUnit)enemy).setInitialAngle(360-60);
+								
+				((CircleEnemyUnit)enemy).setTurnStartTime(1f);
+				
+				generateAt(enemy, time);
+										
+				time += 0.1;			
+			}
 		
+		/*
+		for(int j=0;j<100;j++){
+			
 		
+			for(int i=0;i<10;i++){
+				
+				enemy = new TriangularPathEnemyUnit(350, 700);	
+				((TriangularPathEnemyUnit)enemy).setInitialDirection(270 + 45);
+				((TriangularPathEnemyUnit)enemy).setTurnAngle(60);
+				
+				enemy.setSpeed(250);
+				generateAt(enemy, time);
+				time += 0.2;
+			}
+			
+		time += 3;
 		
-
-		
-		
+		}
+		*/
+			
 			
 	////////////////////////////////////////////////////////////////////////////////////////////////////
 	////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -311,7 +348,7 @@ public class EnemyUnitGenerator {
 			
 			
 		
-		time += 10;
+		time += 100;
 		enemy = new MainBoss(370, 550);
 		enemy.setHP(20000);
 		

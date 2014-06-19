@@ -25,6 +25,11 @@ public class TriangularPathEnemyUnit extends Enemy {
 	
 	private float turn_angle;
 	
+	
+	private float initial_direction;
+	
+	
+	
 	public TriangularPathEnemyUnit(float x, float y){
 		super(x, y);
 		
@@ -38,7 +43,18 @@ public class TriangularPathEnemyUnit extends Enemy {
 		
 		turn_angle = 45;
 		
+		initial_direction = 270+45;
+		
+		angle = initial_direction;
+		
 				
+	}
+	
+	
+	public void setInitialDirection(float d){
+		
+		initial_direction = d;
+		
 	}
 	
 	public void setChangePathTime(float t){
@@ -46,17 +62,22 @@ public class TriangularPathEnemyUnit extends Enemy {
 	}
 	
 	
+
+	public void setTurnAngle(float a){
+		
+		turn_angle = a;
+		
+	}
+	
 	
 	
 	@Override
 	public void update(float dt) {
 		// TODO Auto-generated method stub
 		
-		super.update(dt);
-		
+		super.update(dt);		
 		
 		timer += dt;
-		
 		
 		if(timer >= change_path_time){
 			
@@ -72,10 +93,10 @@ public class TriangularPathEnemyUnit extends Enemy {
 		}		
 		
 		if(right_direction){
-			angle = 360 - turn_angle;
+			angle = initial_direction - turn_angle;
 		}
 		else{
-			angle = 180 + turn_angle;
+			angle = initial_direction + turn_angle;
 			
 		}
 
@@ -88,19 +109,18 @@ public class TriangularPathEnemyUnit extends Enemy {
 	
 	
 	
-	public void setTurnAngle(float a){
-		
-		turn_angle = a;
-		
-	}
 
 	@Override
 	public void draw(ShapeRenderer sr) {
 		// TODO Auto-generated method stub
 		sr.begin(ShapeType.Line);
-		
-			sr.rect(x - width/2, y - height/2, width, height);
-		
+				
+		 sr.identity();
+		 sr.translate(x, y, 0);
+		 sr.rotate(0, 0, 1, angle);
+		 sr.rect(- width/2,  - height/2, width, height);						
+		 sr.identity();
+		 
 		sr.end();
 	
 	}

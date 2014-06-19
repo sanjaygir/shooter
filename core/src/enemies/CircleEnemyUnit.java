@@ -13,10 +13,7 @@ public class CircleEnemyUnit extends Enemy{
 	 * 
 	 * THE BEHAVIOR OF THIS CLASS IS IT TRAVELS TO CERTAIN DISTANCE GIVEN BY SCREEN Y COORDINATE AND IT STARTS 
 	 * TURNING GIVEN BY THE TURN RATE OR ANGLE_AMOUNT* 
-	 * 
-	 * 
-	 * 
-	 * 
+	 * 	
 	 * 
 	 */
 	
@@ -26,11 +23,12 @@ public class CircleEnemyUnit extends Enemy{
 	
 	//HOW MUCH TO TURN THE ANGLE BY .. RATE OF CHANGE OF ANGLE OR ANGULAR SPEED
 	private float angle_amount;
+		
+	private float turn_start_time;
+	private float turn_stop_angle;
 	
-	//WHEN TO START TURNING
-	private int turn_distance;
 	
-	
+	private float timer;
 	
 	public CircleEnemyUnit(float x, float y){
 		
@@ -46,19 +44,27 @@ public class CircleEnemyUnit extends Enemy{
 		angle_amount = 1f;
 		angle = 270;
 		
-		turn_distance = 400;
+		turn_start_time = 2f;
+		
+		timer = 0;
 		
 	}
 	
+	public void setTurnStartTime(float t){
+		turn_start_time = t;
+	}	
+
+	public void setTurnStopAngle(float t){
+		turn_stop_angle = t;
+	}
+	
+	public void setInitialAngle(float t){
+		angle = t;
+	}
+		
 	public void setAngleAmount(float d){
 		
 		angle_amount = d;
-		
-	}
-	
-	public void setTurnDistance(int d){
-		
-		turn_distance = d;
 		
 	}
 	
@@ -69,11 +75,17 @@ public class CircleEnemyUnit extends Enemy{
 		// TODO Auto-generated method stub
 		
 		super.update(dt);
+
+		timer += dt;
 		
-		
-		if(this.y < turn_distance){
-			angle += angle_amount;
+		if(timer > turn_start_time){
+	
+				if(angle < turn_stop_angle){
+					angle += angle_amount;
+				}
+			
 		}
+	
 		
 		this.x += speed * dt * MathUtils.cos(angle * MathUtils.PI/180f);
 		this.y += speed * dt * MathUtils.sin(angle * MathUtils.PI/180f);
@@ -85,10 +97,15 @@ public class CircleEnemyUnit extends Enemy{
 	public void draw(ShapeRenderer sr) {
 		// TODO Auto-generated method stub
 			
+		
 		sr.begin(ShapeType.Line);
 		
-			sr.rect(x - width/2, y - height/2, width, height);
-		
+		 sr.identity();
+		 sr.translate(x, y, 0);
+		 sr.rotate(0, 0, 1, angle);
+		 sr.rect(- width/2,  - height/2, width, height);						
+		 sr.identity();
+		 
 		sr.end();
 
 		
