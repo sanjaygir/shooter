@@ -5,7 +5,6 @@ import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
 import com.badlogic.gdx.math.MathUtils;
 
 public class TriangularPathEnemyUnit extends Enemy {
-
 	
 
 	/*
@@ -46,9 +45,9 @@ public class TriangularPathEnemyUnit extends Enemy {
 		initial_direction = 270+45;
 		
 		angle = initial_direction;
-		
-				
+						
 	}
+	
 	
 	
 	public void setInitialDirection(float d){

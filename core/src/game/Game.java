@@ -43,6 +43,11 @@ public class Game extends ApplicationAdapter {
 			Save.save(new Score(0));
 		}
 				
+		
+		LevelLoader l = new LevelLoader("map.txt");
+		
+		
+		
 			
 	}
 

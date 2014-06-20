@@ -50,8 +50,7 @@ public class Player extends Entity{
 		
 		lives = 3;
 		
-		invincible = false;
-		
+		invincible = false;		
 		
 		invincible_timer = 0;
 		invincible_time = 3;
@@ -313,8 +312,6 @@ public class Player extends Entity{
 			weapon2.setShoot(b);
 		
 	}
-	
-
 	
 	
 	

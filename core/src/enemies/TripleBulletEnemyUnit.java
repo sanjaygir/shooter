@@ -8,8 +8,7 @@ import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
 
 public class TripleBulletEnemyUnit extends Enemy{
-	
-	
+		
 
 	/*
 	 * 
@@ -36,9 +35,7 @@ public class TripleBulletEnemyUnit extends Enemy{
 	
 	
 	public TripleBulletEnemyUnit(float x, float y){
-		
-		
-		
+			
 		super(x, y);
 		
 		this.width = 50;

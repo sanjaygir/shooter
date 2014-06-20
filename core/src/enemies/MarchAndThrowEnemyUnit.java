@@ -37,6 +37,8 @@ public class MarchAndThrowEnemyUnit extends Enemy{
 	private float jump_x_vel;
 	private float jump_y_vel;
 	
+	private float angle;
+	
 	
 	
 	public MarchAndThrowEnemyUnit(float x, float y){
@@ -68,6 +70,7 @@ public class MarchAndThrowEnemyUnit extends Enemy{
 		jump_x_vel = jump_velocity * MathUtils.cos(jump_angle * MathUtils.PI/180f);
 		jump_y_vel = jump_velocity * MathUtils.sin(jump_angle * MathUtils.PI/180f);
 		
+		angle = 0;
 		
 	}	
 	
@@ -133,6 +136,8 @@ public class MarchAndThrowEnemyUnit extends Enemy{
 			this.x += dt* march_x_vel;
 			this.y += dt* march_y_vel;
 			
+	
+			angle = MathUtils.atan2(march_y_vel, march_x_vel) * 180f/MathUtils.PI;
 			
 		}
 		else{					
@@ -142,25 +147,28 @@ public class MarchAndThrowEnemyUnit extends Enemy{
 			this.x += dt*jump_x_vel;
 			this.y += dt*jump_y_vel;
 			
-			
+			angle = MathUtils.atan2(jump_y_vel, jump_x_vel) * 180f/MathUtils.PI;
 			
 			
 		}
 			
 		
-		
-		
+				
 		
 	}
 	
 	@Override
 	public void draw(ShapeRenderer sr) {
 		// TODO Auto-generated method stub
-			
+
 		sr.begin(ShapeType.Line);
 		
-		sr.rect(x - width/2, y - height/2, width, height);
-		
+		 sr.identity();
+		 sr.translate(x, y, 0);
+		 sr.rotate(0, 0, 1, angle);
+		 sr.rect(- width/2,  - height/2, width, height);						
+		 sr.identity();
+		 
 		sr.end();
 
 		

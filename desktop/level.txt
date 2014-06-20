@@ -1,0 +1,48 @@
+SL 	- Simple Linear Enemy Unit	(x, y, width, height, hp, speed, time_delay)
+SLG	-
+
+C 	- Circle Enemy Unit		(x, y, width, height, hp, speed, time_delay, init_angle, angle_turn_amount, turn_start_time, turn_stop_angle)
+CG	-
+
+MAT	- March And Throw Enemy Unit	(x, y, width, height, hp, speed, time_delay, march_angle, transition_time, gravity, jump_velocity, jump_angle)
+MATG	-
+
+TB 	- Triple Bullet Enemy Unit	(x, y, width, height, hp, speed, time_delay, shoot_interval, shoot_direction)
+TBG	-
+
+
+TP	- Triangular Path Enemy Unit	(x, y, width, height, hp, speed, time_delay, init_direction, path_change_time, turn_angle)
+TPG	-
+
+B	- Boss				
+WC	- Wall Crawler Enemy Unit	(x, y, width, height, hp, speed, time_delay, place, enter_from)
+
+
+
+Capsules (x, y, width, height, speed, time_delay)
+
+P_SBMG	- Single Barrel Machine Gun
+P_CMG	- Cross Machine Gun
+P_ECG	- Enemy Chaser Gun
+P_DLMG	- Double Linear Missile Gun
+P_TBMG	- Triple Barrel Machine Gun
+P_FBMG	- Five Barrel Machine Gun
+P_TBG	- Time Bomb Gun
+P_SMG	- Sine Machine Gun
+P_LG	- Laser Gun
+P_DLG	- Double Laser Gun
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
