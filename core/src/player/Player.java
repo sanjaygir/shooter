@@ -3,6 +3,7 @@ package player;
 
 import game.Entity;
 import game.Game;
+import game.GameCharacterProperties;
 import game.WeaponSystem;
 import game.WeaponTypes;
 import gamescreens.PlayState;
@@ -48,29 +49,22 @@ public class Player extends Entity{
 						
 		super(x, y);
 		
-		lives = 3;
-		
+		lives = GameCharacterProperties.PLAYER_LIVES;
+		speed = GameCharacterProperties.PLAYER_SPEED;		
+		invincible_time = GameCharacterProperties.PLAYER_INVINCIBLE_DELAY;
+		blink_time = GameCharacterProperties.PLAYER_BLINK_DELAY;
+		width = GameCharacterProperties.PLAYER_WIDTH;
+		height = GameCharacterProperties.PLAYER_HEIGHT;
+				
+		weapon1 = new SingleBarrelMachineGun(x, y);	
+		weapon2 = null;
+				
+		remove = false;
+		visible = true;
 		invincible = false;		
 		
 		invincible_timer = 0;
-		invincible_time = 3;
-		
-		blink_time = 0.05f;
 		blink_timer = 0;
-		
-		
-		width = 100;
-		height = 10;
-		
-		speed = 300;		
-		
-		weapon1 = new SingleBarrelMachineGun(x, y);	
-		weapon2 = null;
-		
-		remove = false;
-		
-		visible = true;
-		
 		
 	}
 		

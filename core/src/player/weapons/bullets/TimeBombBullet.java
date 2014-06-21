@@ -27,6 +27,9 @@ public class TimeBombBullet extends Bullet{
 				
 	}
 	
+	public void setBlastRadius(float r){
+		blast_radius = r;
+	}
 	
 	
 	public void setExplodeTime(float s){

@@ -2,6 +2,7 @@ package player.weapons;
 
 import game.BulletWeaponSystem;
 import game.Entity;
+import game.GameCharacterProperties;
 import gamescreens.PlayState;
 
 import java.util.ArrayList;
@@ -14,7 +15,7 @@ public class CrossMachineGun extends BulletWeaponSystem{
 	public CrossMachineGun(float x, float y){
 			
 		super(x, y);
-		shoot_time = 0.05f;
+		shoot_time = GameCharacterProperties.CROSS_MACHINE_GUN_SHOOT_DELAY;
 		shoot_timer = 0;
 		
 		targets = PlayState.enemies;
@@ -38,36 +39,32 @@ public class CrossMachineGun extends BulletWeaponSystem{
 			
 			b = new SimpleLinearBullet(x, y);
 			b.setTargets(targets);
-			b.setSpeed(800);
+			b.setSpeed(GameCharacterProperties.CROSS_MACHINE_GUN_BULLET_SPEED);
 			b.setAngle(90);
-			b.setDamage(50);
-			
+			b.setDamage(GameCharacterProperties.CROSS_MACHINE_GUN_BULLET_DAMAGE);			
 			bullets.add(b);
 						
 			
 			b = new SimpleLinearBullet(x, y);
 			b.setTargets(targets);
-			b.setSpeed(800);
+			b.setSpeed(GameCharacterProperties.CROSS_MACHINE_GUN_BULLET_SPEED);
 			b.setAngle(0);
-			b.setDamage(50);
-			
+			b.setDamage(GameCharacterProperties.CROSS_MACHINE_GUN_BULLET_DAMAGE);			
 			bullets.add(b);						
 
 			b = new SimpleLinearBullet(x, y);
 			b.setTargets(targets);
-			b.setSpeed(800);
+			b.setSpeed(GameCharacterProperties.CROSS_MACHINE_GUN_BULLET_SPEED);
 			b.setAngle(180);
-			b.setDamage(50);
-			
+			b.setDamage(GameCharacterProperties.CROSS_MACHINE_GUN_BULLET_DAMAGE);			
 			bullets.add(b);
 						
 
 			b = new SimpleLinearBullet(x, y);
 			b.setTargets(targets);
-			b.setSpeed(800);
+			b.setSpeed(GameCharacterProperties.CROSS_MACHINE_GUN_BULLET_SPEED);
 			b.setAngle(270);
-			b.setDamage(50);
-			
+			b.setDamage(GameCharacterProperties.CROSS_MACHINE_GUN_BULLET_DAMAGE);			
 			bullets.add(b);
 						
 			

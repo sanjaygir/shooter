@@ -2,6 +2,7 @@ package player.weapons;
 
 import game.BulletWeaponSystem;
 import game.Entity;
+import game.GameCharacterProperties;
 import gamescreens.PlayState;
 import player.weapons.bullets.EnemyChaserBullet;
 
@@ -11,7 +12,7 @@ public class EnemyChaserGun extends BulletWeaponSystem{
 			
 		super(x, y);
 		
-		shoot_time = 0.2f;
+		shoot_time = GameCharacterProperties.ENEMY_CHASER_GUN_SHOOT_DELAY;
 		shoot_timer = 0;
 		targets = PlayState.enemies;
 		
@@ -27,8 +28,7 @@ public class EnemyChaserGun extends BulletWeaponSystem{
 		if(cooling_down == false && shoot){
 			
 			float min_dist = 10000;
-			Entity target = null;
-			
+			Entity target = null;			
 			
 			for(int i=0;i<targets.size();i++){
 				
@@ -53,8 +53,8 @@ public class EnemyChaserGun extends BulletWeaponSystem{
 				EnemyChaserBullet b = new EnemyChaserBullet(x, y);
 				b.setTarget(target);
 				b.setTargets(targets);
-				b.setSpeed(400);
-				
+				b.setSpeed(GameCharacterProperties.ENEMY_CHASER_GUN_BULLET_SPEED);
+				b.setDamage(GameCharacterProperties.ENEMY_CHASER_GUN_BULLET_DAMAGE);
 				
 				bullets.add(b);
 							

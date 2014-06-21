@@ -1,6 +1,7 @@
 package player.weapons;
 
 import game.BulletWeaponSystem;
+import game.GameCharacterProperties;
 import gamescreens.PlayState;
 import player.weapons.bullets.TimeBombBullet;
 
@@ -15,7 +16,7 @@ public class TimeBombGun extends BulletWeaponSystem{
 		
 		super(x, y);
 	
-		shoot_time = 3f;
+		shoot_time = GameCharacterProperties.TIME_BOMB_GUN_SHOOT_DELAY;
 		shoot_timer = 0;
 		
 		targets = PlayState.enemies;
@@ -33,7 +34,10 @@ public class TimeBombGun extends BulletWeaponSystem{
 			
 			bullet = new TimeBombBullet(x, y);
 			bullet.setTargets(targets);
-			bullet.setSpeed(1000);
+			bullet.setSpeed(GameCharacterProperties.TIME_BOMB_GUN_BULLET_SPEED);
+			bullet.setDamage(GameCharacterProperties.TIME_BOMB_GUN_BULLET_DAMAGE);
+			bullet.setExplodeTime(GameCharacterProperties.TIME_BOMB_GUN_BLAST_TIME);
+			bullet.setBlastRadius(GameCharacterProperties.TIME_BOMB_GUN_BLAST_RADIUS);
 			bullets.add(bullet);
 			
 			cooling_down = true;

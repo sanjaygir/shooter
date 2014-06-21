@@ -2,6 +2,7 @@ package player.weapons;
 
 import game.Entity;
 import game.Game;
+import game.GameCharacterProperties;
 import game.WeaponSystem;
 import gamescreens.PlayState;
 
@@ -12,7 +13,7 @@ public class LaserGun extends WeaponSystem{
 
 	private float target_y;
 	private float speed;
-	
+	private float hit_rate;
 	
 	private boolean hitting_target;
 	
@@ -20,20 +21,26 @@ public class LaserGun extends WeaponSystem{
 	public LaserGun(float x, float y){
 				
 		super(x, y);
-		
-	
+			
 		target_y = this.y;
 		
-		speed = 3000;
-		
-	
+		speed = GameCharacterProperties.LASER_GUN_LASER_SPEED;
+			
 		hitting_target = false;
 		targets = PlayState.enemies;
+		hit_rate = GameCharacterProperties.LASER_GUN_LASER_HIT_RATE;
 		
 	}
 	
 
 	
+	public void setSpeed(float s){
+		speed = s;				
+	}
+	
+	public void setHitRate(float h){
+		hit_rate = h;
+	}
 	
 	@Override
 	public void update(float dt) {
@@ -61,8 +68,7 @@ public class LaserGun extends WeaponSystem{
 			}
 			
 		}	
-		
-		
+				
 		
 		if(min != null && shoot){
 			this.target_y = min.getY();
@@ -71,12 +77,11 @@ public class LaserGun extends WeaponSystem{
 		else{
 			hitting_target = false;
 		}
-		
-		
+				
 		
 		if(hitting_target){
 			
-			min.getHit(20);
+			min.getHit(hit_rate);
 			
 		}
 		

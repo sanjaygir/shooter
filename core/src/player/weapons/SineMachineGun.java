@@ -2,6 +2,7 @@ package player.weapons;
 
 
 import game.BulletWeaponSystem;
+import game.GameCharacterProperties;
 import gamescreens.PlayState;
 import player.weapons.bullets.SineBullet;
 
@@ -11,7 +12,7 @@ public class SineMachineGun extends BulletWeaponSystem{
 	
 		super(x, y);
 		
-		shoot_time = 0.05f;
+		shoot_time = GameCharacterProperties.SINE_MACHINE_GUN_SHOOT_DELAY;
 		shoot_timer = 0;
 		targets = PlayState.enemies;
 		
@@ -28,15 +29,15 @@ public class SineMachineGun extends BulletWeaponSystem{
 		if(!cooling_down && shoot){
 			
 			SineBullet b1 = new SineBullet(x, y);
-			b1.setSpeed(800);
-			
+			b1.setSpeed(GameCharacterProperties.SINE_MACHINE_GUN_BULLET_SPEED);
+			b1.setDamage(GameCharacterProperties.SINE_MACHINE_GUN_BULLET_DAMAGE);
 			b1.setTargets(targets);
 			
 			
 			SineBullet b2 = new SineBullet(x, y);
-			b2.setSpeed(800);
+			b2.setSpeed(GameCharacterProperties.SINE_MACHINE_GUN_BULLET_SPEED);
 			b2.setPhase(180);
-			
+			b2.setDamage(GameCharacterProperties.SINE_MACHINE_GUN_BULLET_DAMAGE);
 			b2.setTargets(targets);
 			
 			
