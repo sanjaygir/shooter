@@ -77,11 +77,34 @@ public class CircleEnemyUnit extends Enemy{
 		super.update(dt);
 
 		timer += dt;
-		
+					
 		if(timer > turn_start_time){
-	
+						
+			
 				if(angle < turn_stop_angle){
-					angle += angle_amount;
+					
+					if((turn_stop_angle - angle) < angle_amount){
+						angle = turn_stop_angle;
+					}
+					else
+					{
+						angle += angle_amount;
+					}
+										
+					
+				}
+				else if(angle > turn_stop_angle){
+					
+
+					if((angle - turn_stop_angle) < angle_amount){
+						angle = turn_stop_angle;
+					}
+					else
+					{
+						angle -= angle_amount;
+					}
+					
+					
 				}
 			
 		}

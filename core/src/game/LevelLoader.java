@@ -5,8 +5,7 @@ import java.io.FileReader;
 import java.util.ArrayList;
 
 public class LevelLoader {
-	
-	
+		
 	private ArrayList<String> lines;
 	
 	
@@ -79,7 +78,7 @@ public class LevelLoader {
 				
 			}
 			else if(type.equals("C")){
-				
+								
 
 				token.type = ToGenerateTokenTypes.C;
 				

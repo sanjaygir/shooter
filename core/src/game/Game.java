@@ -44,10 +44,8 @@ public class Game extends ApplicationAdapter {
 		}
 				
 		
-		LevelLoader l = new LevelLoader("map.txt");
-		
-		
-		
+		//LevelLoader l = new LevelLoader("map.txt");
+				
 			
 	}
 
