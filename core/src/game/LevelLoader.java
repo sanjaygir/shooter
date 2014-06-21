@@ -21,8 +21,17 @@ public class LevelLoader {
 			String line = null;
 			
 			while((line = reader.readLine())!=null){
-		
-				lines.add(line);
+				
+				if (line.equals("")) continue;
+				
+				
+				String[] parts = line.split("\\s+");
+				
+				if(parts.length != 0){
+								
+					lines.add(line);
+					
+				}
 					
 			}
 			
@@ -43,7 +52,7 @@ public class LevelLoader {
 			ToGenerateToken token = new ToGenerateToken();
 			
 			
-			String[] parts = lines.get(i).split("\\s");
+			String[] parts = lines.get(i).split("\\s+");
 	
 			String type = parts[0];
 			

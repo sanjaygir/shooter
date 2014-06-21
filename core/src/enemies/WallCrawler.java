@@ -38,8 +38,7 @@ public class WallCrawler extends Enemy{
 	//WHERE DOES IT ENTER TO SCREEN FROM
 	private int entry_from;
 	
-	
-	
+		
 	
 	public WallCrawler(int p, int e){
 		

@@ -35,9 +35,8 @@ public class DoubleLinearMissileGun extends BulletWeaponSystem{
 			b1.setSpeed(500);
 			b1.setDriftLeft(100);
 			b1.setHeight(50);
-			b1.setDamage(500);
-			
-			
+			b1.setDamage(100);
+						
 			
 			bullets.add(b1);
 			
@@ -46,7 +45,7 @@ public class DoubleLinearMissileGun extends BulletWeaponSystem{
 			b2.setTargets(targets);
 			b2.setSpeed(500);
 			b2.setDriftRight(100);
-			b2.setDamage(500);
+			b2.setDamage(100);
 			
 			b2.setHeight(50);
 			

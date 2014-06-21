@@ -38,25 +38,16 @@ public class CrossMachineGun extends BulletWeaponSystem{
 			
 			b = new SimpleLinearBullet(x, y);
 			b.setTargets(targets);
-			b.setSpeed(1000);
+			b.setSpeed(800);
 			b.setAngle(90);
 			b.setDamage(50);
 			
 			bullets.add(b);
-			
-			
-			b = new SimpleLinearBullet(x, y);
-			b.setTargets(targets);
-			b.setSpeed(1000);
-			b.setAngle(45);
-			b.setDamage(50);
-			
-			bullets.add(b);
-			
+						
 			
 			b = new SimpleLinearBullet(x, y);
 			b.setTargets(targets);
-			b.setSpeed(1000);
+			b.setSpeed(800);
 			b.setAngle(0);
 			b.setDamage(50);
 			
@@ -64,7 +55,7 @@ public class CrossMachineGun extends BulletWeaponSystem{
 
 			b = new SimpleLinearBullet(x, y);
 			b.setTargets(targets);
-			b.setSpeed(1000);
+			b.setSpeed(800);
 			b.setAngle(180);
 			b.setDamage(50);
 			
@@ -73,40 +64,12 @@ public class CrossMachineGun extends BulletWeaponSystem{
 
 			b = new SimpleLinearBullet(x, y);
 			b.setTargets(targets);
-			b.setSpeed(1000);
-			b.setAngle(90 + 45);
+			b.setSpeed(800);
+			b.setAngle(270);
 			b.setDamage(50);
 			
 			bullets.add(b);
 						
-						
-	
-			b = new SimpleLinearBullet(x, y);
-			b.setTargets(targets);
-			b.setSpeed(1000);
-			b.setAngle(45 + 90);
-			b.setDamage(50);
-			
-			bullets.add(b);
-	
-				
-			b = new SimpleLinearBullet(x, y);
-			b.setTargets(targets);
-			b.setSpeed(1000);
-			b.setAngle(45 + 180);
-			b.setDamage(50);
-			
-			bullets.add(b);
-	
-			
-			b = new SimpleLinearBullet(x, y);
-			b.setTargets(targets);			
-			b.setSpeed(1000);
-			b.setAngle(45 + 270);
-			b.setDamage(50);
-			
-			bullets.add(b);
-	
 			
 			cooling_down = true;
 		}

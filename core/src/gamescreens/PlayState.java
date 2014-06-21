@@ -83,7 +83,7 @@ public class PlayState extends GameState{
 	public void update(float dt) {
 		// TODO Auto-generated method stub
 		
-		
+				
 		if(player.lives < 0){
 			Game.gsm.setState(GameStateManager.GAME_OVER_STATE);
 		}

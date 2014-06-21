@@ -17,7 +17,7 @@ public abstract class Entity {
 	protected float hp;
 	protected float speed;
 		
-	public abstract void update(float dt);
+	
 	public abstract void draw(ShapeRenderer sr);
 	
 	public Entity(float x, float y){
@@ -71,10 +71,16 @@ public abstract class Entity {
 			
 		}
 		
+	}	
+	
+	public void update(float dt){
+			
+		if(this.x < -Game.GAME_WIDTH || this.x > (Game.GAME_WIDTH + Game.GAME_WIDTH) || this.y < -Game.GAME_HEIGHT || this.y > (Game.GAME_HEIGHT + Game.GAME_HEIGHT)){
+			this.remove = true;
+		}
+				
 	}
 	
-	
-
 	public void setX(float x){
 		this.x = x;
 	}

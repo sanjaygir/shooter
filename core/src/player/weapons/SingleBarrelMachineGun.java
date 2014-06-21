@@ -30,7 +30,7 @@ public class SingleBarrelMachineGun extends BulletWeaponSystem{
 
 			SimpleLinearBullet b = new SimpleLinearBullet(x, y);
 			b.setTargets(this.targets);
-			b.setSpeed(1000);
+			b.setSpeed(800);
 			bullets.add(b);
 			
 			cooling_down = true;

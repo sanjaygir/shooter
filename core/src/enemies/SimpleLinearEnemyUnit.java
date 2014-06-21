@@ -38,14 +38,8 @@ public class SimpleLinearEnemyUnit extends Enemy{
 				
 		super.update(dt);
 		
-		if(this.y < 0){
-			this.remove = true;
-			return;
-		}
-			
 		this.y -= speed * dt;
-				
-		
+						
 	}
 	
 
