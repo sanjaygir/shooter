@@ -1,28 +1,120 @@
 package game;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.util.ArrayList;
 
 public class LevelLoader {
 		
 	private ArrayList<String> lines;
 	
+		
+	public void stripComments(String path){
+		
+
+		String raw = "";
+		
+		try{
+			
+			FileReader fr = new FileReader(path);
+			
+			BufferedReader br = new BufferedReader(fr);
+			
+			
+			int c;
+			
+			while((c = br.read()) != -1){
+				
+				raw += (char)c;
+				
+				
+			}
+			
+		}
+		catch(Exception e){
+			e.printStackTrace();
+		}
+		
+		
+		
+		String to_be_outputted = "";
+		
+		int i;
+		
+		for(i=0;i<raw.length();i++){
+						
+			
+			if(raw.charAt(i) == '/' && raw.charAt(i+1) == '*'){
+				
+				i++;
+				
+				while(true){
+					
+					i++;
+					
+					if(raw.charAt(i) == '*' && raw.charAt(i+1) == '/') {
+						i++;
+						
+						
+						break;}
+					
+				}				
+				
+			}
+			else{
+				to_be_outputted += raw.charAt(i);
+			}
+			
+			
+			
+		}
+		
+		
+		
+		
+		try{
+			
+			FileWriter fw = new FileWriter("temp.txt");
+			BufferedWriter bw = new BufferedWriter(fw);
+			bw.write(to_be_outputted);
+			bw.close();
+			
+		
+		}
+		catch(Exception e){
+			e.printStackTrace();
+		}
+		
+		
+		
+	}
 	
 	public LevelLoader(String path){
 		
 		lines = new ArrayList<String>();
 		
 		
+		
+		stripComments(path);
+		
+			
+		
+		
 		try{
 		
-			BufferedReader reader = new BufferedReader(new FileReader(path));
-		
+			BufferedReader reader = new BufferedReader(new FileReader("temp.txt"));
+			
+			
 			String line = null;
 			
 			while((line = reader.readLine())!=null){
 				
 				if (line.equals("")) continue;
+				
+				
+				if(hasComments(line)) continue;
 				
 				
 				String[] parts = line.split("\\s+");
@@ -42,6 +134,15 @@ public class LevelLoader {
 		
 	}
 
+	public boolean hasComments(String s){
+		
+		for(int i=0;i<s.length();i++){
+			
+			if(s.charAt(i) == '/') return true;			
+		}
+		
+		return false;
+	}
 	
 	public ArrayList<ToGenerateToken> getToGenerateTokens(){
 		
@@ -50,13 +151,12 @@ public class LevelLoader {
 		for(int i=0;i<lines.size();i++){
 			
 			ToGenerateToken token = new ToGenerateToken();
-			
-			
+						
 			String[] parts = lines.get(i).split("\\s+");
 	
 			String type = parts[0];
 			
-						
+			
 			if(type.equals("SL")){
 			
 				token.type = ToGenerateTokenTypes.SL;

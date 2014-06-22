@@ -76,14 +76,14 @@ public class GameCharacterProperties {
 	
 	public static final float ENEMY_CHASER_GUN_SHOOT_DELAY = 0.2f;
 	public static final float ENEMY_CHASER_GUN_BULLET_SPEED = 400;
-	public static final float ENEMY_CHASER_GUN_BULLET_DAMAGE = 100;
+	public static final float ENEMY_CHASER_GUN_BULLET_DAMAGE = 70;
 	
 	//TIME BOMB GUN
 	
 	
 	public static final float TIME_BOMB_GUN_SHOOT_DELAY = 3f;
 	public static final float TIME_BOMB_GUN_BULLET_SPEED = 1000;
-	public static final float TIME_BOMB_GUN_BULLET_DAMAGE = 600;
+	public static final float TIME_BOMB_GUN_BULLET_DAMAGE = 500;
 	public static final float TIME_BOMB_GUN_BLAST_RADIUS = 200;
 	public static final float TIME_BOMB_GUN_BLAST_TIME = 3;
 	

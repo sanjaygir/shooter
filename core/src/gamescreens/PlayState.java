@@ -23,6 +23,7 @@ import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
 public class PlayState extends GameState{
 
 	private ShapeRenderer sr;
+	
 		
 	public static  ArrayList<Entity> enemies;
 	public static  ArrayList<Entity> players;
