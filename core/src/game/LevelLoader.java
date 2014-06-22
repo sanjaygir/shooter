@@ -13,24 +13,25 @@ public class LevelLoader {
 		
 	public void stripComments(String path){
 		
-
 		String raw = "";
 		
+		
+		//Read the file as raw string
 		try{
 			
-			FileReader fr = new FileReader(path);
-			
+			FileReader fr = new FileReader(path);			
 			BufferedReader br = new BufferedReader(fr);
-			
-			
+						
 			int c;
 			
-			while((c = br.read()) != -1){
-				
-				raw += (char)c;
-				
-				
+			while((c = br.read()) != -1){				
+				raw += (char)c;				
 			}
+			
+			
+			br.close();
+			fr.close();
+			
 			
 		}
 		catch(Exception e){
@@ -38,6 +39,7 @@ public class LevelLoader {
 		}
 		
 		
+		//Strip the comments and store it in to_be_outputted
 		
 		String to_be_outputted = "";
 		
@@ -56,9 +58,9 @@ public class LevelLoader {
 					
 					if(raw.charAt(i) == '*' && raw.charAt(i+1) == '/') {
 						i++;
+						break;
 						
-						
-						break;}
+					}
 					
 				}				
 				
@@ -66,20 +68,22 @@ public class LevelLoader {
 			else{
 				to_be_outputted += raw.charAt(i);
 			}
-			
-			
-			
+				
 		}
 		
 		
 		
+		//save it in a temporary file for now
 		
 		try{
 			
 			FileWriter fw = new FileWriter("temp.txt");
 			BufferedWriter bw = new BufferedWriter(fw);
 			bw.write(to_be_outputted);
+			
 			bw.close();
+			fw.close();
+			
 			
 		
 		}
@@ -94,13 +98,12 @@ public class LevelLoader {
 	public LevelLoader(String path){
 		
 		lines = new ArrayList<String>();
-		
-		
+				
 		
 		stripComments(path);
+				
 		
-			
-		
+		//Read the levels info from the temporary file
 		
 		try{
 		
